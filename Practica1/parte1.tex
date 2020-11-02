@@ -1,0 +1,107 @@
+\documentclass{uc3mpracticas}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Plantilla Prácticas UC3M                               %%%
+%%%                Universidad Carlos III de Madrid                          %%%
+%%%                   Alejandro Valverde Mahou                               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Permitir cabeceras y pie de páginas personalizados
+\pagestyle{fancy}
+
+%Path por defecto de las imágenes
+\graphicspath{ {./images/} }
+
+%Declarar formato de encabezado y pie de página de las páginas del documento
+\fancypagestyle{doc}{
+  %Cabecera
+  \headerpr[1]{Parte 1: \textbf{Identificación}}{}{Ingeniería del Conocimiento}
+  %Pie de Página
+  \footerpr{}{}{{\thepage} de \pageref{LastPage}}
+}
+
+%Declarar formato de encabezado y pie del título e indice
+\fancypagestyle{titu}{%
+  %Cabecera
+  \headerpr{}{}{}
+  %Pie de Página
+  \footerpr{}{}{}
+}
+
+
+\appto\frontmatter{\pagestyle{titu}}
+\appto\mainmatter{\pagestyle{doc}}
+
+
+\begin{document}
+  %Comienzo formato título
+  \frontmatter
+
+
+  %Portada 1 (Centrado todo)
+  \centeredtitle{Images/LogoUC3M.png}{Grado en Ingeniería Informática}{Curso 2020-2021}{Ingeniería del Conocimiento}{Práctica 1-Parte 1: Identificación}
+
+  \vspace{60mm}
+
+  \authors{Alba Reinders Sánchez}{100383444}{Alejandro Valverde Mahou}{100383383}{}{}{}{}
+
+  \newpage
+
+
+  %Comienzo formato documento general
+  \mainmatter
+
+  \section{Plan de requisitos}
+  \subsection{Metas específicas y generales}
+
+  \begin{itemize}
+    \item \textbf{Metas Generales}:
+
+    Crear un escenario que involucre al paciente (niño) y al robot, con el objetivo de que ambos interactuen a través de dos juegos distintos. Para conseguir esto, el requisito principal es construir un \textbf{SBC} (\textit{Sistema Basado en el Conocimiento}) completo que contenga toda la información necesaria en cuanto al desarrollo de una sesión, y que sea flexible, es decir, que sea capaz de adaptar las acciones del robot a flujos anómalos de la interacción.
+
+    \item \textbf{Metas Específicas}:
+
+    Se tienen que definir dos juegos diferentes con su funcionamiento normal y dos posibles alteraciones que tengan que ver con los distintos comportamientos y personalidades de los pacientes.
+  \end{itemize}
+
+  \subsection{Funcionalidad y rendimiento}
+
+  El tiempo de respuesta del sistema debe ser menor a 5 segundos para evitar que el paciente crea que el robot ha dejado de funcionar o se aburra porque requiere de demasiado tiempo de espera para cada respuesta.
+
+  \subsection{Limitaciones de coste y tiempo}
+
+  Para desarrollar el SBC que se plantea se tiene de tiempo hasta la fecha de entrega (\textit{29 de Noviembre de 2020}). El coste está determinado por el tiempo dedicado a realizar este sistema, que se ve limitado no sólo por la fecha de entrega sino también por el hecho de compaginar esta práctica con otras de distintas asignaturas.
+
+  \section{Evaluación del problema}
+  \subsection{Adecuación}
+
+  \begin{itemize}
+    \item \textbf{Naturaleza del problema}:
+
+    Requiere experiencia de terapeutas, rehabilitadores y pedagogos, implica el uso de diferentes tácticas según el juego a realizar y las características del paciente, es una actividad práctica y satisface necesidades a largo plazo como es la rehabilitación a través de juegos que entretegan al paciente.
+
+    \item \textbf{Tipo de problema}:
+
+    La tarea no requiere de investigación para su desarrollo. Los trabajos recientes en el área demuestran la utilidad de incorporar este tipo de juegos en sesiones de rehabilitación. Se puede resolver con manipulación simbólica ya que trabaja a nivel de acciones. Hace uso de heurísticas pues no hay un algoritmo preciso que valga para resolver todos los casos.
+
+    \item \textbf{Complejidad}:
+
+    El dominio es acotado, sólo dos juegos y un número limitado de personalidades de los pacientes. El problema puede descomponerse en las diferentes acciones a realizar a lo largo de una sesión. No tiene una solución sencilla si se resuelve con programación imperativa, debido a su gran número de posibilidades. Además, el conocimiento de los expertos se puede transferir al sistema.
+  \end{itemize}
+
+  \subsection{Plausibilidad}
+
+  Existen expertos e investigaciones accesibles que explican los métodos de resolución del problema. La definición del problema es clara y estructurada, y la tarea depende de los conocimientos y de las acciones que se lleven a cabo a lo largo de las sesiones.
+
+  \section{Definir el problema y concebir la solución}
+  \subsection{Entradas y salidas del sistema}
+
+  Las entradas generales son el juego que se va a llevar a cabo y la personalidad del paciente. Las entradas específicas son las respuestas o acciones del paciente a lo largo de la sesión, que serán distintas en cada sesión.
+
+  \vspace{2mm}
+
+  Las salidas son las acciones y comentarios (respuestas de audio) del robot.
+
+\end{document}
