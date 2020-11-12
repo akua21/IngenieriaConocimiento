@@ -1,0 +1,177 @@
+\documentclass{uc3mpracticas}
+\usepackage{multirow}
+\usepackage{listings}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Plantilla Prácticas UC3M                               %%%
+%%%                Universidad Carlos III de Madrid                          %%%
+%%%                   Alejandro Valverde Mahou                               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Permitir cabeceras y pie de páginas personalizados
+\pagestyle{fancy}
+
+%Path por defecto de las imágenes
+\graphicspath{ {./images/} }
+
+%Declarar formato de encabezado y pie de página de las páginas del documento
+\fancypagestyle{doc}{
+  %Cabecera
+  \headerpr[1]{Parte 2: \textbf{Adquisición del Conocimiento y Conceptualización}}{}{Ingeniería del Conocimiento}
+  %Pie de Página
+  \footerpr{}{}{{\thepage} de \pageref{LastPage}}
+}
+
+%Declarar formato de encabezado y pie del título e indice
+\fancypagestyle{titu}{%
+  %Cabecera
+  \headerpr{}{}{}
+  %Pie de Página
+  \footerpr{}{}{}
+}
+
+
+\appto\frontmatter{\pagestyle{titu}}
+\appto\mainmatter{\pagestyle{doc}}
+
+
+\begin{document}
+
+  \mainmatter
+
+  \section{Identificación de conceptos, características, valores y relaciones}
+
+  \subsection{Conceptos, características y valores}
+
+
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Concepto} & \textbf{Características} & \textbf{Valores}\\
+    \hline \hline \hline
+    \multirow{8}{*}{\textit{Sesión}} & \multirow{2}{*}{Nombre del Juego} & Tres en Raya \\
+    & & Twister \\
+    \cline{2-3}
+    & \multirow{6}{*}{Estado} & Entorno del juego preparado \\
+    & & Pesona saludada \\
+    & & Juego explicado \\
+    & & Juego ejecutando \\
+    & & Juego terminado \\
+    & & Persona despedida \\
+    \hline \hline
+    \multirow{8}{*}{\textit{Paciente}} & \multirow{2}{*}{Personalidad} & Distraido \\
+    & & Impaciente \\
+    \cline{2-3}
+    & \multirow{2}{*}{Mano} & Derecha \\
+    & & Izquierda \\
+    \cline{2-3}
+    & \multirow{2}{*}{Pie} & Derecho \\
+    & & Izquierdo \\
+    \cline{2-3}
+    & \multirow{2}{*}{Acción} & Colocar ficha \\
+    & & Colocar extremidad \\
+    \hline \hline
+    \multirow{11}{*}{\textit{Robot}} & \multirow{2}{*}{Color de Ojos} & Rojo \\
+    & & Verde \\
+    \cline{2-3}
+    & \multirow{9}{*}{Acción} & Colocar ficha \\
+    & & Elegir extremidad \\
+    & & Elegir color \\
+    & & Saludar \\
+    & & Explicar juego \\
+    & & Alentar \\
+    & & Corregir \\
+    & & Terminar juego \\
+    & & Despedirse \\
+    \hline \hline
+    \multirow{14}{*}{\textit{Juego}} & \multirow{2}{*}{Nombre} & Tres en Raya \\
+    & & Twister \\
+    \cline{2-3}
+    & \multirow{2}{*}{Resultado} & Victoria robot \\
+    & & Victoria paciente \\
+    \cline{2-3}
+    & \multirow{8}{*}{Objeto} & Tablero Tres en Raya \\
+    & & Ficha O \\
+    & & Ficha X \\
+    & & Tablero Twister \\
+    & & Casilla Roja \\
+    & & Casilla Verde \\
+    & & Casilla Azul \\
+    & & Casilla Amarilla \\
+    \cline{2-3}
+    & \multirow{2}{*}{Turno} & Turno robot \\
+    & & Turno paciente \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \subsection{Relaciones}
+
+  \begin{itemize}
+    \item \textit{Sesión} tiene \textit{Juego}
+    \item \textit{Sesión} tiene \textit{Paciente}
+    \item \textit{Sesión} tiene \textit{Robot}
+  \end{itemize}
+
+
+  \section{El razonamiento del experto (reglas del sistema)}
+
+  Cuando el robot detecta que el entorno del juego está preparado saluda al paciente. Después explica el juego y comienza a ejecutarlo.
+
+  \vspace{2mm}
+
+  Si el juego es el Tres en Raya, primero se le asigna una ficha al paciente y luego la otra al robot, después se comienza a jugar por turnos hasta que uno de los dos consigue hacer las tres en raya.
+
+  \vspace{2mm}
+
+  Si el juego es el Twister, el robot elige qué extremidad y en qué color debe colocar el paciente esta extremidad.
+
+  \vspace{2mm}
+
+  Cuando el juego ha terminado el robot se despide del paciente.
+
+
+  \section{Identificación de las inferencias}
+
+  \begin{lstlisting}
+  SI Estado = Entorno del juego preparado
+      ENTONCES Robot.accion = Saludar Y Robot.accion = Explicar juego
+
+  SI Nombre del Juego = Tres en Raya Y Turno = Turno robot
+      ENTONCES Robot.accion = Colocar ficha
+
+  SI Nombre del Juego = Tres en Raya Y Turno = Turno paciente
+      ENTONCES Paciente.accion = Colocar ficha
+
+  SI Nombre del Juego = Tres en Raya
+  Y (Resultado = Victoria robot O Resultado = Victoria paciente)
+      ENTONCES Estado = Juego terminado
+
+  SI Estado = Juego terminado
+      ENTONCES Robot.accion = Despedirse Y Estado = Persona despedida
+
+  SI Nombre del Juego = Twister Y Turno = Turno robot
+      ENTONCES Robot.accion = Elegir extremidad Y Robot.accion = Elegir color
+
+  SI Nombre del Juego = Twister Y Turno = Turno paciente
+      ENTONCES Paciente.accion = Colocar extremidad
+
+  \end{lstlisting}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
