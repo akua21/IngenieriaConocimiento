@@ -4,10 +4,6 @@
   (slot nombre
     (type STRING)
   )
-
-  (slot resultado
-    (type STRING)
-  )
 )
 
 (defclass PACIENTE (is-a INITIAL-OBJECT)
@@ -20,14 +16,9 @@
     (allowed-values despistado energetico)
   )
 
-  (slot mano
+  (slot extremidad
     (type SYMBOL)
-    (allowed-values derecha izquierda)
-  )
-
-  (slot pie
-    (type SYMBOL)
-    (allowed-values derecho izquierdo)
+    (allowed-values mano-derecha mano-izquierda pie-derecho pie-izquierdo)
   )
 )
 
@@ -45,10 +36,6 @@
     (allowed-values 3-en-raya twister)
   )
 
-  (slot explicacion
-    (type STRING)
-  )
-
   (slot resultado
     (type SYMBOL)
   )
@@ -58,11 +45,6 @@
   (slot nombre
     (source composite)
     (default 3-en-raya)
-  )
-
-  (slot explicacion
-    (source composite)
-    (default "Tenemos que colocar las fichas por turnos para consiguir poner 3 en línea recta. Tu empiezas.")
   )
 
   (slot resultado
@@ -78,13 +60,72 @@
     (default twister)
   )
 
-  (slot explicacion
-    (source composite)
-    (default "Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.")
-  )
-
   (slot resultado
     (source composite)
     (allowed-values no-decidido victoria-paciente derrota-paciente)
+    (default no-decidido)
   )
+
+  ; Lo que ha indicado el robot
+  (slot indicado
+    (type SYMBOL)
+    (allowed-values no rojo amarillo azul verde)
+    (default no)
+  )
+)
+
+(defclass FLUJO (is-a INITIAL-OBJECT)
+  (slot accion-actual
+    (type STRING)
+  )
+
+  (slot accion-resultante
+    (type STRING)
+  )
+
+  (slot imprimir
+    (type STRING)
+  )
+)
+
+(defclass FLUJO-TWISTER (is-a FLUJO)
+  (slot comando
+    (type SYMBOL)
+    (default -)
+  )
+)
+
+(defclass FLUJO-3-EN-RAYA (is-a FLUJO))
+
+
+; Instancias
+
+(definstances inicial
+  (of ACCION (nombre saludar))
+  ([saludar-explicar] of FLUJO (accion-actual saludar) (accion-resultante explicar) (imprimir "¡Hola!"))
+
+  ([twister] of TWISTER)
+
+  ([explicarTwister-elegir] of FLUJO-TWISTER (accion-actual explicar) (accion-resultante elegir) (imprimir "Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte."))
+
+  ([elegir-colocar] of FLUJO-TWISTER (accion-actual elegir) (accion-resultante colocar) (imprimir ""))
+
+
+  (colocarNormal-lasjd) resultado -> comprobar
+  (colocarDespistado-lasjd) resultado -> volver-explicar
+  (colocarEnergetico-lasjd) resultado -> moverse
+)
+
+(deffacts inicial-facts
+
+  CREAR-SESION(JUEGO, PACIENTE/PERSONALIDAD)
+
+  (color rojo)
+  (color verde)
+  (color amarillo)
+  (color azul)
+  (extremidad mano-derecha)
+  (extremidad mano-izquierda)
+  (extremidad pie-derecho)
+  (extremidad pie-izquierdo)
 )
