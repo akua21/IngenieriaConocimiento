@@ -1,5 +1,22 @@
 ; Jerarquía de clases
 
+(defclass ESTADO (is-a INITIAL-OBJECT)
+  (slot turno
+    (type SYMBOL)
+    (allowed-values turno-robot turno-paciente)
+  )
+
+  (slot num-acciones
+    (type INTEGER)
+    (default 0)
+  )
+
+  (slot acciones-max
+    (type INTEGER)
+    (default 10)
+  )
+)
+
 (defclass ACCION (is-a INITIAL-OBJECT)
   (slot nombre
     (type STRING)
@@ -14,11 +31,6 @@
   (slot personalidad
     (type SYMBOL)
     (allowed-values despistado energetico)
-  )
-
-  (slot extremidad
-    (type SYMBOL)
-    (allowed-values mano-derecha mano-izquierda pie-derecho pie-izquierdo)
   )
 )
 
@@ -67,12 +79,19 @@
   )
 
   ; Lo que ha indicado el robot
-  (slot indicado
+  (slot color-indicado
     (type SYMBOL)
     (allowed-values no rojo amarillo azul verde)
     (default no)
   )
+
+  (slot extremidad-indicada
+    (type SYMBOL)
+    (allowed-values no pie-derecho pie-izquierdo mano-derecha mano-izquierda)
+    (default no)
+  )
 )
+
 
 (defclass FLUJO (is-a INITIAL-OBJECT)
   (slot accion-actual
@@ -101,25 +120,40 @@
 ; Instancias
 
 (definstances inicial
+  ([estado] of ESTADO (turno turno-robot))
+  ([twister] of TWISTER)
+  ([paciente] of PACIENTE (nombre Pepe) (personalidad despistado))
+
   (of ACCION (nombre saludar))
   ([saludar-explicar] of FLUJO (accion-actual saludar) (accion-resultante explicar) (imprimir "¡Hola!"))
 
-  ([twister] of TWISTER)
 
   ([explicarTwister-elegir] of FLUJO-TWISTER (accion-actual explicar) (accion-resultante elegir) (imprimir "Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte."))
 
+
+
+
+  ;  ?¿ -> Preguntar
   ([elegir-colocar] of FLUJO-TWISTER (accion-actual elegir) (accion-resultante colocar) (imprimir ""))
+  (colocarNormal-lasjd) elegir -> colocar
+  (colocarDespistado-lasjd) elegir -> volver-explicar
+  (colocarEnergetico-lasjd) elegir -> moverse
+
+  colocar -> check-bien
+  colocar -> check-mal
+  colocar -> paciente-caido
 
 
-  (colocarNormal-lasjd) resultado -> comprobar
-  (colocarDespistado-lasjd) resultado -> volver-explicar
-  (colocarEnergetico-lasjd) resultado -> moverse
+
+
+  ([comprobarBien-elegir] of FLUJO-TWISTER (accion-actual comprobar-bien) (accion-resultante elegir) (imprimir "Enhorabuena, muy bien hecho"))
+
+  ([terminar-despedirse] of FLUJO (accion-actual terminar-juego) (accion-resultante despedirse) (imprimir "Hemos terminado el juego"))
+
+  ([despedirse-apagar] of FLUJO (accion-actual despedirse) (accion-resultante apagar-robot) (imprimir "Hasta otra"))
 )
 
 (deffacts inicial-facts
-
-  CREAR-SESION(JUEGO, PACIENTE/PERSONALIDAD)
-
   (color rojo)
   (color verde)
   (color amarillo)
