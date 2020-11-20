@@ -45,7 +45,7 @@
 (defclass JUEGO (is-a INITIAL-OBJECT)
   (slot nombre
     (type SYMBOL)
-    (allowed-values 3-en-raya twister)
+    (allowed-values tres-en-raya twister)
   )
 
   (slot resultado
@@ -53,10 +53,10 @@
   )
 )
 
-(defclass 3-EN-RAYA (is-a JUEGO)
+(defclass TRES-EN-RAYA (is-a JUEGO)
   (slot nombre
     (source composite)
-    (default 3-en-raya)
+    (default tres-en-raya)
   )
 
   (slot resultado
@@ -107,14 +107,9 @@
   )
 )
 
-(defclass FLUJO-TWISTER (is-a FLUJO)
-  (slot comando
-    (type SYMBOL)
-    (default -)
-  )
-)
+(defclass FLUJO-TWISTER (is-a FLUJO))
 
-(defclass FLUJO-3-EN-RAYA (is-a FLUJO))
+(defclass FLUJO-TRES-EN-RAYA (is-a FLUJO))
 
 
 ; Instancias
@@ -135,13 +130,13 @@
 
   ;  ?¿ -> Preguntar
   ([elegir-colocar] of FLUJO-TWISTER (accion-actual elegir) (accion-resultante colocar) (imprimir ""))
-  (colocarNormal-lasjd) elegir -> colocar
-  (colocarDespistado-lasjd) elegir -> volver-explicar
-  (colocarEnergetico-lasjd) elegir -> moverse
+  ; (colocarNormal-lasjd) elegir -> colocar
+  ; (colocarDespistado-lasjd) elegir -> volver-explicar
+  ; (colocarEnergetico-lasjd) elegir -> moverse
 
-  colocar -> check-bien
-  colocar -> check-mal
-  colocar -> paciente-caido
+  ; colocar -> check-bien
+  ; colocar -> check-mal
+  ; colocar -> paciente-caido
 
 
 
