@@ -1,25 +1,36 @@
 ; Jerarquía de clases
 
-(defclass ESTADO (is-a INITIAL-OBJECT)
-  (slot turno
+(defclass JUEGO (is-a INITIAL-OBJECT)
+  (slot id
     (type SYMBOL)
-    (allowed-values turno-robot turno-paciente)
   )
 
-  (slot num-acciones
+  (slot explicacion
+    (type STRING)
+  )
+
+  (slot turno-inicial
+    (type SYMBOL)
+  )
+)
+
+(defclass CONTROL (is-a INITIAL-OBJECT)
+  (slot turno
+    (type SYMBOL)
+  )
+
+  (slot contador-ciclos
     (type INTEGER)
     (default 0)
   )
 
-  (slot acciones-max
+  (slot ciclos-maximos
     (type INTEGER)
-    (default 10)
+    (default 5)
   )
-)
 
-(defclass ACCION (is-a INITIAL-OBJECT)
-  (slot nombre
-    (type STRING)
+  (slot juego
+    (type SYMBOL)
   )
 )
 
@@ -30,131 +41,83 @@
 
   (slot personalidad
     (type SYMBOL)
-    (allowed-values despistado energetico)
   )
 )
 
-(defclass ROBOT (is-a INITIAL-OBJECT)
-  (slot color-ojos
-    (type SYMBOL)
-    (allowed-values rojo verde normal)
-    (default normal)
-  )
-)
 
-(defclass JUEGO (is-a INITIAL-OBJECT)
-  (slot nombre
-    (type SYMBOL)
-    (allowed-values tres-en-raya twister)
-  )
 
-  (slot resultado
+
+; TWISTER ---------------------------------------------------------------------
+
+
+(defclass COLOR (is-a INITIAL-OBJECT)
+  (slot id
     (type SYMBOL)
   )
 )
 
-(defclass TRES-EN-RAYA (is-a JUEGO)
-  (slot nombre
-    (source composite)
-    (default tres-en-raya)
-  )
-
-  (slot resultado
-    (source composite)
-    (allowed-values empate victoria-paciente victoria-robot)
-  )
-)
-
-
-(defclass TWISTER (is-a JUEGO)
-  (slot nombre
-    (source composite)
-    (default twister)
-  )
-
-  (slot resultado
-    (source composite)
-    (allowed-values no-decidido victoria-paciente derrota-paciente)
-    (default no-decidido)
-  )
-
-  ; Lo que ha indicado el robot
-  (slot color-indicado
+(defclass EXTREMIDAD (is-a INITIAL-OBJECT)
+  (slot id
     (type SYMBOL)
-    (allowed-values no rojo amarillo azul verde)
-    (default no)
   )
+)
 
-  (slot extremidad-indicada
+(defclass ELECCION (is-a INITIAL-OBJECT)
+  (slot color
     (type SYMBOL)
-    (allowed-values no pie-derecho pie-izquierdo mano-derecha mano-izquierda)
-    (default no)
+  )
+
+  (slot extremidad
+    (type SYMBOL)
   )
 )
 
 
-(defclass FLUJO (is-a INITIAL-OBJECT)
-  (slot accion-actual
-    (type STRING)
+(definstances twister
+  ; ([control] of CONTROL (turno robot))
+  ([rojo] of COLOR (id rojo))
+  ([azul] of COLOR (id azul))
+  ([amarillo] of COLOR (id amarillo))
+  ([verde] of COLOR (id verde))
+  ([mano-derecha] of EXTREMIDAD (id mano-derecha))
+  ([mano-izquierda] of EXTREMIDAD (id mano-izquierda))
+  ([pie-derecho] of EXTREMIDAD (id pie-derecho))
+  ([pie-izquierdo] of EXTREMIDAD (id pie-izquierdo))
+  ([twister] of JUEGO (id twister) (explicacion "Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.") (turno-inicial robot))
+)
+
+
+(defclass CASILLA (is-a INITIAL-OBJECT)
+  (slot x
+    (type INTEGER)
   )
 
-  (slot accion-resultante
-    (type STRING)
+  (slot y
+    (type INTEGER)
   )
 
-  (slot imprimir
-    (type STRING)
+  (slot valor
+    (type SYMBOL)
+    (default vacio)
   )
 )
 
-(defclass FLUJO-TWISTER (is-a FLUJO))
-
-(defclass FLUJO-TRES-EN-RAYA (is-a FLUJO))
-
-
-; Instancias
-
-(definstances inicial
-  ([estado] of ESTADO (turno turno-robot))
-  ([twister] of TWISTER)
-  ([paciente] of PACIENTE (nombre Pepe) (personalidad despistado))
-
-  (of ACCION (nombre saludar))
-  ([saludar-explicar] of FLUJO (accion-actual saludar) (accion-resultante explicar) (imprimir "¡Hola!"))
-
-
-  ([explicarTwister-elegir] of FLUJO-TWISTER (accion-actual explicar) (accion-resultante elegir) (imprimir "Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte."))
-
-
-
-
-  ;  ?¿ -> Preguntar
-  ([elegir-colocar] of FLUJO-TWISTER (accion-actual elegir) (accion-resultante colocar) (imprimir ""))
-  ; (colocarNormal-lasjd) elegir -> colocar
-  ; (colocarDespistado-lasjd) elegir -> volver-explicar
-  ; (colocarEnergetico-lasjd) elegir -> moverse
-
-  ; colocar -> check-bien
-  ; colocar -> check-mal
-  ; colocar -> paciente-caido
-
-
-
-
-  ([comprobarBien-elegir] of FLUJO-TWISTER (accion-actual comprobar-bien) (accion-resultante elegir) (imprimir "Enhorabuena, muy bien hecho"))
-
-  ([terminar-despedirse] of FLUJO (accion-actual terminar-juego) (accion-resultante despedirse) (imprimir "Hemos terminado el juego"))
-
-  ([despedirse-apagar] of FLUJO (accion-actual despedirse) (accion-resultante apagar-robot) (imprimir "Hasta otra"))
+(definstances tres-en-raya
+  ([c11] of CASILLA (x 1) (y 1))
+  ([c12] of CASILLA (x 1) (y 2))
+  ([c13] of CASILLA (x 1) (y 3))
+  ([c21] of CASILLA (x 2) (y 1))
+  ([c22] of CASILLA (x 2) (y 2))
+  ([c23] of CASILLA (x 2) (y 3))
+  ([c31] of CASILLA (x 3) (y 1))
+  ([c32] of CASILLA (x 3) (y 2))
+  ([c33] of CASILLA (x 3) (y 3))
+  ([tres-en-raya] of JUEGO (id tres-en-raya) (explicacion "Tienes que colocar la ficha en el tablero y conseguir poner 3 en línea. Empiezas tú.") (turno-inicial paciente))
 )
 
-(deffacts inicial-facts
-  (color rojo)
-  (color verde)
-  (color amarillo)
-  (color azul)
-  (extremidad mano-derecha)
-  (extremidad mano-izquierda)
-  (extremidad pie-derecho)
-  (extremidad pie-izquierdo)
+(deffacts init
+  (juego twister)
+)
+(definstances init
+  ([pepe] of PACIENTE (nombre Pepe) (personalidad despistado))
 )
