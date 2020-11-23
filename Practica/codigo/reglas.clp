@@ -59,14 +59,35 @@
 )
 
 (defrule comprobar-posicion-despistado
-  ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (juego twister))
-  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre))
+  ?control <- (object (is-a CONTROL) (turno paciente) (contador-fallos ?f) (juego twister))
+  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre) (repeticiones ?r))
   (object (is-a PACIENTE) (personalidad despistado))
   =>
+  (modify-instance ?eleccion (repeticiones (+ ?r 1)))
+  (modify-instance ?control (contador-fallos (+ ?f 1)))
   (printout t "Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito." crlf)
   (printout t "Coloca " ?extre " en el color " ?col crlf)
 )
 
+(defrule saltar-ciclo
+  (declare (salience 1))
+  ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (juego twister))
+  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre) (repeticiones ?r))
+  (test (> ?r 2))
+  =>
+  (modify-instance ?control (turno robot) (contador-ciclos (+ ?c 1)))
+  (unmake-instance ?eleccion)
+  (printout t "No te preocupes, vamos a pasar al siguiente movimiento" crlf)
+)
+
+(defrule demasiadas-equivocaciones
+  (declare (salience 2))
+  ?control <- (object (is-a CONTROL) (contador-fallos ?f))
+  (test (> ?f 6))
+  =>
+  (assert (flag terminado))
+  (printout t "Hoy no estás muy atento. Vamos a terminar la sesión." crlf)
+)
 
 (defrule comprobar-posicion
   ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (juego twister))
@@ -105,6 +126,15 @@
   (printout t "'El " ?t " ha colocado en " ?x "-" ?y "'" crlf)
 )
 
+(defrule simular-no-colocar
+  ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (contador-fallos ?f) (juego tres-en-raya))
+  (object (is-a PACIENTE) (personalidad despistado))
+  (object (is-a CASILLA) (x 3) (valor vacio)) ;Igualar la proporcion de despistado respecto a colocacion normal
+  =>
+  (modify-instance ?control (contador-fallos (+ ?f 1)))
+  (printout t "Psst, te toca a ti" crlf)
+)
+
 ; Condiciones de victoria ------------------------------------------------------
 ; Tienen prioridad para que se haga sobre el empate
 
@@ -120,7 +150,7 @@
   (printout t "Ha ganado " ?v crlf)
 )
 
-(defrule comprobar-victoria-paciente-v
+(defrule comprobar-victoria-v
   (declare (salience 1))
   (object (is-a CONTROL) (turno comprobar) (juego tres-en-raya))
   (object (is-a CASILLA) (x 1) (y ?y) (valor ?v))
@@ -132,7 +162,7 @@
   (printout t "Ha ganado " ?v crlf)
 )
 
-(defrule comprobar-victoria-paciente-d1
+(defrule comprobar-victoria-d1
   (declare (salience 1))
   (object (is-a CONTROL) (turno comprobar) (juego tres-en-raya))
   (object (is-a CASILLA) (x 1) (y 1) (valor ?v))
@@ -144,7 +174,7 @@
   (printout t "Ha ganado " ?v crlf)
 )
 
-(defrule comprobar-victoria-paciente-d2
+(defrule comprobar-victoria-d2
   (declare (salience 1))
   (object (is-a CONTROL) (turno comprobar) (juego tres-en-raya))
   (object (is-a CASILLA) (x 1) (y 3) (valor ?v))

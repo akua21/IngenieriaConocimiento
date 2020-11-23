@@ -29,6 +29,11 @@
     (default 5)
   )
 
+  (slot contador-fallos
+    (type INTEGER)
+    (default 0)
+  )
+
   (slot juego
     (type SYMBOL)
   )
@@ -69,6 +74,11 @@
 
   (slot extremidad
     (type SYMBOL)
+  )
+
+  (slot repeticiones
+    (type INTEGER)
+    (default 0)
   )
 )
 
@@ -113,11 +123,4 @@
   ([c32] of CASILLA (x 3) (y 2))
   ([c33] of CASILLA (x 3) (y 3))
   ([tres-en-raya] of JUEGO (id tres-en-raya) (explicacion "Tienes que colocar la ficha en el tablero y conseguir poner 3 en línea. Empiezas tú.") (turno-inicial paciente))
-)
-
-(deffacts init
-  (juego twister)
-)
-(definstances init
-  ([pepe] of PACIENTE (nombre Pepe) (personalidad despistado))
 )

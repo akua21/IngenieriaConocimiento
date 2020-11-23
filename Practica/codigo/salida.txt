@@ -1,0 +1,50 @@
+TRUE
+CLIPS> (run)
+¡Hola Pepe!
+Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
+Veo que no te has enterado de mi explicación. Te la explico otra vez.
+Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
+Veo que te has enterado de mi explicación. ¡Empecemos!
+Coloca mano-izquierda en el color azul
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-izquierda en el color azul
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-izquierda en el color azul
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-izquierda en el color azul
+No te preocupes, vamos a pasar al siguiente movimiento
+Coloca mano-derecha en el color verde
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-derecha en el color verde
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-derecha en el color verde
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-derecha en el color verde
+No te preocupes, vamos a pasar al siguiente movimiento
+Coloca mano-derecha en el color azul
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-derecha en el color azul
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-derecha en el color azul
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-derecha en el color azul
+No te preocupes, vamos a pasar al siguiente movimiento
+Coloca pie-izquierdo en el color verde
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca pie-izquierdo en el color verde
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca pie-izquierdo en el color verde
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca pie-izquierdo en el color verde
+No te preocupes, vamos a pasar al siguiente movimiento
+Coloca mano-izquierda en el color amarillo
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-izquierda en el color amarillo
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-izquierda en el color amarillo
+Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
+Coloca mano-izquierda en el color amarillo
+No te preocupes, vamos a pasar al siguiente movimiento
+Hemos terminado el juego
+¡Adios Pepe!
+CLIPS> (dribble-off)

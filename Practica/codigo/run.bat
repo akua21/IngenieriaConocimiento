@@ -7,7 +7,7 @@
 (load reglas.clp)
 (load prueba-1.clp)
 (set-strategy random)
-(watch focus) 
+(watch focus)
 (reset)
 (dribble-on salida.txt)
 (run)
