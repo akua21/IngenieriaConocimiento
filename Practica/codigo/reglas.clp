@@ -1,6 +1,6 @@
 ; Reglas
 
-; saludo y explicacion ---------------------------------------------------------
+; saludo, explicación, comprobar-enterado, comprobar-enterado-despistado--------
 
 (defrule saludar
   ?flag <- (juego ?juego)
@@ -9,10 +9,8 @@
   =>
   (retract ?flag)
   (assert (flag ?juego))
-  (set-strategy random)
   (printout t "¡Hola " ?n "!" crlf)
 )
-
 
 (defrule explicar
   ?flag <- (flag ?juego)
@@ -24,7 +22,6 @@
   (printout t ?e crlf)
 )
 
-
 (defrule comprobar-enterado
   (declare (salience 1))
   ?flag <- (flag comprendido)
@@ -33,6 +30,7 @@
   (printout t "Veo que te has enterado de mi explicación. ¡Empecemos!" crlf)
 )
 
+; Regla exclusiva para repetir si es despistado
 (defrule comprobar-enterado-despistado
   (declare (salience 1))
   ?control <- (object (is-a CONTROL) (juego ?juego))
@@ -45,7 +43,7 @@
   (printout t "Veo que no te has enterado de mi explicación. Te la explico otra vez." crlf)
 )
 
-; flujo twister ----------------------------------------------------------------
+; Flujo TWISTER ----------------------------------------------------------------
 
 (defrule robot-selecciona
   ?control <- (object (is-a CONTROL) (turno robot) (contador-ciclos ?c) (ciclos-maximos ?max) (juego twister))
@@ -53,14 +51,16 @@
   (object (is-a COLOR) (id ?col))
   (object (is-a EXTREMIDAD) (id ?extre))
   =>
-  (make-instance of ELECCION (color ?col) (extremidad ?extre))
+  (make-instance of ELECCION (color ?col) (extremidad ?extre) (orden ?c))
   (modify-instance ?control (turno paciente))
   (printout t "Coloca " ?extre " en el color " ?col crlf)
 )
 
+; Reglas exclusivas despistado ------------------
+
 (defrule comprobar-posicion-despistado
-  ?control <- (object (is-a CONTROL) (turno paciente) (contador-fallos ?f) (juego twister))
-  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre) (repeticiones ?r))
+  ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (contador-fallos ?f) (juego twister))
+  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre) (repeticiones ?r) (orden ?c))
   (object (is-a PACIENTE) (personalidad despistado))
   =>
   (modify-instance ?eleccion (repeticiones (+ ?r 1)))
@@ -72,29 +72,54 @@
 (defrule saltar-ciclo
   (declare (salience 1))
   ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (juego twister))
-  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre) (repeticiones ?r))
+  ?eleccion <- (object (is-a ELECCION) (color ?col) (extremidad ?extre) (repeticiones ?r) (orden ?c))
   (test (> ?r 2))
   =>
-  (modify-instance ?control (turno robot) (contador-ciclos (+ ?c 1)))
+  (modify-instance ?control (turno robot))
   (unmake-instance ?eleccion)
   (printout t "No te preocupes, vamos a pasar al siguiente movimiento" crlf)
 )
 
-(defrule demasiadas-equivocaciones
-  (declare (salience 2))
-  ?control <- (object (is-a CONTROL) (contador-fallos ?f))
-  (test (> ?f 6))
+; Reglas exclusivas enérgico ------------------
+
+(defrule comprobar-posicion-energico
+  (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (juego twister))
+  (object (is-a ELECCION) (orden ?c))
+  (object (is-a PACIENTE) (personalidad energico))
   =>
-  (assert (flag terminado))
-  (printout t "Hoy no estás muy atento. Vamos a terminar la sesión." crlf)
+  (assert (orden-repe 0))
+  (printout t "Veo que te has movido. No pasa nada, te repito todos los movimientos." crlf)
 )
+
+(defrule repetir-orden
+  (declare (salience 1))
+  (object (is-a CONTROL) (contador-ciclos ?c) (juego twister))
+  (object (is-a ELECCION) (color ?col) (extremidad ?extre) (orden ?o))
+  ?orden <- (orden-repe ?o)
+  (test (< ?o (+ ?c 1)))
+  =>
+  (retract ?orden)
+  (assert (orden-repe (+ ?o 1)))
+  (printout t  ?o ": " ?extre " en " ?col crlf)
+)
+
+(defrule auxiliar-repeticion
+  (declare (salience 1))
+  (object (is-a CONTROL) (contador-ciclos ?c) (juego twister))
+  ?orden <- (orden-repe ?o)
+  (test (= ?o (+ ?c 1)))
+  =>
+  (retract ?orden)
+  (printout t "Sigamos" crlf)
+)
+
+; Reglas normales ----------------------------
 
 (defrule comprobar-posicion
   ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (juego twister))
-  ?eleccion <- (object (is-a ELECCION))
+  ?eleccion <- (object (is-a ELECCION) (orden ?c))
   =>
   (modify-instance ?control (turno robot) (contador-ciclos (+ ?c 1)))
-  (unmake-instance ?eleccion)
   (printout t "Muy bien hecho" crlf)
 )
 
@@ -106,7 +131,6 @@
   (printout t "Oh vaya, te has caído" crlf)
 )
 
-
 (defrule terminar-juego
   ?control <- (object (is-a CONTROL) (contador-ciclos ?max) (ciclos-maximos ?max) (juego twister))
   =>
@@ -114,8 +138,9 @@
   (printout t "Hemos terminado el juego" crlf)
 )
 
-; Simular colocar tres-en-raya -------------------------------------------------
+; Flujo TRES-EN-RAYA------------------------------------------------------------
 
+; Simular colocar tres-en-raya
 (defrule simular-colocar
   ?control <- (object (is-a CONTROL) (turno ?t) (contador-ciclos ?c) (juego tres-en-raya))
   ?casilla <- (object (is-a CASILLA) (x ?x) (y ?y) (valor vacio))
@@ -126,6 +151,20 @@
   (printout t "'El " ?t " ha colocado en " ?x "-" ?y "'" crlf)
 )
 
+; Exclusivas enérgico --------------------
+
+(defrule simular-coloca-mal
+  ?control <- (object (is-a CONTROL) (turno robot) (contador-ciclos ?c) (contador-fallos ?f) (juego tres-en-raya))
+  ?casilla <- (object (is-a CASILLA) (x ?x) (y ?y) (valor vacio))
+  (object (is-a PACIENTE) (personalidad energico))
+  =>
+  (modify-instance ?control (contador-fallos (+ ?f 1)))
+  (printout t "No puedes colocar en "  ?x "-" ?y " porque es mi turno" crlf)
+)
+
+
+; Exclusivas despistado --------------------
+
 (defrule simular-no-colocar
   ?control <- (object (is-a CONTROL) (turno paciente) (contador-ciclos ?c) (contador-fallos ?f) (juego tres-en-raya))
   (object (is-a PACIENTE) (personalidad despistado))
@@ -135,7 +174,7 @@
   (printout t "Psst, te toca a ti" crlf)
 )
 
-; Condiciones de victoria ------------------------------------------------------
+; Condiciones de victoria -----------------
 ; Tienen prioridad para que se haga sobre el empate
 
 (defrule comprobar-victoria-h
@@ -186,7 +225,7 @@
   (printout t "Ha ganado " ?v crlf)
 )
 
-; Empate -----------------------------------------------------------------------
+; Empate -------------------------------
 
 (defrule comprobar-empate
   (object (is-a CONTROL) (turno comprobar) (juego tres-en-raya))
@@ -196,7 +235,7 @@
   (printout t "Hemos empatado" crlf)
 )
 
-; Decidir a quien le toca colocar ----------------------------------------------
+; Decidir a quien le toca colocar -------
 
 (defrule decidir-siguiente-robot
   ?control <- (object (is-a CONTROL) (turno comprobar) (contador-ciclos ?c) (juego tres-en-raya))
@@ -215,6 +254,78 @@
   (modify-instance ?control (turno paciente))
   (printout t "Te toca a ti" crlf)
 )
+
+
+; Terminar la sesión porque se equivoca más de 6 veces
+
+(defrule demasiadas-equivocaciones-despistado
+  (declare (salience 2))
+  ?control <- (object (is-a CONTROL) (contador-fallos ?f))
+  (test (> ?f 5))
+  =>
+  (assert (flag terminado))
+  (printout t "Hoy no estás muy atento. Vamos a terminar la sesión." crlf)
+)
+
+(defrule demasiadas-equivocaciones-energetico
+  (declare (salience 2))
+  ?control <- (object (is-a CONTROL) (contador-fallos ?f))
+  (object (is-a PACIENTE) (personalidad energico))
+  (test (> ?f 3))
+  =>
+  (assert (flag terminado))
+  (printout t "Estás haciendo muchas trampas. Pierdes la partida" crlf)
+)
+
+
+; Repetir partida exclusivo de energético --------------------------------------
+
+(defrule repetir-partida
+  (declare (salience 5))
+  ?control <- (object (is-a CONTROL) (juego ?juego) (repeticiones-partida ?r))
+  (object (is-a JUEGO) (id ?juego) (turno-inicial ?t))
+  (object (is-a PACIENTE) (personalidad energico))
+  ?flag <- (flag terminado)
+  (test (< ?r 3))
+  =>
+  (retract ?flag)
+  (assert (flag resetear))
+  (unmake-instance ?control)
+  (make-instance of CONTROL (turno ?t) (juego ?juego) (repeticiones-partida (+ ?r 1)))
+  (printout t "Veo que todavía te quedan energías. ¡Vamos ha echar otra partida!" crlf)
+)
+
+; Resetear tres-en-raya
+(defrule resetear-partida-tres-en-raya
+  (declare (salience 5))
+  (flag resetear)
+  ?casilla <- (object (is-a CASILLA) (valor ?v))
+  (test (neq ?v vacio))
+  =>
+  (modify-instance ?casilla (valor vacio))
+  (printout t "'Reiniciando partida...'" crlf)
+)
+
+
+; Resetear twister
+(defrule resetear-partida-twister
+  (declare (salience 5))
+  (flag resetear)
+  ?eleccion <- (object (is-a ELECCION))
+  =>
+  (unmake-instance ?eleccion)
+  (printout t "'Reiniciando partida...'" crlf)
+)
+
+(defrule auxiliar-fin-reseteo
+  (declare (salience 4))
+  ?flag <- (flag resetear)
+  =>
+  (retract ?flag)
+  (printout t "'Partida reiniciada'" crlf)
+)
+
+; despedida --------------------------------------------------------------------
 
 (defrule despedirse
   (declare (salience 5))

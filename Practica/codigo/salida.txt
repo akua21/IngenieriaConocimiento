@@ -1,50 +1,47 @@
 TRUE
 CLIPS> (run)
 ¡Hola Pepe!
-Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
-Veo que no te has enterado de mi explicación. Te la explico otra vez.
-Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
+Tienes que colocar la ficha en el tablero y conseguir poner 3 en línea. Empiezas tú.
 Veo que te has enterado de mi explicación. ¡Empecemos!
-Coloca mano-izquierda en el color azul
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-izquierda en el color azul
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-izquierda en el color azul
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-izquierda en el color azul
-No te preocupes, vamos a pasar al siguiente movimiento
-Coloca mano-derecha en el color verde
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-derecha en el color verde
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-derecha en el color verde
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-derecha en el color verde
-No te preocupes, vamos a pasar al siguiente movimiento
-Coloca mano-derecha en el color azul
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-derecha en el color azul
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-derecha en el color azul
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-derecha en el color azul
-No te preocupes, vamos a pasar al siguiente movimiento
-Coloca pie-izquierdo en el color verde
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca pie-izquierdo en el color verde
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca pie-izquierdo en el color verde
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca pie-izquierdo en el color verde
-No te preocupes, vamos a pasar al siguiente movimiento
-Coloca mano-izquierda en el color amarillo
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-izquierda en el color amarillo
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-izquierda en el color amarillo
-Veo que no has hecho el movimiento todavía. No pasa nada, te lo repito.
-Coloca mano-izquierda en el color amarillo
-No te preocupes, vamos a pasar al siguiente movimiento
-Hemos terminado el juego
+'El paciente ha colocado en 1-3'
+Me toca a mi
+'El robot ha colocado en 1-2'
+Te toca a ti
+'El paciente ha colocado en 3-3'
+Me toca a mi
+'El robot ha colocado en 2-3'
+Te toca a ti
+'El paciente ha colocado en 3-2'
+Me toca a mi
+No puedes colocar en 3-1 porque es mi turno
+'El robot ha colocado en 1-1'
+Te toca a ti
+'El paciente ha colocado en 2-1'
+Me toca a mi
+'El robot ha colocado en 3-1'
+Te toca a ti
+'El paciente ha colocado en 2-2'
+Hemos empatado
+Veo que todavía te quedan energías. ¡Vamos ha echar otra partida!
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Partida reiniciada'
+'El paciente ha colocado en 2-2'
+Me toca a mi
+'El robot ha colocado en 1-2'
+Te toca a ti
+'El paciente ha colocado en 3-1'
+Me toca a mi
+'El robot ha colocado en 2-1'
+Te toca a ti
+'El paciente ha colocado en 1-3'
+Ha ganado paciente
 ¡Adios Pepe!
 CLIPS> (dribble-off)
