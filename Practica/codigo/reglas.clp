@@ -267,7 +267,7 @@
   (printout t "Hoy no estás muy atento. Vamos a terminar la sesión." crlf)
 )
 
-(defrule demasiadas-equivocaciones-energetico
+(defrule demasiadas-equivocaciones-energico
   (declare (salience 2))
   ?control <- (object (is-a CONTROL) (contador-fallos ?f))
   (object (is-a PACIENTE) (personalidad energico))

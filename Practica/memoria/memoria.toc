@@ -1,9 +1,12 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
-\contentsline {section}{\numberline {2}Manual técnico}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Ontología}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Reglas}{3}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Manual de usuario}{3}{section.3}%
-\contentsline {section}{\numberline {4}Pruebas realizadas}{3}{section.4}%
-\contentsline {section}{\numberline {5}Conclusiones}{3}{section.5}%
-\contentsline {section}{\numberline {6}Comentarios personales}{3}{section.6}%
+\contentsline {section}{\numberline {2}Manual técnico}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Ontología}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Reglas}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Reglas genéricas}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Reglas Twister}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Reglas Tres en Raya}{7}{subsubsection.2.2.3}%
+\contentsline {section}{\numberline {3}Manual de usuario}{8}{section.3}%
+\contentsline {section}{\numberline {4}Pruebas realizadas}{9}{section.4}%
+\contentsline {section}{\numberline {5}Conclusiones}{10}{section.5}%
+\contentsline {section}{\numberline {6}Comentarios personales}{11}{section.6}%
