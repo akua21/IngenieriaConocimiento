@@ -37,6 +37,11 @@
   (slot juego
     (type SYMBOL)
   )
+
+  (slot repeticiones-partida
+    (type INTEGER)
+    (default 0)
+  )
 )
 
 (defclass PACIENTE (is-a INITIAL-OBJECT)
@@ -76,6 +81,11 @@
   )
 
   (slot repeticiones
+    (type INTEGER)
+    (default 0)
+  )
+
+  (slot orden
     (type INTEGER)
     (default 0)
   )

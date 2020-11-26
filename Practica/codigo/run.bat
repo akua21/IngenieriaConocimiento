@@ -6,6 +6,7 @@
 (load ontologia.clp)
 (load reglas.clp)
 (load prueba-1.clp)
+(seed (integer (time)))
 (set-strategy random)
 (watch focus)
 (reset)
