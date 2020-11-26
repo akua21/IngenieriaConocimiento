@@ -1,25 +1,51 @@
 TRUE
 CLIPS> (run)
-¡Hola Pepe!
-Tienes que colocar la ficha en el tablero y conseguir poner 3 en línea. Empiezas tú.
+¡Hola Mario!
+Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
 Veo que te has enterado de mi explicación. ¡Empecemos!
-'El paciente ha colocado en 1-3'
-Me toca a mi
-'El robot ha colocado en 1-1'
-Te toca a ti
-'El paciente ha colocado en 2-3'
-Me toca a mi
-'El robot ha colocado en 1-2'
-Te toca a ti
-'El paciente ha colocado en 2-1'
-Me toca a mi
-'El robot ha colocado en 3-3'
-Te toca a ti
-'El paciente ha colocado en 3-1'
-Me toca a mi
-'El robot ha colocado en 3-2'
-Te toca a ti
-'El paciente ha colocado en 2-2'
-Ha ganado paciente
-¡Adios Pepe!
+Coloca mano-izquierda en el color rojo
+Veo que te has movido. No pasa nada, te repito todos los movimientos.
+0: mano-izquierda en rojo
+Sigamos
+Muy bien hecho
+Coloca mano-izquierda en el color rojo
+Muy bien hecho
+Coloca mano-izquierda en el color verde
+Veo que te has movido. No pasa nada, te repito todos los movimientos.
+0: mano-izquierda en rojo
+1: mano-izquierda en rojo
+2: mano-izquierda en verde
+Sigamos
+Muy bien hecho
+Coloca mano-izquierda en el color azul
+Muy bien hecho
+Coloca mano-izquierda en el color rojo
+Veo que te has movido. No pasa nada, te repito todos los movimientos.
+0: mano-izquierda en rojo
+1: mano-izquierda en rojo
+2: mano-izquierda en verde
+3: mano-izquierda en azul
+4: mano-izquierda en rojo
+Sigamos
+Muy bien hecho
+Hemos terminado el juego
+Veo que todavía te quedan energías. ¡Vamos ha echar otra partida!
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Reiniciando partida...'
+'Partida reiniciada'
+Coloca mano-izquierda en el color amarillo
+Muy bien hecho
+Coloca mano-derecha en el color azul
+Muy bien hecho
+Coloca pie-izquierdo en el color amarillo
+Muy bien hecho
+Coloca mano-izquierda en el color amarillo
+Muy bien hecho
+Coloca pie-izquierdo en el color azul
+Muy bien hecho
+Hemos terminado el juego
+¡Adios Mario!
 CLIPS> (dribble-off)
