@@ -59,7 +59,6 @@
 
 ; TWISTER ---------------------------------------------------------------------
 
-
 (defclass COLOR (is-a INITIAL-OBJECT)
   (slot id
     (type SYMBOL)
