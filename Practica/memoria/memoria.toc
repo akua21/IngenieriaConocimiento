@@ -4,9 +4,23 @@
 \contentsline {subsection}{\numberline {2.1}Ontología}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Reglas}{6}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Reglas genéricas}{6}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Reglas Twister}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2}Reglas Twister}{7}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Reglas Tres en Raya}{7}{subsubsection.2.2.3}%
 \contentsline {section}{\numberline {3}Manual de usuario}{8}{section.3}%
 \contentsline {section}{\numberline {4}Pruebas realizadas}{9}{section.4}%
-\contentsline {section}{\numberline {5}Conclusiones}{10}{section.5}%
-\contentsline {section}{\numberline {6}Comentarios personales}{11}{section.6}%
+\contentsline {subsubsection}{\numberline {4.0.1}Prueba 1-1: Comportamiento normal en el Tres en Raya con victoria del robot}{9}{subsubsection.4.0.1}%
+\contentsline {subsubsection}{\numberline {4.0.2}Prueba 1-2: Comportamiento normal en el Tres en Raya con victoria del paciente}{9}{subsubsection.4.0.2}%
+\contentsline {subsubsection}{\numberline {4.0.3}Prueba 1-3: Comportamiento normal en el Tres en Raya con empate}{9}{subsubsection.4.0.3}%
+\contentsline {subsubsection}{\numberline {4.0.4}Prueba 2-1: Comportamiento normal en el Twister con victoria del paciente}{9}{subsubsection.4.0.4}%
+\contentsline {subsubsection}{\numberline {4.0.5}Prueba 2-2: Comportamiento normal en el Twister con caída del paciente}{9}{subsubsection.4.0.5}%
+\contentsline {subsubsection}{\numberline {4.0.6}Prueba 3-1: Comportamiento despistado repetir explicación en el Twister}{9}{subsubsection.4.0.6}%
+\contentsline {subsubsection}{\numberline {4.0.7}Prueba 3-2: Comportamiento despistado repetir movimiento en el Twister con finalización normal}{10}{subsubsection.4.0.7}%
+\contentsline {subsubsection}{\numberline {4.0.8}Prueba 3-3: Comportamiento despistado repetir movimiento en el Twister con finalización por demasiados despistes}{10}{subsubsection.4.0.8}%
+\contentsline {subsubsection}{\numberline {4.0.9}Prueba 4-1: Comportamiento despistado repetir movimiento en el Tres en Raya con finalización normal}{10}{subsubsection.4.0.9}%
+\contentsline {subsubsection}{\numberline {4.0.10}Prueba 4-2: Comportamiento despistado repetir movimiento en el Tres en Raya con finalización por demasiados despistes}{10}{subsubsection.4.0.10}%
+\contentsline {subsubsection}{\numberline {4.0.11}Prueba 5-1: Comportamiento enérgico repetir el juego}{10}{subsubsection.4.0.11}%
+\contentsline {subsubsection}{\numberline {4.0.12}Prueba 5-2: Comportamiento enérgico impedir colocar fuera de turno en el Tres en Raya con finalización normal}{10}{subsubsection.4.0.12}%
+\contentsline {subsubsection}{\numberline {4.0.13}Prueba 5-2-bis: Comportamiento enérgico impedir colocar fuera de turno en el Tres en Raya con finalización por demasiadas trampas}{10}{subsubsection.4.0.13}%
+\contentsline {subsubsection}{\numberline {4.0.14}Prueba 6: Comportamiento enérgico repetir historial en el TwisterRaya}{11}{subsubsection.4.0.14}%
+\contentsline {section}{\numberline {5}Conclusiones}{12}{section.5}%
+\contentsline {section}{\numberline {6}Comentarios personales}{12}{section.6}%

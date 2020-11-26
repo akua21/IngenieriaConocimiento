@@ -2,6 +2,7 @@
 
 \usepackage{helvet}
 \usepackage{caption}
+\usepackage{listings}
 \renewcommand{\familydefault}{\sfdefault}
 
 
@@ -109,25 +110,43 @@ El documento consiste en el manual técnico con la descripción de la implementa
 
   Los flujos de acciones que se han planteado para resolver los problemas son los siguientes, donde los estados de color rojo solo se pueden realizar si el \textit{paciente} es \textit{enérgico} y los de color verde si el \textit{paciente} es \textit{despistado}.
 
+
+  \vspace{2mm}
+
+  El flujo de una sesión consiste en: saludar al \textit{paciente} y explicarle el juego. Si se comprueba que el \textit{paciente} no lo ha entendido correctamente, se repite la explicación. Una vez el \textit{paciente} lo ha entendido, se procede a ejecutar el juego. Cuando finaliza el mismo, se comprueba si el \textit{paciente} tiene energías para seguir jugando. Si es así, se repite el juego. En caso contrario, se termina la sesión.
+
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=.75\linewidth]{Images/flujo_sesion1.png}
+    \includegraphics[width=.85\linewidth]{Images/flujo1.png}
     \caption*{Flujo genérico de una sesión}
   \end{figure}
 
+  Si el juego elegido es el \textbf{Twister}, el flujo consiste en, una vez explicado y entendido el juego, seleccionar un color y extremidad que el \textit{paciente} tendrá que realizar. Si el \textit{paciente} la realiza correctamente, se pasará a elegir otro color y extremidad. Una vez se haga correctamente 5 veces, el juego terminará. Por otro lado, si el \textit{paciente} se cae, el juego terminará también.
+
+  \vspace{2mm}
+
+  Además, si el \textit{paciente} está despistado, se le repetirá el último comando y, en caso de que se lo tenga que repetir más de 6 veces, se considera que el \textit{paciente} está demasiado despistado para continuar y se termina la sesión. Por último, si el \textit{paciente} cambia su posición, se le repetirá todas las órdenes, para que pueda volver a colocarse correctamente.
+
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=.75\linewidth]{Images/flujo_sesion2.png}
+    \includegraphics[width=.6\linewidth]{Images/flujo2.png}
     \caption*{Flujo del Twister}
   \end{figure}
 
+  \newpage
+
+  Si el juego es el \textbf{Tres en Raya}, el flujo consiste en, una vez explicado y entendido el juego, simular colocar una ficha por turnos, pasando del \textit{paciente} al \textit{robot} (empieza siempre el \textit{paciente}). Si el \textit{paciente} está despistado y no coloca ficha se le recuerda un máximo de 3 veces seguidas, y en caso de que siga despistado, se terminará la sesión. Por otro lado, si se despista un total de 6 veces, la sesión terminará, por el mismo motivo.
+
+  \vspace{2mm}
+
+  Si por el contrario tiene muchas energías y coloca ficha cuando no es su turno, se le regaña, y se le impedirá colocar la ficha. Además, si intenta colocar ficha fuera de turno más de 3 veces, se terminará la partida, y se le dará la victoria al \textit{robot}. Siempre que no haya tres en raya o un empate (todas las casillas ocupadas sin tres en raya) se seguirá el flujo del juego.
+
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=.75\linewidth]{Images/flujo_sesion3.png}
+    \includegraphics[width=.65\linewidth]{Images/flujo3.png}
     \caption*{Flujo del Tres en Raya}
   \end{figure}
 
-  \newpage
 
   \subsection{Ontología}
 
@@ -164,6 +183,20 @@ El documento consiste en el manual técnico con la descripción de la implementa
 
   \subsection{Reglas}
 
+  Según se ha planteado el \textit{SP}, en la reglas reside toda la funcionalidad del sistema. Por ello, el número de reglas creadas es bastante grande. Sin embargo, considerando todas las distintas variaciones e interacciones que se han tenido en cuenta, resulta lógico que se necesiten más reglas.
+
+  \vspace{1mm}
+
+  Esta cantidad de reglas permite que los datos que se tienen que introducir por un usuario del sistema sea mínima, y hace que todo el flujo sea controlado por las reglas.
+
+  \vspace{2mm}
+
+  También destacar que, como se ha enfocado a dos personalidades concretas, hay reglas que son exclusivas para estas personalidades. Esto hace que al estar enfocado a una solución muy concreta, la resolución es mucho más detallada y potente. Pero a cambio se pierde capacidad de generalización a la hora de añadir nuevas personalidades.
+
+  \vspace{1mm}
+
+  Si se quisiera añadir un pesonalidad nueva habría que reescribir y modificar reglas, así como crear nuevas. A pesar de esto, se ha decidido esta forma para poder realizar un desarrollo de la sesión lo más completa posible.
+
   \subsubsection{Reglas genéricas}
 
   Estas reglas son las que sirven para ambos juegos y donde da igual la personalidad del paciente:
@@ -175,7 +208,7 @@ El documento consiste en el manual técnico con la descripción de la implementa
     \item \textbf{\textit{Despedirse}}: el \textit{robot} se despide de manera personalizada del \textit{paciente} por su nombre.
   \end{itemize}
 
-  Si el \textit{paciente} tiene de personalidad \textit{despistado}, existe la regla \textbf{\textit{Comprobar-enterado-despistado}} para repetir la explicación del juego y la regla \textbf{\textit{Demasiadas-equivocaciones-despistado}} para terminar la sesión porque se ha equivocado más de 5 veces y por tanto se considera que el \textit{paciente} puede no estar muy atento para continuar con el juego.
+  Si el \textit{paciente} tiene de personalidad \textit{despistado}, existe la regla \textbf{\textit{Comprobar-enterado-despistado}} para repetir la explicación del juego y la regla \textbf{\textit{Demasiadas-equivocaciones-despistado}} para terminar la sesión porque se ha equivocado más de 6 veces y por tanto se considera que el \textit{paciente} puede no estar muy atento para continuar con el juego.
 
   \vspace{3mm}
 
@@ -251,19 +284,237 @@ El documento consiste en el manual técnico con la descripción de la implementa
 
   \section{Manual de usuario}
 
+  El programa realizado es muy sencillo de cara a los parámetros que tiene que tener en cuenta el usuario a la hora de utilizarlo.
+
+  \vspace{2mm}
+
+  En \textit{deffacts \textbf{init}} debe escribir dentro del \textit{fact} 'juego' el nombre de aquel que se va a realizar: \textbf{tres-en-raya} ó \textbf{twister}.
+
+  \vspace{2mm}
+
+  En \textit{definstances \textbf{init}} debe especificar siempre el nombre del paciente en la \textit{instancia} de la clase PACIENTE, escribiéndolo en el \textit{slot} 'nombre'. Además, si el paciente tiene la personalidad de enérgico o despistado se tiene que escribir en el \textit{slot} 'personalidad': \textbf{energico} ó \textbf{despistado}.
+
+  \vspace{1mm}
+
+  Si no se pone ninguna personalidad ó si se pone una que no sea ninguna de las anteriores, el sistema realizará el comportamiento por defecto sin variaciones.
+
+  \vspace{3mm}
+
+  Para un caso de uso donde se quiere llevar a cabo una sesión con el juego del \textit{\textbf{Tres en Raya}} y con un paciente con personalidad \textit{despistado}, se deben realizar los siguientes pasos:
+
+  \begin{itemize}
+    \item Paso 1: escribir \textbf{tres-en-raya} en el \textit{fact} 'juego' de \textit{deffacts \textbf{init}}.
+    \item Paso 2: escribir, dentro de la \textit{instancia} de la clase PACIENTE de \textit{definstances \textbf{init}}, el nombre del paciente (por ejemplo Pepe) en el \textit{slot} 'nombre'. Y en el \textit{slot} 'personalidad' escribir \textbf{despistado}.
+  \end{itemize}
+
+
+  A continuación se muestra el ejemplo de código de este caso de uso:
+
+  \begin{lstlisting}
+    (deffacts init
+      (juego tres-en-raya)
+    )
+    (definstances init
+      ([pepe] of PACIENTE (nombre Pepe) (personalidad despistado))
+    )
+  \end{lstlisting}
+
+  Respecto a la salida del programa, se va mostrando a través de la terminal el flujo de la sesión, tanto lo que le dice el robot al paciente como cambios en el estado del juego según los parámetros introducidos.
+
   \newpage
 
   \section{Pruebas realizadas}
+
+  \textit{Nota: varios archivos pueden ser reutilizados para diferentes pruebas dado el caracter aleatorio de cada ejecución. Por el mismo motivo, el ejecutar una prueba concreta no quiere decir que se obtendrá el mismo resultado, sino que es uno de los resultados posibles.}
+
+  \subsubsection{Prueba 1-1: Comportamiento normal en el Tres en Raya con victoria del robot}
+
+
+  Archivo de entrada: \textbf{prueba-1.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-1-1.txt}
+
+  \vspace{2mm}
+
+  Esta prueba consiste en evaluar si el sistema genera el comportamiento esperado. Concretamente se evalua que todo funcione para el caso en que la ejecución no sufre alteraciones en el juego del \textbf{Tres en Raya}, y el robot consigue una victoria (Casillas \textit{1-1; 1-2; 1-3}).
+
+
+  \subsubsection{Prueba 1-2: Comportamiento normal en el Tres en Raya con victoria del paciente}
+
+
+  Archivo de entrada: \textbf{prueba-1.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-1-2.txt}
+
+  \vspace{2mm}
+
+  Esta prueba consiste, al igual que la anterior, en evaluar si el sistema genera el comportamiento esperado para el caso en que la ejecución no sufre altearciones en el juego del \textbf{Tres en Raya}, y, en este caso, el paciente consigue una victoria (Casillas \textit{2-1; 2-2; 2-3} ó \textit{3-1; 2-2; 1-3}).
+
+
+  \subsubsection{Prueba 1-3: Comportamiento normal en el Tres en Raya con empate}
+
+
+  Archivo de entrada: \textbf{prueba-1.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-1-3.txt}
+
+  \vspace{2mm}
+
+  Esta prueba es similar a las anteriores, pero en este caso se comprueba que el empate funciona correctamente.
+
+
+  \subsubsection{Prueba 2-1: Comportamiento normal en el Twister con victoria del paciente}
+
+
+  Archivo de entrada: \textbf{prueba-2.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-2-1.txt}
+
+  \vspace{2mm}
+
+  En esta prueba se comprueba que el paciente cumpla una sesión con normalidad en el juego del \textbf{Twister}, y que no se caiga, ganando así el juego. La secuencia de acciones que realiza el paciente es: \textit{pie izquierdo en verde; pie izquierdo en amarillo; pie izquierdo en verde; pie derecho en rojo; pie-izquierdo en verde}.
+
+  \vspace{1mm}
+
+  \textit{Nota: a pesar de que parece que la secuencia es muy sencilla, pues repite 4 veces una instrucción para el pie izquierdo, este es un comportamiento que puede darse a la hora de jugar al Twister en la realidad, por lo que no se ha decidido realizar ningún tipo de control sobre las elecciones para evitar estas repeticiones.}
+
+  \subsubsection{Prueba 2-2: Comportamiento normal en el Twister con caída del paciente}
+
+
+  Archivo de entrada: \textbf{prueba-2.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-2-2.txt}
+
+  \vspace{2mm}
+
+  En este caso se comprueba que el paciente no llegue a vencer el juego porque se caiga antes. Esto solo puede ocurrir una vez se han realizado al menos 3 acciones, ya que se ha considerado que un paciente no puede caerse antes de haber hecho estos 3 movimientos. Las acciones que ha realizado el paciente antes de caerse han sido: \textit{mano derecha en azul; pie derecho en verde; pie izquierdo en verde; pie derecho en verde}. Al ir a hacer la acción \textit{pie derecho en amarillo}, el paciente se ha caído.
+
+
+  \subsubsection{Prueba 3-1: Comportamiento despistado repetir explicación en el Twister}
+
+
+  Archivo de entrada: \textbf{prueba-3.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-3-1.txt}
+
+  \vspace{2mm}
+
+  Esta prueba comprueba que ante un paciente con personalidad despistado, el sistema genera la repetición de la explicación del juego. Esto puede ocurrir 0, 1 o más veces seguidas. No hace falta realizar una prueba para el juego del \textbf{Tres en Raya} porque sigue el mismo esquema.
+
+
+  \subsubsection{Prueba 3-2: Comportamiento despistado repetir movimiento en el Twister con finalización normal}
+
+
+  Archivo de entrada: \textbf{prueba-3.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-3-2.txt}
+
+  \vspace{2mm}
+
+  En esta prueba se comprueba que el paciente despistado no realiza el movimiento que le dice el robot y por tanto este le repite el último movimiento. Esta prueba concluye con la finalización de la partida con normalidad, es decir, que el paciente sigue jugando y termina correctamente.
+
+
+  \subsubsection{Prueba 3-3: Comportamiento despistado repetir movimiento en el Twister con finalización por demasiados despistes}
+
+
+  Archivo de entrada: \textbf{prueba-3.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-3-3.txt}
+
+  \vspace{2mm}
+
+  Esta prueba es similar a la anterior, pero en este caso el paciente despistado no realiza el movimiento que le dice el robot más de 6 veces y por ello la partida se acaba antes.
+
+
+
+  \subsubsection{Prueba 4-1: Comportamiento despistado repetir movimiento en el Tres en Raya con finalización normal}
+
+
+  Archivo de entrada: \textbf{prueba-4.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-4-1.txt}
+
+  \vspace{2mm}
+
+  En esta prueba donde se juega al \textbf{Tres en Raya} el paciente con personalidad despistado se olvida de colocar ficha y el robot se lo recuerda. Esta prueba finaliza de forma normal.
+
+
+  \subsubsection{Prueba 4-2: Comportamiento despistado repetir movimiento en el Tres en Raya con finalización por demasiados despistes}
+
+
+  Archivo de entrada: \textbf{prueba-4.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-4-2.txt}
+
+  \vspace{2mm}
+
+  Es una prueba similar a la anterior, con la diferencia de que en este caso el paciente se despista más de 6 veces y por tanto la sesión termina antes.
+
+  \vspace{1mm}
+
+  \textit{Nota: dado que la probabilidad de despistarse es pequeña, y además va decreciendo a lo largo de la partida, porque se asume que cuanto más juegue menos despistado estará el paciente, ha sido necesario aumentar la probabilidad para poder realizar esta prueba.}
+
+
+  \subsubsection{Prueba 5-1: Comportamiento enérgico repetir el juego}
+
+
+  Archivo de entrada: \textbf{prueba-5.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-5-1.txt}
+
+  \vspace{2mm}
+
+  En esta prueba se simula que el paciente enérgico, despueś de una partida de \textbf{Tres en Raya} sigue teniendo energías, y quiere jugar otra vez. Esto puede ocurrir hasta un máximo de 4 partidas.
+
+  \subsubsection{Prueba 5-2: Comportamiento enérgico impedir colocar fuera de turno en el Tres en Raya con finalización normal}
+
+
+  Archivo de entrada: \textbf{prueba-5.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-5-2.txt}
+
+  \vspace{2mm}
+
+  Esta prueba sirve para determinar si se realiza correctamente las regañinas o reproches del robot hacía el paciente enérgico cuando este intenta colocar fuera de turno.
+
+  \vspace{1mm}
+
+  \textit{Nota: Esto ocurre en la partida 3 del archivo de salida}
+
+  \subsubsection{Prueba 5-2-bis: Comportamiento enérgico impedir colocar fuera de turno en el Tres en Raya con finalización por demasiadas trampas}
+
+
+  Archivo de entrada: \textbf{prueba-5.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-5-2.txt}
+
+  \vspace{2mm}
+
+  En este caso, la salida es similar a la anterior, pero en este caso el paciente enérgico comete demasiadas trampas, y se le da la partida por perdida.
+
+  \vspace{1mm}
+
+  \textit{Nota: Esto ocurre en la partida 4 del archivo de salida}
+
+
+  \subsubsection{Prueba 6: Comportamiento enérgico repetir historial en el TwisterRaya}
+
+
+  Archivo de entrada: \textbf{prueba-6.clp} \hspace{15mm} Archivo de salida: \textbf{salida-prueba-6.txt}
+
+  \vspace{2mm}
+
+  Esta última prueba consiste en comprobar cuando el paciente enérgico cambia de posición completamente. Cuando esto ocurre el robot le repite la secuencia entera de acciones hasta el momento para que el paciente se pueda recolocar.
+
 
   \newpage
 
   \section{Conclusiones}
 
-  \newpage
+  En esta práctica se ha tenido que realizar por primera vez una programación algo más compleja, al tenerse que resolver un problema mucho mayor a los resueltos previamente en los talleres. Aunque la metodología que se ha utilizado es la misma, las dimensiones de este problema son mucho mayores y esto ha hecho que se haya tenido que crear un mayor número de clases y reglas.
+
+  \vspace{3mm}
+
+  Aún así, ha sido muy útil llevarla a cabo, pues se han podido afianzar más los conocimientos de los sistemas de producción. Pudiendo ver su aplicación a problemas muy cercanos a la realidad.
+
+  \vspace{2mm}
+
+  A pesar de ello, sigue siendo un problema relativamente reducido, pero que podría ser escalable a un problema real, para el cuál simplemente haría falta ampliar el número de reglas, y aumentar el tamaño de la ontología en consecuencia.
+
+  \vspace{2mm}
+
+  Se piensa que para el problema planteado en concreto, la solución obtenida es bastante completa y sofisticada, aunque, tal y como se menciona en la práctica, la capacidad de generalización del código es reducida.
+
 
   \section{Comentarios personales}
 
+  Respecto a problemas encontrados durante la realización de la práctica, simplemente destacar que en un primer momento se enfocó mal el desarrollo de la ejecución del programa. Se crearon reglas que guiaban la sesión de principio a fin, lo cual no tenía sentido, ya que este desarrollo se tenía que hacer con reglas que se fueran ejecutando de manera aleatoria según se avanzaba en la sesión.
 
+  \vspace{2mm}
+
+  Esto hizo que se tuviera que empezar de nuevo, pues se tuvo que modificar la ontología y crear todas las reglas. Al principio, resultó ligeramente confuso, pero una vez se comprendió la dinámica del sistema, y su funcionamiento, el resto fue relativamente sencillo.
+
+  \vspace{3mm}
+
+  En cuanto a comentarios personales, decir que ha sido una práctica especialmente interesante para adecuarnos a un paradigma de programación que hasta el momento nos era desconocido.
+
+  \vspace{2mm}
+
+  Como única crítica constructiva, mencionar que el taller de \textit{la fábrica de cerveza}, al ser un problema que generaba acciones de forma muy guida, hizo que se creyera en un primer momento que se tenía que realizar de la misma manera. Esto no fue un buen planteamiento inicial, aunque al final se terminó enfocando la práctica correctamente.
 
 
 \end{document}

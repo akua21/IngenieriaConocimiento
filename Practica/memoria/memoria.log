@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.23)  25 NOV 2020 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.23)  26 NOV 2020 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -355,10 +355,35 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count270
 Package caption Info: hyperref package is loaded.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count271
+\lst@gtempboxa=\box91
+\lst@token=\toks19
+\lst@length=\count272
+\lst@currlwidth=\dimen166
+\lst@column=\count273
+\lst@pos=\count274
+\lst@lostspace=\dimen167
+\lst@width=\dimen168
+\lst@newlines=\count275
+\lst@lineno=\count276
+\lst@maxwidth=\dimen169
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count277
+\lst@skipnumbers=\count278
+\lst@framebox=\box92
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count271
-\l__pdf_internal_box=\box91
+\l__kernel_color_stack_int=\count279
+\l__pdf_internal_box=\box93
 )
 (./memoria.aux
 LaTeX Info: Redefining \. on input line 20.
@@ -366,31 +391,31 @@ LaTeX Info: Redefining \% on input line 20.
 )
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 41
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 42
 .
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 41.
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
+(Font)              scaled to size 9.49997pt on input line 42.
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -428,20 +453,20 @@ LaTeX Info: Redefining \% on input line 41.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 41.
+(lastpage)             ! on input line 42.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count272
-\scratchdimen=\dimen166
-\scratchbox=\box92
-\nofMPsegments=\count273
-\nofMParguments=\count274
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count275
-\MPscratchDim=\dimen167
-\MPnumerator=\count276
-\makeMPintoPDFobject=\count277
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count280
+\scratchdimen=\dimen170
+\scratchbox=\box94
+\nofMPsegments=\count281
+\nofMParguments=\count282
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count283
+\MPscratchDim=\dimen171
+\MPnumerator=\count284
+\makeMPintoPDFobject=\count285
+\everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -452,8 +477,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 41.
-\AtBeginShipoutBox=\box93
+LaTeX Info: Redefining \selectfont on input line 42.
+\AtBeginShipoutBox=\box95
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
@@ -463,7 +488,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 41.
+Package hyperref Info: Link coloring ON on input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -474,45 +499,47 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count278
+\c@section@level=\count286
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
 
 (./memoria.out) (./memoria.out)
 \@outlinefile=\write3
 \openout3 = `memoria.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<Images/LogoUC3M.png, id=48, 337.26pt x 118.4425pt>
+\c@lstlisting=\count287
+<Images/LogoUC3M.png, id=100, 337.26pt x 118.4425pt>
 File: Images/LogoUC3M.png Graphic file (type png)
 <use Images/LogoUC3M.png>
-Package pdftex.def Info: Images/LogoUC3M.png  used on input line 47.
+Package pdftex.def Info: Images/LogoUC3M.png  used on input line 48.
 (pdftex.def)             Requested size: 227.62204pt x 79.9398pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 47.
+(Font)              scaled to size 16.41594pt on input line 48.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 47.
+(Font)              scaled to size 13.67995pt on input line 48.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 47.
+(Font)              scaled to size 13.67995pt on input line 48.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 47.
+(Font)              scaled to size 16.41594pt on input line 48.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 47.
+(Font)              scaled to size 23.63593pt on input line 48.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 51.
+(Font)              scaled to size 9.49997pt on input line 52.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 51.
+(Font)              scaled to size 11.39996pt on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 51.
+(Font)              <7> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 51.
+(Font)              <5> on input line 52.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 51.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 52.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 51.
+(Font)              scaled to size 9.49997pt on input line 52.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/LogoUC3M.png>] (.
@@ -524,85 +551,94 @@ LaTeX Info: Redefining \% on input line 1.
 \openout4 = `memoria.toc'.
 
  [2]
-<Images/nao.png, id=75, 3179.88pt x 3902.58pt>
+<Images/nao.png, id=146, 3179.88pt x 3902.58pt>
 File: Images/nao.png Graphic file (type png)
 <use Images/nao.png>
-Package pdftex.def Info: Images/nao.png  used on input line 69.
+Package pdftex.def Info: Images/nao.png  used on input line 70.
 (pdftex.def)             Requested size: 118.0078pt x 144.82195pt.
-<Images/3enraya.png, id=76, 301.125pt x 301.125pt>
+<Images/3enraya.png, id=147, 301.125pt x 301.125pt>
 File: Images/3enraya.png Graphic file (type png)
 <use Images/3enraya.png>
-Package pdftex.def Info: Images/3enraya.png  used on input line 89.
+Package pdftex.def Info: Images/3enraya.png  used on input line 90.
 (pdftex.def)             Requested size: 122.72913pt x 122.73146pt.
-<Images/twister.jpg, id=77, 602.25pt x 320.69812pt>
+<Images/twister.jpg, id=148, 602.25pt x 320.69812pt>
 File: Images/twister.jpg Graphic file (type jpg)
 <use Images/twister.jpg>
-Package pdftex.def Info: Images/twister.jpg  used on input line 94.
+Package pdftex.def Info: Images/twister.jpg  used on input line 95.
 (pdftex.def)             Requested size: 196.36734pt x 104.5633pt.
 
-Overfull \hbox (18.88527pt too wide) in paragraph at lines 87--97
+Overfull \hbox (18.88527pt too wide) in paragraph at lines 88--98
  []$[]$$[]$ 
  []
 
 [3 <./Images/nao.png> <./Images/3enraya.png> <./Images/twister.jpg>]
-<Images/flujo_sesion1.png, id=88, 707.64375pt x 177.66376pt>
-File: Images/flujo_sesion1.png Graphic file (type png)
-<use Images/flujo_sesion1.png>
-Package pdftex.def Info: Images/flujo_sesion1.png  used on input line 114.
-(pdftex.def)             Requested size: 354.02342pt x 88.88316pt.
-<Images/flujo_sesion2.png, id=89, 517.935pt x 471.7625pt>
-File: Images/flujo_sesion2.png Graphic file (type png)
-<use Images/flujo_sesion2.png>
-Package pdftex.def Info: Images/flujo_sesion2.png  used on input line 120.
-(pdftex.def)             Requested size: 354.02342pt x 322.4787pt.
-<Images/flujo_sesion3.png, id=90, 532.99126pt x 306.14375pt>
-File: Images/flujo_sesion3.png Graphic file (type png)
-<use Images/flujo_sesion3.png>
-Package pdftex.def Info: Images/flujo_sesion3.png  used on input line 126.
-(pdftex.def)             Requested size: 354.02342pt x 203.35413pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4 <./Images/flujo_sesion1.png> <./Images/flujo_sesion2.png>]
+<Images/flujo1.png, id=159, 1422.31375pt x 331.2375pt>
+File: Images/flujo1.png Graphic file (type png)
+<use Images/flujo1.png>
+Package pdftex.def Info: Images/flujo1.png  used on input line 120.
+(pdftex.def)             Requested size: 401.22942pt x 93.4383pt.
+<Images/flujo2.png, id=160, 828.09375pt x 636.3775pt>
+File: Images/flujo2.png Graphic file (type png)
+<use Images/flujo2.png>
+Package pdftex.def Info: Images/flujo2.png  used on input line 132.
+(pdftex.def)             Requested size: 283.22162pt x 217.65695pt.
+ [4 <./Images/flujo1.png> <./Images/flujo2.png>]
+<Images/flujo3.png, id=171, 997.7275pt x 549.05125pt>
+File: Images/flujo3.png Graphic file (type png)
+<use Images/flujo3.png>
+Package pdftex.def Info: Images/flujo3.png  used on input line 146.
+(pdftex.def)             Requested size: 306.81741pt x 168.83853pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 132.
+(Font)              scaled to size 11.39996pt on input line 151.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 141.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 160.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 9.49997pt on input line 141.
- [5 <./Images/flujo_sesion3.png>] [6] [7] [8] [9] [10] 
+(Font)              scaled to size 9.49997pt on input line 160.
+ [5 <./Images/flujo3.png>] [6] [7]
+[8]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 330.
+
+[9] [10] [11] 
 AED: lastpage setting LastPage
-[11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
+[12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
  (./memoria.aux
 LaTeX Info: Redefining \. on input line 20.
 LaTeX Info: Redefining \% on input line 20.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
-Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 174A761559BB1076E4F7AB81D0C75E8B;658.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 520.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
+
+
+Package rerunfilecheck Warning: File `memoria.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `memoria.out':
+(rerunfilecheck)             Before: EB2541A4BDEFE3CD9058E8E7F58BAEA0;2672
+(rerunfilecheck)             After:  2EA2942661326CDA53128BED86F498E7;2810.
  ) 
 Here is how much of TeX's memory you used:
- 8641 strings out of 483121
- 132305 string characters out of 5964354
- 413219 words of memory out of 5000000
- 23479 multiletter control sequences out of 15000+600000
+ 10260 strings out of 483121
+ 153604 string characters out of 5964354
+ 432782 words of memory out of 5000000
+ 25064 multiletter control sequences out of 15000+600000
  563029 words of font info for 46 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 42i,11n,49p,798b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,49p,798b,984s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 ro8a.pfb>
-Output written on memoria.pdf (11 pages, 7710997 bytes).
+Output written on memoria.pdf (12 pages, 7776842 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 228 words of extra memory for PDF output out of 10000 (max. 10000000)
 

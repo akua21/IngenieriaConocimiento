@@ -7,5 +7,19 @@
 \BOOKMARK [3][-]{subsubsection.2.2.3}{Reglas Tres en Raya}{subsection.2.2}% 7
 \BOOKMARK [1][-]{section.3}{Manual de usuario}{}% 8
 \BOOKMARK [1][-]{section.4}{Pruebas realizadas}{}% 9
-\BOOKMARK [1][-]{section.5}{Conclusiones}{}% 10
-\BOOKMARK [1][-]{section.6}{Comentarios personales}{}% 11
+\BOOKMARK [2][-]{subsubsection.4.0.1}{Prueba 1-1: Comportamiento normal en el Tres en Raya con victoria del robot}{section.4}% 10
+\BOOKMARK [3][-]{subsubsection.4.0.2}{Prueba 1-2: Comportamiento normal en el Tres en Raya con victoria del paciente}{subsubsection.4.0.1}% 11
+\BOOKMARK [3][-]{subsubsection.4.0.3}{Prueba 1-3: Comportamiento normal en el Tres en Raya con empate}{subsubsection.4.0.1}% 12
+\BOOKMARK [3][-]{subsubsection.4.0.4}{Prueba 2-1: Comportamiento normal en el Twister con victoria del paciente}{subsubsection.4.0.1}% 13
+\BOOKMARK [3][-]{subsubsection.4.0.5}{Prueba 2-2: Comportamiento normal en el Twister con ca\355da del paciente}{subsubsection.4.0.1}% 14
+\BOOKMARK [3][-]{subsubsection.4.0.6}{Prueba 3-1: Comportamiento despistado repetir explicaci\363n en el Twister}{subsubsection.4.0.1}% 15
+\BOOKMARK [3][-]{subsubsection.4.0.7}{Prueba 3-2: Comportamiento despistado repetir movimiento en el Twister con finalizaci\363n normal}{subsubsection.4.0.1}% 16
+\BOOKMARK [3][-]{subsubsection.4.0.8}{Prueba 3-3: Comportamiento despistado repetir movimiento en el Twister con finalizaci\363n por demasiados despistes}{subsubsection.4.0.1}% 17
+\BOOKMARK [3][-]{subsubsection.4.0.9}{Prueba 4-1: Comportamiento despistado repetir movimiento en el Tres en Raya con finalizaci\363n normal}{subsubsection.4.0.1}% 18
+\BOOKMARK [3][-]{subsubsection.4.0.10}{Prueba 4-2: Comportamiento despistado repetir movimiento en el Tres en Raya con finalizaci\363n por demasiados despistes}{subsubsection.4.0.1}% 19
+\BOOKMARK [3][-]{subsubsection.4.0.11}{Prueba 5-1: Comportamiento en\351rgico repetir el juego}{subsubsection.4.0.1}% 20
+\BOOKMARK [3][-]{subsubsection.4.0.12}{Prueba 5-2: Comportamiento en\351rgico impedir colocar fuera de turno en el Tres en Raya con finalizaci\363n normal}{subsubsection.4.0.1}% 21
+\BOOKMARK [3][-]{subsubsection.4.0.13}{Prueba 5-2-bis: Comportamiento en\351rgico impedir colocar fuera de turno en el Tres en Raya con finalizaci\363n por demasiadas trampas}{subsubsection.4.0.1}% 22
+\BOOKMARK [3][-]{subsubsection.4.0.14}{Prueba 6: Comportamiento en\351rgico repetir historial en el TwisterRaya}{subsubsection.4.0.1}% 23
+\BOOKMARK [1][-]{section.5}{Conclusiones}{}% 24
+\BOOKMARK [1][-]{section.6}{Comentarios personales}{}% 25
