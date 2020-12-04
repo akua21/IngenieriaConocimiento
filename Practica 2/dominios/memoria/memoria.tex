@@ -1,0 +1,277 @@
+\documentclass{uc3mpracticas}
+
+\usepackage{helvet}
+\usepackage{caption}
+\usepackage{listings}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Plantilla Prácticas UC3M                               %%%
+%%%                Universidad Carlos III de Madrid                          %%%
+%%%                   Alejandro Valverde Mahou                               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Permitir cabeceras y pie de páginas personalizados
+\pagestyle{fancy}
+
+%Path por defecto de las imágenes
+\graphicspath{ {./images/} }
+
+%Declarar formato de encabezado y pie de página de las páginas del documento
+\fancypagestyle{doc}{
+  %Cabecera
+  \headerpr[1]{Dominios de Planificación}{}{Ingeniería del Conocimiento}
+  %Pie de Página
+  \footerpr{}{\textbf{UC3M}}{{\thepage} de \pageref{LastPage}}
+}
+
+%Declarar formato de encabezado y pie del título e indice
+\fancypagestyle{titu}{%
+  %Cabecera
+  \headerpr{}{}{}
+  %Pie de Página
+  \footerpr{}{}{}
+}
+
+
+\appto\frontmatter{\pagestyle{titu}}
+\appto\mainmatter{\pagestyle{doc}}
+
+
+\begin{document}
+  %Comienzo formato título
+  \frontmatter
+
+
+  %Portada 1 (Centrado todo)
+  \centeredtitle{Images/LogoUC3M.png}{Grado en Ingeniería Informática}{Curso 2020/2021}{Ingeniería del Conocimiento}{Dominios de Planificación}
+
+  \vspace{55mm}
+
+  \authors{Alba Reinders Sánchez}{100383444}{Alejandro Valverde Mahou}{100383383}{}{}{Grupo 83}{Leganés}
+
+  \newpage
+
+  %Índice
+  \tableofcontents
+
+  \newpage
+
+  %Comienzo formato documento general
+  \mainmatter
+
+  \section{Estudio de los dominios}
+
+  Se va a describir cada dominio brevemente y explicar sus predicados y acciones (precondiciones y efectos).
+
+  \subsection{Blocks World}
+
+  En este dominio tan solo se encuentra el tipo 'bloque'. Los \textbf{predicados} que tiene son:
+  \begin{itemize}
+    \item \textit{(on ?x - block ?y - block)}: representa que el bloque x está sobre el bloque y.
+  	\item \textit{(ontable ?x - block)}: representa que el bloque x está encima de la mesa.
+  	\item \textit{(clear ?x - block)}: representa que el bloque x no tiene ningún bloque encima.
+  	\item \textit{(handempty)}: representa que el gancho está libre.
+  	\item \textit{(holding ?x - block)}: representa que el gancho sujeta albloque x.
+  \end{itemize}
+
+  Sus \textbf{acciones} son:
+  \begin{itemize}
+    \item Pick-up:
+    \\Precondiciones: el bloque no tiene nada encima y está encima de la mesa y el gancho está libre.
+    \\Efectos: el bloque deja de estar encima de la mesa y el gancho pasa a sujetar el bloque.
+    \item Put-down:
+    \\Precondiciones: el gancho sujeta el bloque.
+    \\Efectos: el bloque pasa a estar encima de la mesa, con nada encima, y el gancho pasa a estar libre.
+    \item Stack:
+    \\Precondiciones: el gancho sujeta el bloque 1 y el bloque 2 no tiene nada encima.
+    \\Efectos: el bloque 2 pasa a tener encima el bloque 1 y el gancho pasa a estar libre.
+    \item Unstack:
+    \\Precondiciones: el bloque 1 está sobre el bloque 2, el bloque 1 no tiene nada encima y el gancho está libre.
+    \\Efectos: el bloque 2 pasa a no tener nada encima y el gancho pasa a sujetar el bloque 1.
+  \end{itemize}
+
+
+
+  \subsection{Logistics}
+
+  En este dominio hay los siguientes tipos: 'camión', 'avión' (vehículo), 'paquete', 'vehículo' (objeto físico), 'aeropuerto', 'localización' (lugar), 'ciudad', 'lugar' y 'objeto físico' (objeto). Los \textbf{predicados} que tiene son:
+  \begin{itemize}
+    \item \textit{(in-city ?loc - place ?city - city)}: representa que un lugar se encuentra en una ciudad.
+  	\item \textit{(at ?obj - physobj ?loc - place)}: representa que un objeto físico está en un lugar.
+  	\item \textit{(in ?pkg - package ?veh - vehicle)}: representa que un paquete está en un vehículo.
+  \end{itemize}
+
+  Sus \textbf{acciones} son:
+  \begin{itemize}
+    \item Load-truck:
+    \\Precondiciones: tener un paquete y un camión en el mismo lugar.
+    \\Efectos: se elimina el paquete del lugar y se mete dentro del camión.
+    \item Load-airplane:
+    \\Precondiciones: tener un paquete y un avión en el mismo lugar.
+    \\Efectos: se elimina el paquete del lugar y se mete dentro del avión.
+    \item Unload-truck:
+    \\Precondiciones: tener un paquete en un camión y el camión en un lugar.
+    \\Efectos: se elimina el paquete del camión y el paquete pasa a estar en el lugar.
+    \item Unload-airplane:
+    \\Precondiciones: tener un paquete en un avión y el avión en un lugar.
+    \\Efectos: se elimina el paquete del avión y el paquete pasa a estar en el lugar.
+    \item Drive-truck:
+    \\Precondiciones: tener un camión en el lugar 1, y que el lugar 1 y el lugar 2 estén en la misma ciudad.
+    \\Efectos: El camión deja de estar en lugar 1 y pasa a estar en el lugar 2.
+    \item Fly-airplane:
+    \\Precondiciones: tener un avión en el lugar 1.
+    \\Efectos: el avión deja de estar en el lugar 1 y pasa a estar en el lugar 2.
+  \end{itemize}
+
+
+
+  \subsection{Rover}
+
+  En este dominio hay los siguientes tipos: 'rover', 'punto de ruta', 'almacenamiento', 'cámara', 'modo', 'aterrizador', y 'objetivo'. Los \textbf{predicados} que tiene son:
+  \begin{itemize}
+    \item \textit{(at ?x - rover ?y - waypoint)}: representa que el rover se encuenta en un punto de ruta.
+  	\item \textit{(at\_lander ?x - lander ?y - waypoint)}: representa que el aterrizador se encuentra en un punto de ruta.
+  	\item \textit{(can\_traverse ?r - rover ?x - waypoint ?y - waypoint)}: representa que el rover puede pasar del punto 1 al punto 2.
+    \item \textit{(equipped\_for\_soil\_analysis ?r - rover)}: representa que el rover está equipado para analizar sustrato.
+    \item \textit{(equipped\_for\_rock\_analysis ?r - rover)}: representa que el rover está equipado para analizar rocas.
+    \item \textit{(equipped\_for\_imaging ?r - rover)}: representa que el rover está equipado para realizar imágenes.
+    \item \textit{(empty ?s - store)}: representa que el almacenamiento se encuentra vacío
+    \item \textit{(have\_rock\_analysis ?r - rover ?w - waypoint)}: representa que el rover posee información de las rocas de un punto de ruta.
+    \item \textit{(have\_soil\_analysis ?r - rover ?w - waypoint)}: representa que el rover posee información de los sustratos de un punto de ruta.
+    \item \textit{(full ?s - store)}: representa que el almacenamiento se encuentra lleno.
+    \item \textit{(calibrated ?c - camera ?r - rover)}: representa que la cámara del rover está calibrada.
+    \item \textit{(supports ?c - camera ?m - mode)}: representa que la ámara acepta el mode de toma de imagen.
+    \item \textit{(available ?r - rover)}: representa que el rover se encuentra disponible.
+    \item \textit{(visible ?w - waypoint ?p - waypoint)}: representa que el punto de ruta 2 es visible desde el punto de ruta 1.
+    \item \textit{(have\_image ?r - rover ?o - objective ?m - mode)}: representa que el rover posee una foto tomada con un modo de un objetivo.
+    \item \textit{(communicated\_soil\_data ?w - waypoint)}: representa que la información del sustrato de un punto de ruta ha sido comunicada.
+    \item \textit{(communicated\_rock\_data ?w - waypoint)}: representa que la información de las rocas de un punto de ruta ha sido comunicada.
+    \item \textit{(communicated\_image\_data ?o - objective ?m - mode)}: representa que la información de la imagen tomada con un modo del objetivo ha sido comunicada.
+    \item \textit{(at\_soil\_sample ?w - waypoint)}: representa que un punto de ruta tiene muestras de sustratos.
+    \item \textit{(at\_rock\_sample ?w - waypoint)}: representa que un punto de ruta tiene muestras de rocas.
+    \item \textit{(visible\_from ?o - objective ?w - waypoint)}: representa que el objetivo es visible desde el punto de ruta.
+    \item \textit{(store\_of ?s - store ?r - rover)}: representa que el almacenamiento pertenece al rover.
+    \item \textit{(calibration\_target ?i - camera ?o - objective)}: representa que la cámara está calibrada sobre el objetivo.
+    \item \textit{(on\_board ?i - camera ?r - rover)}: representa que el rover posee la cámara.
+    \item \textit{(channel\_free ?l - lander)}: representa que el canal de comunicazión del aterrizador está disponible.
+    \item \textit{(in\_sun ?w - waypoint)}: representa que el punto de ruta es un punto de recarga.
+  \end{itemize}
+
+  Sus \textbf{acciones} son:
+  \begin{itemize}
+    \item Navigate:
+    \\Precondiciones: el rover está disponible, con más de 8 de energía, y se encuentra en el punto de ruta 1, y se puede viajar al punto de ruta 2.
+    \\Efectos: el rover deja de estar en el punto de ruta 1 y pasa a estar en el 2, y su energía decrementa.
+    \item Recharge:
+    \\Precondiciones: el rover está en un punto de recarga y tiene de 80 o menos de energía.
+    \\Efectos: aumenta la energía del rover en 20 y aumenta el número de recargas hechas.
+    \item Sample\_soil:
+    \\Precondiciones: si el rover está equipado para tomar muestras de sustratos, su energía es mayor o igual a 3, está vacío y se encuentra sobre muestras de sustrato.
+    \\Efectos: el rover pasa a estar lleno con muestras de sustrato, y las muestras dejan de estar en el punto de ruta. La energía del rover decrece en 3 unidades.
+    \item Sample\_rock:
+    \\Precondiciones: si el rover está equipado para tomar muestras de rocas, su energía es mayor o igual a 5, está vacío y se encuentra sobre muestras de rocas.
+    \\Efectos: el rover pasa a estar lleno con muestras de rocas, y las muestras dejan de estar en el punto de ruta. La energía del rover decrece en 5 unidades.
+    \item Drop:
+    \\Precondiciones: el almacenamiento del rover está lleno.
+    \\Efectos: el almacenamiento deja de estar lleno y pasa a estar vacío.
+    \item Calibrate:
+    \\Precondiciones: el rover está equipado para hacer fotografías, tiene una cámara encima y se encuentra en un punto de ruta, su energía es mayor o igual a 2, hay un objetivo que fotografiar que es visible desde el punto de ruta.
+    \\Efectos: disminuye la energía en 2 y se calibra la cámara del rover.
+    \item Take\_image:
+    \\Precondiciones: la cámara del rover está calibrada, está equipado para hacer fotografías, y la cámara acepta el modo de fotografía, y el objetivo es visible desde la posición del rover, y su energías es mayor o igual a 1.
+    \\Efectos: se consigue una imagen del objetivo, la cámara deja de estar calibrada y se reduce la energía en 1 unidad.
+    \item Comunicate\_soil\_data:
+    \\Precondiciones: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee información de los sustratos del punto de ruta 3 y su energía es mayor o igual a 4 y desde el punto de ruta 1 es visible el punto de ruta 2.
+    \\Efectos: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información del sustrato del punto de ruta 3 y el rover vuelve a estar disponible y su energía disminuye en 4.
+    \item Comunicate\_rock\_data:
+    \\Precondiciones: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee información de las rocas del punto de ruta 3 y su energía es mayor o igual a 4 y desde el punto de ruta 1 es visible el punto de ruta 2.
+    \\Efectos: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información de las rocas del punto de ruta 3 y el rover vuelve a estar disponible y su energía disminuye en 4.
+    \item Comunicate\_image\_data:
+    \\Precondiciones: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee una foto tomada con un modo de un objetivo y su energía es mayor o igual a 6 y desde el punto de ruta 1 es visible el punto de ruta 2.
+    \\Efectos: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información de la imagen tomada con un modo del objetivo y el rover vuelve a estar disponible y su energía disminuye en 6.
+  \end{itemize}
+
+
+
+
+  \subsection{Satellite}
+
+  En este dominio hay los siguientes tipos: 'satélite', 'dirección', 'instrumento' y 'modo'. Los \textbf{predicados} que tiene son:
+
+  \begin{itemize}
+    \item \textit{(on\_board ?i - instrument ?s - satellite)}: representa que el instrumento se encuentra en el satélite.
+    \item \textit{(supports ?i - instrument ?m - mode)}: representa que el instrumento acepta el mode.
+    \item \textit{(pointing ?s - satellite ?d - direction)}: representa que el satélite está mirando en la dirección.
+    \item \textit{(power\_avail ?s - satellite)}: representa que el satélite tiene energía.
+    \item \textit{(power\_on ?i - instrument)}: representa que el instrumento está encendido.
+    \item \textit{(calibrated ?i - instrument))}: representa que el instrumento está calibrado.
+    \item \textit{(have\_image ?d - direction ?m - mode)}: representa que se tiene una imágen con el mode en la dirección.
+    \item \textit{(calibration\_target ?i - instrument ?d - direction))}: representa que el instrumento está calibrado en la dirección.
+  \end{itemize}
+
+  Sus \textbf{acciones} son:
+  \begin{itemize}
+    \item Turn\_to:
+    \\Precondiciones: el satélite está mirando a la dirección 1, hay una dirección 2 diferente a la 1, tiene al menos el combustible necesario para realizar el cambio de dirección.
+    \\Efectos: el satélite está mirando a la dirección 2 y ya no está mirando a la dirección 1, disminuye su combustible tanto como haya necesitado para hacer el cambio de dirección y se contabiliza el consumo de este combustible.
+    \item Switch\_on:
+    \\Precondiciones: el instrumento se encuentra en satélite y tiene energía.
+    \\Efectos: el isntrumento pasa a estar encendido, sin calibrar y sin posibilidad de recibir más energía.
+    \item Switch\_off:
+    \\Precondiciones: el instrumento se encuentra en el satélite, y está encendido
+    \\Efectos: el instrumento pasa a estar apagado, y se vuelve a permitir que reciba energía.
+    \item Calibrate:
+    \\Precondiciones: el instrumento está calibrado, encendido y se encuentra en el satélite y el satélite mira en la misma dirección que e instrumento.
+    \\Efectos: el instrumento está calibrado.
+    \item Take\_image:
+    \\Precondiciones: el instrumento se encuentra en el satélite, está calibrado, permite usar el modo, está encendido, el satélite está apuntando en la dirección, y todavía tiene capacidad de almacenaje.
+    \\Efectos: se disminuye la capacidad de almacenaje, se obtienen los datos y la imagen de la dirección con el modo.
+  \end{itemize}
+
+
+  \subsection{Zeno Travel}
+
+  En este dominio hay los siguientes tipos: 'aeronave', 'persona', 'ciudad' y 'nivel de combustible' (objeto). Los \textbf{predicados} que tiene son:
+
+
+  \begin{itemize}
+    \item \textit{(at ?x - (either person aircraft) ?c - city)}: representa que o una persona o una aeronave se encuentran en una ciudad.
+  	\item \textit{(in ?p - person ?a - aircraft)}: representa que la persona se encuentra en una aeronave.
+  	\item \textit{(fuel-level ?a - aircraft ?l - flevel)}: representa el nivel de combustible en una aeronave.
+  	\item \textit{(next ?l1 ?l2 - flevel))}: representa el cambio de nivel de combustible 1 a nivel de combustible 2.
+  \end{itemize}
+
+  Sus \textbf{acciones} son:
+  \begin{itemize}
+    \item Board:
+    \\Precondiciones: la persona y la aeronave se encuentran en la misma ciudad.
+    \\Efectos: la persona deja de estar en la ciudad y se encuentra en la aeronave.
+    \item Debark:
+    \\Precondiciones: la persona se encuentra en la aeronave y la aeronave está en una ciudad.
+    \\Efectos: la persona deja de estar en la aeronave y pasa a estar en la ciudad.
+    \item Fly:
+    \\Precondiciones: la aeronave se encuentra en la ciudad 1 y su nivel de combustible puede pasar al siguiente.
+    \\Efectos: la aeronave deja de estar en la ciudad 1 y pasa a estar en la ciudad 2, su nivel de combustible deja de ser el 1 y pasa a ser el 2.
+    \item Zoom:
+    \\Precondiciones: la aeronave se encuentra en la ciudad 1, y existen 2 niveles siguientes de combustible.
+    \\Efectos: la aeronave pasa a tener el tercer nivel de combustible, y pasa a estar en la ciudad 2.
+    \item Refuel:
+    \\Precondiciones: la aeronave se encuentra en la ciudad, y el nivel de combustible puede pasar al siguiente.
+    \\Efectos: el nivel de combustible de la aeronave pasa a ser el siguiente.
+  \end{itemize}
+
+
+\section{Comparación de combustibles Satellite vs Zeno Travel}
+
+A continuación se va a comparar cómo modelan la cantidad de combustible utilizado en los dominios de Satellite y Zeno Travel.
+
+\section{Experimetos}
+
+
+
+
+
+
+\end{document}

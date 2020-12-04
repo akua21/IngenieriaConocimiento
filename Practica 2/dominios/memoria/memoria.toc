@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Estudio de los dominios}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Blocks World}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Logistics}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Rover}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Satellite}{6}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Zeno Travel}{7}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Comparar de combustibles Satellite vs Zeno Travel}{7}{section.2}%
+\contentsline {section}{\numberline {3}Experimetos}{7}{section.3}%
