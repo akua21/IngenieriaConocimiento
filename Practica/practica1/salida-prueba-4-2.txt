@@ -1,0 +1,28 @@
+TRUE
+CLIPS> (run)
+¡Hola Guillermo!
+Tienes que colocar la ficha en el tablero y conseguir poner 3 en línea. Empiezas tú.
+Veo que no te has enterado de mi explicación. Te la explico otra vez.
+Tienes que colocar la ficha en el tablero y conseguir poner 3 en línea. Empiezas tú.
+Veo que te has enterado de mi explicación. ¡Empecemos!
+Psst, te toca a ti
+'El paciente ha colocado en 2-2'
+Me toca a mi
+'El robot ha colocado en 3-2'
+Te toca a ti
+'El paciente ha colocado en 2-3'
+Me toca a mi
+'El robot ha colocado en 2-1'
+Te toca a ti
+'El paciente ha colocado en 1-3'
+Me toca a mi
+'El robot ha colocado en 1-1'
+Te toca a ti
+Psst, te toca a ti
+Psst, te toca a ti
+Psst, te toca a ti
+Psst, te toca a ti
+Psst, te toca a ti
+Hoy no estás muy atento. Vamos a terminar la sesión.
+¡Adios Guillermo!
+CLIPS> (dribble-off)

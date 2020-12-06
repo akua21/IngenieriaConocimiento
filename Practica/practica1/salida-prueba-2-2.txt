@@ -1,0 +1,17 @@
+TRUE
+CLIPS> (run)
+¡Hola Luis!
+Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
+Veo que te has enterado de mi explicación. ¡Empecemos!
+Coloca mano-derecha en el color azul
+Muy bien hecho
+Coloca pie-derecho en el color verde
+Muy bien hecho
+Coloca pie-izquierdo en el color verde
+Muy bien hecho
+Coloca pie-derecho en el color verde
+Muy bien hecho
+Coloca pie-derecho en el color amarillo
+Oh vaya, te has caído
+¡Adios Luis!
+CLIPS> (dribble-off)

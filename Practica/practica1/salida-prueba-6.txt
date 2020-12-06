@@ -1,0 +1,29 @@
+TRUE
+CLIPS> (run)
+¡Hola Mario!
+Tienes que colocar la extremidad que te vaya diciendo en el color que te diga. Tienes que intentar no caerte.
+Veo que te has enterado de mi explicación. ¡Empecemos!
+Coloca pie-derecho en el color verde
+Muy bien hecho
+Coloca pie-derecho en el color amarillo
+Muy bien hecho
+Coloca pie-derecho en el color azul
+Veo que te has movido. No pasa nada, te repito todos los movimientos.
+0: pie-derecho en verde
+1: pie-derecho en amarillo
+2: pie-derecho en azul
+Sigamos
+Muy bien hecho
+Coloca pie-derecho en el color azul
+Muy bien hecho
+Coloca pie-izquierdo en el color rojo
+Veo que te has movido. No pasa nada, te repito todos los movimientos.
+0: pie-derecho en verde
+1: pie-derecho en amarillo
+2: pie-derecho en azul
+3: pie-derecho en azul
+4: pie-izquierdo en rojo
+Sigamos
+Oh vaya, te has caído
+¡Adios Mario!
+CLIPS> (dribble-off)

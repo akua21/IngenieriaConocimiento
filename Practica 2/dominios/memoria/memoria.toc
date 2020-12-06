@@ -5,5 +5,10 @@
 \contentsline {subsection}{\numberline {1.3}Rover}{4}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Satellite}{6}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Zeno Travel}{7}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Comparar de combustibles Satellite vs Zeno Travel}{7}{section.2}%
-\contentsline {section}{\numberline {3}Experimetos}{7}{section.3}%
+\contentsline {section}{\numberline {2}Comparación de combustibles Satellite vs Zeno Travel}{7}{section.2}%
+\contentsline {section}{\numberline {3}Experimetos}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Blocks World}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Logistics}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Rover}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Satellite}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Zeno Travel}{9}{subsection.3.5}%

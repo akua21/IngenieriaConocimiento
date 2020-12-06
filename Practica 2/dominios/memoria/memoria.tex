@@ -79,17 +79,17 @@
   Sus \textbf{acciones} son:
   \begin{itemize}
     \item Pick-up:
-    \\Precondiciones: el bloque no tiene nada encima y está encima de la mesa y el gancho está libre.
-    \\Efectos: el bloque deja de estar encima de la mesa y el gancho pasa a sujetar el bloque.
+    \\\textit{Precondiciones}: el bloque no tiene nada encima y está encima de la mesa y el gancho está libre.
+    \\\textit{Efectos}: el bloque deja de estar encima de la mesa y el gancho pasa a sujetar el bloque.
     \item Put-down:
-    \\Precondiciones: el gancho sujeta el bloque.
-    \\Efectos: el bloque pasa a estar encima de la mesa, con nada encima, y el gancho pasa a estar libre.
+    \\\textit{Precondiciones}: el gancho sujeta el bloque.
+    \\\textit{Efectos}: el bloque pasa a estar encima de la mesa, con nada encima, y el gancho pasa a estar libre.
     \item Stack:
-    \\Precondiciones: el gancho sujeta el bloque 1 y el bloque 2 no tiene nada encima.
-    \\Efectos: el bloque 2 pasa a tener encima el bloque 1 y el gancho pasa a estar libre.
+    \\\textit{Precondiciones}: el gancho sujeta el bloque 1 y el bloque 2 no tiene nada encima.
+    \\\textit{Efectos}: el bloque 2 pasa a tener encima el bloque 1 y el gancho pasa a estar libre.
     \item Unstack:
-    \\Precondiciones: el bloque 1 está sobre el bloque 2, el bloque 1 no tiene nada encima y el gancho está libre.
-    \\Efectos: el bloque 2 pasa a no tener nada encima y el gancho pasa a sujetar el bloque 1.
+    \\\textit{Precondiciones}: el bloque 1 está sobre el bloque 2, el bloque 1 no tiene nada encima y el gancho está libre.
+    \\\textit{Efectos}: el bloque 2 pasa a no tener nada encima y el gancho pasa a sujetar el bloque 1.
   \end{itemize}
 
 
@@ -106,23 +106,23 @@
   Sus \textbf{acciones} son:
   \begin{itemize}
     \item Load-truck:
-    \\Precondiciones: tener un paquete y un camión en el mismo lugar.
-    \\Efectos: se elimina el paquete del lugar y se mete dentro del camión.
+    \\\textit{Precondiciones}: tener un paquete y un camión en el mismo lugar.
+    \\\textit{Efectos}: se elimina el paquete del lugar y se mete dentro del camión.
     \item Load-airplane:
-    \\Precondiciones: tener un paquete y un avión en el mismo lugar.
-    \\Efectos: se elimina el paquete del lugar y se mete dentro del avión.
+    \\\textit{Precondiciones}: tener un paquete y un avión en el mismo lugar.
+    \\\textit{Efectos}: se elimina el paquete del lugar y se mete dentro del avión.
     \item Unload-truck:
-    \\Precondiciones: tener un paquete en un camión y el camión en un lugar.
-    \\Efectos: se elimina el paquete del camión y el paquete pasa a estar en el lugar.
+    \\\textit{Precondiciones}: tener un paquete en un camión y el camión en un lugar.
+    \\\textit{Efectos}: se elimina el paquete del camión y el paquete pasa a estar en el lugar.
     \item Unload-airplane:
-    \\Precondiciones: tener un paquete en un avión y el avión en un lugar.
-    \\Efectos: se elimina el paquete del avión y el paquete pasa a estar en el lugar.
+    \\\textit{Precondiciones}: tener un paquete en un avión y el avión en un lugar.
+    \\\textit{Efectos}: se elimina el paquete del avión y el paquete pasa a estar en el lugar.
     \item Drive-truck:
-    \\Precondiciones: tener un camión en el lugar 1, y que el lugar 1 y el lugar 2 estén en la misma ciudad.
-    \\Efectos: El camión deja de estar en lugar 1 y pasa a estar en el lugar 2.
+    \\\textit{Precondiciones}: tener un camión en el lugar 1, y que el lugar 1 y el lugar 2 estén en la misma ciudad.
+    \\\textit{Efectos}: El camión deja de estar en lugar 1 y pasa a estar en el lugar 2.
     \item Fly-airplane:
-    \\Precondiciones: tener un avión en el lugar 1.
-    \\Efectos: el avión deja de estar en el lugar 1 y pasa a estar en el lugar 2.
+    \\\textit{Precondiciones}: tener un avión en el lugar 1.
+    \\\textit{Efectos}: el avión deja de estar en el lugar 1 y pasa a estar en el lugar 2.
   \end{itemize}
 
 
@@ -162,35 +162,35 @@
   Sus \textbf{acciones} son:
   \begin{itemize}
     \item Navigate:
-    \\Precondiciones: el rover está disponible, con más de 8 de energía, y se encuentra en el punto de ruta 1, y se puede viajar al punto de ruta 2.
-    \\Efectos: el rover deja de estar en el punto de ruta 1 y pasa a estar en el 2, y su energía decrementa.
+    \\\textit{Precondiciones}: el rover está disponible, con más de 8 de energía, y se encuentra en el punto de ruta 1, y se puede viajar al punto de ruta 2.
+    \\\textit{Efectos}: el rover deja de estar en el punto de ruta 1 y pasa a estar en el 2, y su energía decrementa.
     \item Recharge:
-    \\Precondiciones: el rover está en un punto de recarga y tiene de 80 o menos de energía.
-    \\Efectos: aumenta la energía del rover en 20 y aumenta el número de recargas hechas.
+    \\\textit{Precondiciones}: el rover está en un punto de recarga y tiene de 80 o menos de energía.
+    \\\textit{Efectos}: aumenta la energía del rover en 20 y aumenta el número de recargas hechas.
     \item Sample\_soil:
-    \\Precondiciones: si el rover está equipado para tomar muestras de sustratos, su energía es mayor o igual a 3, está vacío y se encuentra sobre muestras de sustrato.
-    \\Efectos: el rover pasa a estar lleno con muestras de sustrato, y las muestras dejan de estar en el punto de ruta. La energía del rover decrece en 3 unidades.
+    \\\textit{Precondiciones}: si el rover está equipado para tomar muestras de sustratos, su energía es mayor o igual a 3, está vacío y se encuentra sobre muestras de sustrato.
+    \\\textit{Efectos}: el rover pasa a estar lleno con muestras de sustrato, y las muestras dejan de estar en el punto de ruta. La energía del rover decrece en 3 unidades.
     \item Sample\_rock:
-    \\Precondiciones: si el rover está equipado para tomar muestras de rocas, su energía es mayor o igual a 5, está vacío y se encuentra sobre muestras de rocas.
-    \\Efectos: el rover pasa a estar lleno con muestras de rocas, y las muestras dejan de estar en el punto de ruta. La energía del rover decrece en 5 unidades.
+    \\\textit{Precondiciones}: si el rover está equipado para tomar muestras de rocas, su energía es mayor o igual a 5, está vacío y se encuentra sobre muestras de rocas.
+    \\\textit{Efectos}: el rover pasa a estar lleno con muestras de rocas, y las muestras dejan de estar en el punto de ruta. La energía del rover decrece en 5 unidades.
     \item Drop:
-    \\Precondiciones: el almacenamiento del rover está lleno.
-    \\Efectos: el almacenamiento deja de estar lleno y pasa a estar vacío.
+    \\\textit{Precondiciones}: el almacenamiento del rover está lleno.
+    \\\textit{Efectos}: el almacenamiento deja de estar lleno y pasa a estar vacío.
     \item Calibrate:
-    \\Precondiciones: el rover está equipado para hacer fotografías, tiene una cámara encima y se encuentra en un punto de ruta, su energía es mayor o igual a 2, hay un objetivo que fotografiar que es visible desde el punto de ruta.
-    \\Efectos: disminuye la energía en 2 y se calibra la cámara del rover.
+    \\\textit{Precondiciones}: el rover está equipado para hacer fotografías, tiene una cámara encima y se encuentra en un punto de ruta, su energía es mayor o igual a 2, hay un objetivo que fotografiar que es visible desde el punto de ruta.
+    \\\textit{Efectos}: disminuye la energía en 2 y se calibra la cámara del rover.
     \item Take\_image:
-    \\Precondiciones: la cámara del rover está calibrada, está equipado para hacer fotografías, y la cámara acepta el modo de fotografía, y el objetivo es visible desde la posición del rover, y su energías es mayor o igual a 1.
-    \\Efectos: se consigue una imagen del objetivo, la cámara deja de estar calibrada y se reduce la energía en 1 unidad.
+    \\\textit{Precondiciones}: la cámara del rover está calibrada, está equipado para hacer fotografías, y la cámara acepta el modo de fotografía, y el objetivo es visible desde la posición del rover, y su energías es mayor o igual a 1.
+    \\\textit{Efectos}: se consigue una imagen del objetivo, la cámara deja de estar calibrada y se reduce la energía en 1 unidad.
     \item Comunicate\_soil\_data:
-    \\Precondiciones: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee información de los sustratos del punto de ruta 3 y su energía es mayor o igual a 4 y desde el punto de ruta 1 es visible el punto de ruta 2.
-    \\Efectos: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información del sustrato del punto de ruta 3 y el rover vuelve a estar disponible y su energía disminuye en 4.
+    \\\textit{Precondiciones}: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee información de los sustratos del punto de ruta 3 y su energía es mayor o igual a 4 y desde el punto de ruta 1 es visible el punto de ruta 2.
+    \\\textit{Efectos}: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información del sustrato del punto de ruta 3 y el rover vuelve a estar disponible y su energía disminuye en 4.
     \item Comunicate\_rock\_data:
-    \\Precondiciones: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee información de las rocas del punto de ruta 3 y su energía es mayor o igual a 4 y desde el punto de ruta 1 es visible el punto de ruta 2.
-    \\Efectos: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información de las rocas del punto de ruta 3 y el rover vuelve a estar disponible y su energía disminuye en 4.
+    \\\textit{Precondiciones}: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee información de las rocas del punto de ruta 3 y su energía es mayor o igual a 4 y desde el punto de ruta 1 es visible el punto de ruta 2.
+    \\\textit{Efectos}: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información de las rocas del punto de ruta 3 y el rover vuelve a estar disponible y su energía disminuye en 4.
     \item Comunicate\_image\_data:
-    \\Precondiciones: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee una foto tomada con un modo de un objetivo y su energía es mayor o igual a 6 y desde el punto de ruta 1 es visible el punto de ruta 2.
-    \\Efectos: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información de la imagen tomada con un modo del objetivo y el rover vuelve a estar disponible y su energía disminuye en 6.
+    \\\textit{Precondiciones}: el rover está en el punto de ruta 1 y está disponible, el aterrizador está en el punto de ruta 2 y libre, el rover posee una foto tomada con un modo de un objetivo y su energía es mayor o igual a 6 y desde el punto de ruta 1 es visible el punto de ruta 2.
+    \\\textit{Efectos}: el rover deja de estar disponible y el aterrizador deja de estar libre, después vuelve a estar libre, se comunica la información de la imagen tomada con un modo del objetivo y el rover vuelve a estar disponible y su energía disminuye en 6.
   \end{itemize}
 
 
@@ -214,20 +214,20 @@
   Sus \textbf{acciones} son:
   \begin{itemize}
     \item Turn\_to:
-    \\Precondiciones: el satélite está mirando a la dirección 1, hay una dirección 2 diferente a la 1, tiene al menos el combustible necesario para realizar el cambio de dirección.
-    \\Efectos: el satélite está mirando a la dirección 2 y ya no está mirando a la dirección 1, disminuye su combustible tanto como haya necesitado para hacer el cambio de dirección y se contabiliza el consumo de este combustible.
+    \\\textit{Precondiciones}: el satélite está mirando a la dirección 1, hay una dirección 2 diferente a la 1, tiene al menos el combustible necesario para realizar el cambio de dirección.
+    \\\textit{Efectos}: el satélite está mirando a la dirección 2 y ya no está mirando a la dirección 1, disminuye su combustible tanto como haya necesitado para hacer el cambio de dirección y se contabiliza el consumo de este combustible.
     \item Switch\_on:
-    \\Precondiciones: el instrumento se encuentra en satélite y tiene energía.
-    \\Efectos: el isntrumento pasa a estar encendido, sin calibrar y sin posibilidad de recibir más energía.
+    \\\textit{Precondiciones}: el instrumento se encuentra en satélite y tiene energía.
+    \\\textit{Efectos}: el isntrumento pasa a estar encendido, sin calibrar y sin posibilidad de recibir más energía.
     \item Switch\_off:
-    \\Precondiciones: el instrumento se encuentra en el satélite, y está encendido
-    \\Efectos: el instrumento pasa a estar apagado, y se vuelve a permitir que reciba energía.
+    \\\textit{Precondiciones}: el instrumento se encuentra en el satélite, y está encendido
+    \\\textit{Efectos}: el instrumento pasa a estar apagado, y se vuelve a permitir que reciba energía.
     \item Calibrate:
-    \\Precondiciones: el instrumento está calibrado, encendido y se encuentra en el satélite y el satélite mira en la misma dirección que e instrumento.
-    \\Efectos: el instrumento está calibrado.
+    \\\textit{Precondiciones}: el instrumento está calibrado, encendido y se encuentra en el satélite y el satélite mira en la misma dirección que e instrumento.
+    \\\textit{Efectos}: el instrumento está calibrado.
     \item Take\_image:
-    \\Precondiciones: el instrumento se encuentra en el satélite, está calibrado, permite usar el modo, está encendido, el satélite está apuntando en la dirección, y todavía tiene capacidad de almacenaje.
-    \\Efectos: se disminuye la capacidad de almacenaje, se obtienen los datos y la imagen de la dirección con el modo.
+    \\\textit{Precondiciones}: el instrumento se encuentra en el satélite, está calibrado, permite usar el modo, está encendido, el satélite está apuntando en la dirección, y todavía tiene capacidad de almacenaje.
+    \\\textit{Efectos}: se disminuye la capacidad de almacenaje, se obtienen los datos y la imagen de la dirección con el modo.
   \end{itemize}
 
 
@@ -240,26 +240,26 @@
     \item \textit{(at ?x - (either person aircraft) ?c - city)}: representa que o una persona o una aeronave se encuentran en una ciudad.
   	\item \textit{(in ?p - person ?a - aircraft)}: representa que la persona se encuentra en una aeronave.
   	\item \textit{(fuel-level ?a - aircraft ?l - flevel)}: representa el nivel de combustible en una aeronave.
-  	\item \textit{(next ?l1 ?l2 - flevel))}: representa el cambio de nivel de combustible 1 a nivel de combustible 2.
+  	\item \textit{(next ?l1 ?l2 - flevel))}: representa el cambio entre el nivel de combustible 1 y el nivel de combustible 2.
   \end{itemize}
 
   Sus \textbf{acciones} son:
   \begin{itemize}
     \item Board:
-    \\Precondiciones: la persona y la aeronave se encuentran en la misma ciudad.
-    \\Efectos: la persona deja de estar en la ciudad y se encuentra en la aeronave.
+    \\\textit{Precondiciones}: la persona y la aeronave se encuentran en la misma ciudad.
+    \\\textit{Efectos}: la persona deja de estar en la ciudad y se encuentra en la aeronave.
     \item Debark:
-    \\Precondiciones: la persona se encuentra en la aeronave y la aeronave está en una ciudad.
-    \\Efectos: la persona deja de estar en la aeronave y pasa a estar en la ciudad.
+    \\\textit{Precondiciones}: la persona se encuentra en la aeronave y la aeronave está en una ciudad.
+    \\\textit{Efectos}: la persona deja de estar en la aeronave y pasa a estar en la ciudad.
     \item Fly:
-    \\Precondiciones: la aeronave se encuentra en la ciudad 1 y su nivel de combustible puede pasar al siguiente.
-    \\Efectos: la aeronave deja de estar en la ciudad 1 y pasa a estar en la ciudad 2, su nivel de combustible deja de ser el 1 y pasa a ser el 2.
+    \\\textit{Precondiciones}: la aeronave se encuentra en la ciudad 1 y su nivel de combustible puede pasar al anterior.
+    \\\textit{Efectos}: la aeronave deja de estar en la ciudad 1 y pasa a estar en la ciudad 2, su nivel de combustible deja de ser el 1 y pasa a ser el 2.
     \item Zoom:
-    \\Precondiciones: la aeronave se encuentra en la ciudad 1, y existen 2 niveles siguientes de combustible.
-    \\Efectos: la aeronave pasa a tener el tercer nivel de combustible, y pasa a estar en la ciudad 2.
+    \\\textit{Precondiciones}: la aeronave se encuentra en la ciudad 1, y existen 2 niveles anteriores de combustible.
+    \\\textit{Efectos}: la aeronave pasa a tener el tercer nivel de combustible, y pasa a estar en la ciudad 2.
     \item Refuel:
-    \\Precondiciones: la aeronave se encuentra en la ciudad, y el nivel de combustible puede pasar al siguiente.
-    \\Efectos: el nivel de combustible de la aeronave pasa a ser el siguiente.
+    \\\textit{Precondiciones}: la aeronave se encuentra en la ciudad, y el nivel de combustible puede pasar al siguiente.
+    \\\textit{Efectos}: el nivel de combustible de la aeronave pasa a ser el siguiente.
   \end{itemize}
 
 
@@ -267,11 +267,181 @@
 
 A continuación se va a comparar cómo modelan la cantidad de combustible utilizado en los dominios de Satellite y Zeno Travel.
 
+\vspace{2mm}
+
+En \textbf{Satellite} se utiliza un valor numérico para representar la cantidad de combustible que tiene cada satélite y que disminuye su cantidad dependiendo del movimiento que realice.
+
+\vspace{2mm}
+
+En \textbf{Zeno Travel} se utilizan niveles de combustible de forma que un viaje normal consume un nivel, un viaje 'zoom' consume dos niveles y repostar recupera un nivel.
+
+\vspace{2mm}
+
+Estos dos dominios usan de forma distinta el mismo recurso (combustible) pero adaptado a las necesidades de cada dominio.
+
+
+
 \section{Experimetos}
 
+\subsection{Blocks World}
+
+Con este dominio se intenta colocar un número de bloques en ciertas posiciones, que pueden ser o bien sobre la mesa o bien sobre otro bloque.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{probBLOCKS-4-0}}  &  0.00           & 5                 & 5                & 4                   & 3            \\ \hline
+        \textit{\textbf{probBLOCKS-8-0}}  &  0.00           & 25                & 25               & 8                   & 7            \\ \hline
+        \textit{\textbf{probBLOCKS-9-0}}  &  0.20           & 47                & 47               & 9                   & 8            \\ \hline
+        \textit{\textbf{probBLOCKS-12-0}} &  0.77           & 69                & 69               & 12                  & 11           \\ \hline
+        \textit{\textbf{probBLOCKS-13-0}} &  0.73           & 85                & 85               & 13                  & 12           \\ \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection*{Nuevo problema}
+
+Se tiene un total de 10 bloques, todos apilados uno encima de otro. El objetivo es que el bloque que se encuentra debajo del resto bloques, el que está encima de la mesa, pase a estar encima del bloque que se encuentra en la cima de la pila.
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{nuevo problema}}  &  0.00           & 19                & 19               & 10                  & 1                \\ \hline
+  \end{tabular}
+\end{center}
+
+
+\subsection{Logistics}
+
+Este dominio tiene como objetivo llevar paquetes de un lugar a otro. El transporte se puede hacer por camión o por avión.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{probLOGISTICS-4-0}}  &  0.00        & 19                & 19               & 15                  & 4            \\ \hline
+        \textit{\textbf{probLOGISTICS-9-0}}  &  0.00        & 38                & 38               & 22                  & 9            \\ \hline
+        \textit{\textbf{probLOGISTICS-13-1}} &  0.06        & 67                & 67               & 37                  & 13           \\ \hline
+        \textit{\textbf{probLOGISTICS-14-1}} &  0.07        & 78                & 78               & 35                  & 14           \\ \hline
+        \textit{\textbf{probLOGISTICS-15-1}} &  0.09        & 73                & 73               & 37                  & 15           \\ \hline
+  \end{tabular}
+\end{center}
+
+
+\subsubsection*{Nuevo problema}
+
+Se tiene un único avión, 5 aeropuertos, 5 ciudades, 2 localizaciones en la ciudad 1, un camión y 5 paquetes repartidos cada uno en las ciudades. Inicialmente el avión está en la ciudad 5 y el camión en la ciudad 1. El objetivo es que el paquete 1 esté en la ciudad 4, el paquete 2 en la ciudad 3, el paquete 3 en la ciudad 1, el paquete 4 en la ciudad 5 y el paquete 5 en la ciudad 2.
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{nuevo problema}}  &  0.00           & 18                & 18               & 19                  & 5                \\ \hline
+  \end{tabular}
+\end{center}
 
 
 
+\subsection{Rover}
+
+El dominio tiene como objetivo comunicar la información de los datos recogidos por el rover de sustratos, rocas o imágenes en distintos puntos de ruta. Se intenta minimizar el combustible empleado.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{pfile01}}         &  7.17           & 14                & 0                & 13                  & 3            \\ \hline
+        \textit{\textbf{pfile10}}         &  -              & -                 & -                & 29                  & 11           \\ \hline
+        \textit{\textbf{pfile13}}         &  -              & -                 & -                & 30                  & 12           \\ \hline
+        \textit{\textbf{pfile15}}         &  -              & -                 & -                & 32                  & 10           \\ \hline
+        \textit{\textbf{pfile19}}         &  -              & -                 & -                & 51                  & 17           \\ \hline
+  \end{tabular}
+\end{center}
+
+A partir del problema \textit{pfile13} se ejecuta sin el -O en el comando porque en caso contrario daba error.
+
+
+\subsubsection*{Nuevo problema}
+
+Se tienen 2 aterrizadores, un sólo rover con su almacenamiento, 3 modos, 6 puntos de ruta, una cámara y 3 objetivos. La meta es conseguir una imagen en alta resolución del objetivo 0, del objetivo 1 y del objetivo 2.
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{nuevo problema}}  &  1.15           & 12                & 0                & 17                  & 3                \\ \hline
+  \end{tabular}
+\end{center}
+
+
+
+\subsection{Satellite}
+
+Con el dominio se intenta tomar distintas imágenes de diferentes objetivos, minimizando el consumo del combustible.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{pfile01}}         &  0.03           & 10                & 109.88           & 12                  & 3            \\ \hline
+        \textit{\textbf{pfile05}}         &  -              & -                 & -                & 25                  & 8            \\ \hline
+        \textit{\textbf{pfile10}}         & 0.08            & 43                & 634.66           & 38                  & 12           \\ \hline
+        \textit{\textbf{pfile15}}         & 74.88           & 71                & 806.31           & 57                  & 24           \\ \hline
+        \textit{\textbf{pfile18}}         & -               & -                 & -                & 47                  & 13           \\ \hline
+  \end{tabular}
+\end{center}
+
+A partir del problema \textit{pfile10} se ejecuta sin el -O en el comando porque en caso contrario daba error.
+
+
+\subsubsection*{Nuevo problema}
+
+Se tiene un satélite con una capacidad de datos de 1200 y un sólo instrumente con 3 modos y 7 direcciones. El objetivo es que el satélite tome las imágenes de 4 direcciones con el primer modo.
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{nuevo problema}}  & 0.07            & 11                & 108.59           & 12                  & 4                \\ \hline
+  \end{tabular}
+\end{center}
+
+
+
+\subsection{Zeno Travel}
+
+Con el dominio se intenta llevar distintos pasajeros a distintas ciudades, usando aeronaves. También puede ser llevar ciertas aeronaves a ciertas ciudades.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{pfile05}}         &  0.01           & 10                & 10               & 17                  & 4            \\ \hline
+        \textit{\textbf{pfile10}}         &  0.04           & 26                & 26               & 23                  & 9            \\ \hline
+        \textit{\textbf{pfile15}}         &  11.40          & 43                & 43               & 38                  & 14           \\ \hline
+        \textit{\textbf{pfile17}}         &  14.16          & 79                & 79               & 48                  & 23           \\ \hline
+        \textit{\textbf{pfile20}}         &  108.95         & 104               & 104              & 58                  & 24            \\ \hline
+  \end{tabular}
+\end{center}
+
+
+\subsubsection*{Nuevo problema}
+
+Se tiene 2 aeronaves, 7 personas, 4 ciudades y 9 niveles de combustible. La primera aeronave se encuentra en la ciudad 1 con un nivel de combustible de 7 y la segunda en la ciudad 2 con un combustible de 2. Las personas están dispersas por las ciudades pero no de forma equitativa. El objetivo es llevar a la persona 1 y 5 a la ciudad 2, a las personas 2, 3 y 4 a la ciudad 3. A la persona 6 a la ciudad 1 y a la persona 7 a la 0. Además se quiere que el nivel de combustible de la aeronave 1 sea 3 y de la aeronave 2 sea 5.
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+                  \textbf{Problema}       & \textbf{Tiempo} & \textbf{Longitud} & \textbf{Calidad} & \textbf{Nº objetos} & \textbf{Nº metas}\\ \hline \hline
+        \textit{\textbf{nuevo problema}}  &  0.04           & 28                & 28               & 23                  & 9                \\ \hline
+  \end{tabular}
+\end{center}
 
 
 \end{document}
