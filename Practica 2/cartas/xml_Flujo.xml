@@ -1,0 +1,368 @@
+<all-types>
+	<type name='Paciente' subtype='object'></type>
+	<type name='Carta' subtype='object'></type>
+	<type name='Contador' subtype='object'></type>
+</all-types>
+<all-predicates>
+	<predicate description='ExistePaciente' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='p' type='Paciente'></object>
+	</predicate>
+	<predicate description='Identificado' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='ido' type='Paciente'></object>
+	</predicate>
+	<predicate description='Saludado' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='sp' type='Paciente'></object>
+	</predicate>
+	<predicate description='JuegoExplicado' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='jp' type='Paciente'></object>
+	</predicate>
+	<predicate description='CartaEnRonda' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='c' type='Carta'></object>
+		<object nombre='r' type='Contador'></object>
+	</predicate>
+	<predicate description='ParejaCartas' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='c1' type='Carta'></object>
+		<object nombre='c2' type='Carta'></object>
+	</predicate>
+	<predicate description='CartaBocaArriba' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='c' type='Carta'></object>
+	</predicate>
+	<predicate description='CartaRecordada' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='c' type='Carta'></object>
+	</predicate>
+	<predicate description='JuegoTerminado' persistent='false' static='true' dynamic='false' internal='true' sensed='false'>
+	</predicate>
+	<predicate description='Turno' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='t' type='Contador'></object>
+	</predicate>
+	<predicate description='CartaEmparejada' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+		<object nombre='c' type='Carta'></object>
+	</predicate>
+</all-predicates>
+<all-functions>
+	<function description='NumRondas' default='2' persistent='false' static='true' dynamic='false' internal='true' sensed='false'>
+	</function>
+	<function description='RondaActual' default='0' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+	</function>
+	<function description='ContadorBocaArriba' default='0' persistent='false' static='false' dynamic='true' internal='true' sensed='false'>
+	</function>
+</all-functions>
+<all-states>
+	<state name='Listo' island='false'>
+		<predicate description='ExistePaciente' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+		<predicate description='Identificado' not='true'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+	</state>
+	<state name='PacienteIdentific' island='false'>
+		<predicate description='Identificado' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+		<predicate description='Saludado' not='true'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+	</state>
+	<state name='PacienteSaludado' island='false'>
+		<predicate description='Saludado' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+		<predicate description='JuegoExplicado' not='true'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+	</state>
+	<state name='JuegoYaExplicado' island='false'>
+		<predicate description='JuegoExplicado' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+		<function operator='>' firstValue='NumRondas' secondValue='RondaActual'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='SesionIniciada' island='false'>
+		<function operator='>' firstValue='RondaActual' secondValue='RondaActual'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='RondaComenzada' island='false'>
+	</state>
+	<state name='CartaGirada' island='false'>
+	</state>
+	<state name='CartaSinGirarSinC' island='false'>
+		<predicate description='CartaRecordada' not='true'>
+		</predicate>
+		<predicate description='CartaEnRonda' not='false'>
+		</predicate>
+		<function operator='=' firstValue='NumRondas' secondValue='NumRondas'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+		<function operator='=' firstValue='NumRondas' secondValue='NumRondas'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+		<function operator='=' firstValue='NumRondas' secondValue='NumRondas'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='CartaSinGirarConC' island='false'>
+		<predicate description='CartaEnRonda' not='false'>
+			<object variable='c' type='Carta'></object>
+			<object variable='r' type='Contador'></object>
+		</predicate>
+		<predicate description='CartaRecordada' not='false'>
+			<object variable='nc' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<function operator='=' firstValue='RondaActual' secondValue='RondaActual'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+		<function operator='>=' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+		<function operator='<' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='CartaSinGirarReco' island='false'>
+		<predicate description='CartaEnRonda' not='false'>
+			<object variable='r' type='Contador'></object>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaRecordada' not='false'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='true'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<function operator='>=' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+		<function operator='<' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='DosLevantadasBien' island='false'>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c1' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaEmparejada' not='false'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<predicate description='ParejaCartas' not='false'>
+		</predicate>
+		<predicate description='CartaEmparejada' not='true'>
+			<object variable='c1' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaEmparejada' not='true'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaEnRonda' not='false'>
+		</predicate>
+		<predicate description='CartaEnRonda' not='false'>
+		</predicate>
+	</state>
+	<state name='ParejaBien' island='false'>
+	</state>
+	<state name='DosLevantadasMal' island='false'>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c1' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaEmparejada' not='false'>
+			<object variable='c1' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaEmparejada' not='false'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<predicate description='ParejaCartas' not='true'>
+			<object variable='c1' type='Carta'></object>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+	</state>
+	<state name='ParejasMal' island='false'>
+	</state>
+	<state name='TurnoPaciente' island='false'>
+		<predicate description='Turno' not='false'>
+			<object variable='paciente' type='Contador'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='true'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<function operator='=' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='TurnoRobot' island='false'>
+		<predicate description='Turno' not='false'>
+			<object variable='robot' type='Contador'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='true'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<function operator='=' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</state>
+	<state name='TodasBocaArriba' island='false'>
+	</state>
+	<state name='RondaTerminada' island='false'>
+	</state>
+	<state name='TodasRondasHechas' island='false'>
+	</state>
+	<state name='PartidaTerminada' island='false'>
+	</state>
+	<state name='PacienteDespedido' island='false'>
+	</state>
+</all-states>
+<all-actions>
+	<action name='IdentificarPacien' from='Listo' to='PacienteIdentific' bucle='false' landmark='false'>
+		<predicate description='Identificado' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+	</action>
+	<action name='SaludarPaciente' from='PacienteIdentific' to='PacienteSaludado' bucle='false' landmark='false'>
+		<predicate description='Saludado' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+	</action>
+	<action name='ExplicarJuego' from='PacienteSaludado' to='JuegoYaExplicado' bucle='false' landmark='false'>
+		<predicate description='JuegoExplicado' not='false'>
+			<object variable='p' type='Paciente'></object>
+		</predicate>
+	</action>
+	<action name='ComenzarSesion' from='JuegoYaExplicado' to='SesionIniciada' bucle='false' landmark='false'>
+		<function operator='increase' firstValue='RondaActual' secondValue='RondaActual'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</action>
+	<action name='ComenzarRonda' from='SesionIniciada' to='RondaComenzada' bucle='false' landmark='false'>
+		<predicate description='Turno' not='false'>
+			<object variable='paciente' type='Contador'></object>
+		</predicate>
+	</action>
+	<action name='GirarSinConocimie' from='CartaSinGirarSinC' to='CartaGirada' bucle='false' landmark='false'>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaRecordada' not='false'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<function operator='increase' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</action>
+	<action name='GirarConConoc' from='CartaSinGirarConC' to='CartaGirada' bucle='false' landmark='false'>
+	</action>
+	<action name='GirarRecordada' from='CartaSinGirarReco' to='CartaGirada' bucle='false' landmark='false'>
+		<predicate description='CartaBocaArriba' not='false'>
+			<object variable='c' type='Carta'></object>
+		</predicate>
+		<function operator='increase' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</action>
+	<action name='ComprobarParejaBi' from='DosLevantadasBien' to='ParejaBien' bucle='false' landmark='false'>
+		<predicate description='CartaEmparejada' not='false'>
+			<object variable='c1' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaEmparejada' not='false'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<function operator='assign' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</action>
+	<action name='ComprobarParejasM' from='DosLevantadasMal' to='ParejasMal' bucle='false' landmark='false'>
+		<predicate description='CartaBocaArriba' not='true'>
+			<object variable='c1' type='Carta'></object>
+		</predicate>
+		<predicate description='CartaBocaArriba' not='true'>
+			<object variable='c2' type='Carta'></object>
+		</predicate>
+		<function operator='assign' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</action>
+	<action name='CambiarTurnoARobo' from='TurnoPaciente' to='TurnoRobot' bucle='false' landmark='false'>
+	</action>
+	<action name='CambiarTurnoAPaci' from='TurnoRobot' to='TurnoPaciente' bucle='false' landmark='false'>
+		<predicate description='Turno' not='true'>
+			<object variable='robot' type='Contador'></object>
+		</predicate>
+		<predicate description='Turno' not='false'>
+			<object variable='paciente' type='Contador'></object>
+		</predicate>
+		<function operator='assign' firstValue='ContadorBocaArriba' secondValue='ContadorBocaArriba'>
+			<firstVal>
+			</firstVal>
+			<secondVal>
+			</secondVal>
+		</function>
+	</action>
+	<action name='TerminarRonda' from='TodasBocaArriba' to='RondaTerminada' bucle='false' landmark='false'>
+	</action>
+	<action name='TerminarJuego' from='TodasRondasHechas' to='PartidaTerminada' bucle='false' landmark='false'>
+	</action>
+	<action name='DespedirPaciente' from='PartidaTerminada' to='PacienteDespedido' bucle='false' landmark='false'>
+	</action>
+</all-actions>
+<all-problems>
+</all-problems>
