@@ -1,0 +1,144 @@
+\documentclass{uc3mpracticas}
+
+\usepackage{helvet}
+\usepackage{caption}
+\usepackage{listings}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   Plantilla Prácticas UC3M                               %%%
+%%%                Universidad Carlos III de Madrid                          %%%
+%%%                   Alejandro Valverde Mahou                               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Permitir cabeceras y pie de páginas personalizados
+\pagestyle{fancy}
+
+%Path por defecto de las imágenes
+\graphicspath{ {./images/} }
+
+%Declarar formato de encabezado y pie de página de las páginas del documento
+\fancypagestyle{doc}{
+  %Cabecera
+  \headerpr[1]{Planificación Automática}{}{Ingeniería del Conocimiento}
+  %Pie de Página
+  \footerpr{}{\textbf{UC3M}}{{\thepage} de \pageref{LastPage}}
+}
+
+%Declarar formato de encabezado y pie del título e indice
+\fancypagestyle{titu}{%
+  %Cabecera
+  \headerpr{}{}{}
+  %Pie de Página
+  \footerpr{}{}{}
+}
+
+
+\appto\frontmatter{\pagestyle{titu}}
+\appto\mainmatter{\pagestyle{doc}}
+
+
+\begin{document}
+  %Comienzo formato título
+  \frontmatter
+
+
+  %Portada 1 (Centrado todo)
+  \centeredtitle{Images/LogoUC3M.png}{Grado en Ingeniería Informática}{Curso 2020/2021}{Ingeniería del Conocimiento}{Práctica 2: Planificación Automática}
+
+  \vspace{55mm}
+
+  \authors{Alba Reinders Sánchez}{100383444}{Alejandro Valverde Mahou}{100383383}{}{}{Grupo 83}{Leganés}
+
+  \newpage
+
+  %Índice
+  \tableofcontents
+
+  \newpage
+
+  %Comienzo formato documento general
+  \mainmatter
+
+  \section{Introducción}
+
+
+  \section{Manual técnico}
+
+  A continuación se describe el dominio creado explicando las acciones y los predicados.
+
+  \subsection{Predicados}
+
+
+  \begin{itemize}
+    \item \textbf{Paciente ?p}: indica el nombre del paciente que va a recibir la sesión.
+    \item \textbf{Identificado ?idp}: indica que el paciente ha sido identificado por el robot.
+    \item \textbf{Saludado ?sp}: indica que el paciente ha sido saludado por el robot.
+    \item \textbf{JuegoExplicado ?jp}: indica que se le ha explicado el juego al paciente.
+    \item \textbf{NumRondas ?nr}: indica el número de rondas máximas de la sesión.
+    \item \textbf{RondaActual ?r}: indica el número de la ronda actual de la sesión.
+    \item \textbf{Turno ?t}: indica de quién es el turno.
+    \item \textbf{CartaEnRonda ?c ?r}: indica en qué ronda se va a usar cada carta.
+    \item \textbf{}
+  \end{itemize}
+
+
+  \subsection{Acciones}
+
+  \begin{itemize}
+    \item \textbf{Identificar Paciente}: acción del robot que permite pasar del estado inicial al momento en el que se ha reconocido al paciente.
+
+      \textit{Precondiciones}: que exista un paciente, y que no haya sido identificado todavía.
+
+      \textit{Efectos}: el paciente pasa a estar identificado.
+
+    \item \textbf{Saludar Paciente}: acción del robot por la que se saluda a un paciente que ya ha sido identificado, antes de empezar un juego.
+
+      \textit{Precondiciones}: que exista un paciente que haya sido identificado, pero no saludado.
+
+      \textit{Efectos}: saludar al paciente
+
+    \item \textbf{Explicar Juego}: acción del robot en la que este explica las reglas del juego de las cartas.
+
+      \textit{Precondiciones}: que exista un paciente que haya saludado, pero que no se le haya explicado el juego.
+
+      \textit{Efectos}: se le explica el juego al paciente.
+
+    \item \textbf{Comenzar Sesión}: acción del robot que da comienzo al juego.
+
+      \textit{Precondiciones}: que haya un paciente al que se le haya explicado el juego y que exista un número de rondas definidas.
+
+      \textit{Efectos}: se crea la primera ronda.
+
+    \item \textbf{Comenzar Ronda}: acción del robot que da comienzo a una nueva ronda.
+
+      \textit{Precondiciones}: que el juego esté creado y que se haya preparado una ronda.
+
+      \textit{Efectos}: es el turno del paciente.
+
+  \end{itemize}
+
+
+
+
+
+
+
+
+
+  \section{Manual de usuario}
+
+
+  \section{Pruebas realizadas}
+
+
+  \section{Conclusiones}
+
+
+  \section{Comentarios personales}
+
+
+
+
+\end{document}

@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}Manual técnico}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Predicados}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Acciones}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Manual de usuario}{4}{section.3}%
+\contentsline {section}{\numberline {4}Pruebas realizadas}{4}{section.4}%
+\contentsline {section}{\numberline {5}Conclusiones}{4}{section.5}%
+\contentsline {section}{\numberline {6}Comentarios personales}{4}{section.6}%
