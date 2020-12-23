@@ -66,13 +66,13 @@
 
   \section{Manual técnico}
 
-  A continuación se describe el dominio creado explicando las acciones y los predicados.
+  A continuación se describe el dominio creado explicando los predicados y las acciones. Para cada acción se explican sus precondiciones y efectos.
 
   \subsection{Predicados}
 
 
   \begin{itemize}
-    \item \textbf{Paciente ?p}: indica el nombre del paciente que va a recibir la sesión.
+    \item \textbf{Existe Paciente ?p}: indica el nombre del paciente que va a recibir la sesión.
     \item \textbf{Identificado ?idp}: indica que el paciente ha sido identificado por el robot.
     \item \textbf{Saludado ?sp}: indica que el paciente ha sido saludado por el robot.
     \item \textbf{JuegoExplicado ?jp}: indica que se le ha explicado el juego al paciente.
@@ -80,8 +80,15 @@
     \item \textbf{RondaActual ?r}: indica el número de la ronda actual de la sesión.
     \item \textbf{Turno ?t}: indica de quién es el turno.
     \item \textbf{CartaEnRonda ?c ?r}: indica en qué ronda se va a usar cada carta.
-    \item \textbf{}
+    \item \textbf{ParejaCartas ?c1 ?c2}: indica que dos cartas forman una pareja.
+    \item \textbf{CartaBocaArriba ?c}: indica que una  carta se encuentra boca arriba.
+    \item \textbf{CartaRecordada ?c}: indica que una carta ya ha sido dada la vuelta y es recordada por los jugadores.
+    \item \textbf{CartaEmparejada ?c}: indica que una carta ya ha sido emparejada correctamente.
+    \item \textbf{JuegoTerminado}: indica que el juego ha acabado.
+    \item \textbf{Despedido ?dp}: indica que el paciente ha sido despedido por el robot.
   \end{itemize}
+
+  Hemos puesto carta en ronda pero la roinda actual es variable y hay que cambiarlo. Para ello hayt que hgacer otro predicado que sea next que indique el oprden de las rondas. (cokmo en el simon)
 
 
   \subsection{Acciones}
@@ -109,13 +116,74 @@
 
       \textit{Precondiciones}: que haya un paciente al que se le haya explicado el juego y que exista un número de rondas definidas.
 
-      \textit{Efectos}: se crea la primera ronda.
+      \textit{Efectos}: se prepara la primera ronda.
 
     \item \textbf{Comenzar Ronda}: acción del robot que da comienzo a una nueva ronda.
 
-      \textit{Precondiciones}: que el juego esté creado y que se haya preparado una ronda.
+      \textit{Precondiciones}: que se haya preparado una ronda.
 
       \textit{Efectos}: es el turno del paciente.
+
+    \item \textbf{Girar Sin Conocimiento}: acción del robot o del paciente en la que se gira una carta de forma aleatoria porque no se tiene ningún conocimiento previo.
+
+      \textit{Precondiciones}: que se haya iniciado una ronda, que el contador de cartas boca arriba sea 0 o 1, que no haya conocimiento sobre ninguna carta y que la carta esté boca abajo.
+
+      \textit{Efectos}: la carta pasa a estar boca arriba, aumenta el número de cartas boca arriba y la carta pasa a ser recordada por los jugadores.
+
+    \item \textbf{Girar Con Conocimiento}: acción del robot o del paciente en la que se gira una carta conociendo la posición de alguna otra.
+
+      \textit{Precondiciones}: que se haya iniciado una ronda, que el contador de cartas boca arriba sea 0 o 1, que haya conocimiento sobre alguna carta y que la carta esté boca abajo.
+
+      \textit{Efectos}: la carta pasa a estar boca arriba, aumenta el número de cartas boca arriba y la carta pasa a ser recordada por los jugadores.
+
+    \item \textbf{Girar Recordada}: acción del robot o del paciente en la que se gira una carta conociendo la carta previamente.
+
+      \textit{Precondiciones}: que se haya iniciado una ronda, que el contador de cartas boca arriba sea 0 o 1, que haya conocimiento sobre la carta que se va a girar y que esté boca abajo.
+
+      \textit{Efectos}: la carta pasa a estar boca arriba y aumenta el número de cartas boca arriba.
+
+    \item \textbf{Comprobar Pareja Bien}: acción del robot por la que se comprueba que una pareja de cartas boca arriba sea correcta.
+
+      \textit{Precondiciones}: que haya dos carta boca arriba, que no estén emparejadas correctamente y que ambas formen una pareja.
+
+      \textit{Efectos}: se resetea el contador de cartas boca arriba y las cartas pasan a estar emparejadas correctamente.
+
+    \item \textbf{Comprobar Pareja Mal}: acción del robot por la que se comprueba que una pareja de cartas boca arriba no sea correcta.
+
+      \textit{Precondiciones}: que haya dos carta boca arriba, que no estén emparejadas correctamente y que ambas no formen una pareja.
+
+      \textit{Efectos}: se resetea el contador de cartas boca arriba y las cartas pasan a estar boca abajo.
+
+    \item \textbf{Cambiar Turno A Robot}: acción del robot por la que se cambia de turno una vez haya dos cartas boca arriba.
+
+      \textit{Precondiciones}: que el contador de cartas boca arriba se haya reseteado, que sea el turno del paciente y que siga habiendo cartas boca abajo.
+
+      \textit{Efectos}: pasa a ser el turno del robot y el contador de cartas boca arriba se pone a 0.
+
+    \item \textbf{Cambiar Turno A Paciente}: acción del robot por la que se cambia de turno una vez haya dos cartas boca arriba.
+
+      \textit{Precondiciones}: que el contador de cartas boca arriba se haya reseteado, que sea el turno del robot y que siga habiendo cartas boca abajo.
+
+      \textit{Efectos}: pasa a ser el turno del paciente y el contador de cartas boca arriba se pone a 0.
+
+    \item \textbf{Terminar Ronda}: acción del robot por la que se termina la ronda actual.
+
+      \textit{Precondiciones}: que el contador de cartas boca arriba se haya reseteado y que no haya cartas de la ronda boca abajo.
+
+      \textit{Efectos}: pasa a ser el turno del paciente, el contador de cartas boca arriba se pone a 0 y el contandor de rondas aumenta.
+
+    \item \textbf{Terminar Juego}: acción del robot que termina la sesión una vez se han realizado las rondas establecidas.
+
+      \textit{Precondiciones}: que el contador de rondas actuales sea igual al total de rondas.
+
+      \textit{Efectos}: terminar la sesión.
+
+    \item \textbf{Despedir Paciente}: acción del robot que despide al paciente una vez se ha terminado la sesión.
+
+      \textit{Precondiciones}: que la sesión se haya terminado.
+
+      \textit{Efectos}: despedirse del paciente.
+
 
   \end{itemize}
 
