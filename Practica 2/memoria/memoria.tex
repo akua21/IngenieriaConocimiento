@@ -63,13 +63,32 @@
 
   \section{Introducción}
 
+  En esta segunda práctica se lleva a cabo el modelado de un problema similar al de la práctica anterior pero en este caso un \textbf{planificador} tiene que que simular una sesión entre el robot y el paciente, donde la actividad que realizan es jugar al \textbf{juego de memoria de las cartas}.
+
+  \vspace{2mm}
+
+  El documento consiste en el manual técnico con la descripción del dominio implementado, el manual de usuario con la explicación de cómo usar el programa, las pruebas realizadas y el análisis de los resultados, y para finalizar una serie de conclusiones y comentarios personales.
 
   \section{Manual técnico}
 
-  A continuación se describe el dominio creado explicando los predicados y las acciones. Para cada acción se explican sus precondiciones y efectos.
+  A continuación se describe el dominio creado explicando los \textit{predicados} y las \textit{acciones}, en cada acción se especifican sus precondiciones y efectos. Además, se justifican todas las decisiones que se han tenido que tomar durante la implementación.
+
+  \vspace{2mm}
+
+  El flujo de una sesión que se ha planteado es el que se muestra en el siguiente diagrama de estados, donde se pueden ver todas las acciones implementadas para el correcto funcionamiento del planificador.
+
+
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=1.1\linewidth]{./Images/flujo.png}
+    \caption*{Flujo de una sesión}
+  \end{figure}
+
+
 
   \subsection{Predicados}
 
+  Los predicados que se crean para el dominio son los siguientes:
 
   \begin{itemize}
     \item \textbf{Existe Paciente ?p}: indica el nombre del paciente que va a recibir la sesión.
@@ -88,10 +107,16 @@
     \item \textbf{Despedido ?dp}: indica que el paciente ha sido despedido por el robot.
   \end{itemize}
 
-  Hemos puesto carta en ronda pero la roinda actual es variable y hay que cambiarlo. Para ello hayt que hgacer otro predicado que sea next que indique el oprden de las rondas. (cokmo en el simon)
+  Hemos puesto carta en ronda pero la roinda actual es variable y hay que cambiarlo. Para ello hay que hacer otro predicado que sea next que indique el orden de las rondas. (como en el simon)
 
 
   \subsection{Acciones}
+
+  Respecto a las acciones, se han elaborado todas las necesarias para poder realizar una sesión normal, acciones comunes para ambos jugadores y acciones exclusivas del robot. También se tiene en cuenta que la sesión puede ser interrumpida y para ello se crea una acción especial (X).
+
+  \vspace{2mm}
+
+  Por lo que se van a explicar cada una de las acciones del dominio junto con sus precondiciones y efectos para que sea más clara la explicación.
 
   \begin{itemize}
     \item \textbf{Identificar Paciente}: acción del robot que permite pasar del estado inicial al momento en el que se ha reconocido al paciente.
