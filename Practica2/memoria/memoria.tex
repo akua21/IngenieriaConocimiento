@@ -95,8 +95,9 @@
     \item \textbf{Identificado ?idp}: indica que el paciente ha sido identificado por el robot.
     \item \textbf{Saludado ?sp}: indica que el paciente ha sido saludado por el robot.
     \item \textbf{JuegoExplicado ?jp}: indica que se le ha explicado el juego al paciente.
-    \item \textbf{NumRondas ?nr}: indica el número de rondas máximas de la sesión.
-    \item \textbf{RondaActual ?r}: indica el número de la ronda actual de la sesión.
+    \item \textbf{RondaInicial ?r}: indica el nombre de la ronda inicial.
+    \item \textbf{RondaActual ?r}: indica el nombre de la ronda actual de la sesión.
+    \item \textbf{Siguiente ?r1 ?r2}: indica el orden de las rondas, se pasa de \textit{?r1} a \textit{?r2}.
     \item \textbf{Turno ?t}: indica de quién es el turno.
     \item \textbf{CartaEnRonda ?c ?r}: indica en qué ronda se va a usar cada carta.
     \item \textbf{ParejaCartas ?c1 ?c2}: indica que dos cartas forman una pareja.
@@ -106,6 +107,13 @@
     \item \textbf{JuegoTerminado}: indica que el juego ha acabado.
     \item \textbf{Despedido ?dp}: indica que el paciente ha sido despedido por el robot.
   \end{itemize}
+
+  \subsection{Funciones}
+
+  \begin{itemize}
+    \item \textbf{Contador Boca Arriba}: indica el número de cartas dadas la vuelta y sirve para determinar cuando hay que realizar las comprobaciones.
+  \end{itemize}
+
 
   Hemos puesto carta en ronda pero la roinda actual es variable y hay que cambiarlo. Para ello hay que hacer otro predicado que sea next que indique el orden de las rondas. (como en el simon)
 
@@ -139,9 +147,9 @@
 
     \item \textbf{Comenzar Sesión}: acción del robot que da comienzo al juego.
 
-      \textit{Precondiciones}: que haya un paciente al que se le haya explicado el juego y que exista un número de rondas definidas.
+      \textit{Precondiciones}: que haya un paciente al que se le haya explicado el juego y que exista una ronda inicial.
 
-      \textit{Efectos}: se prepara la primera ronda.
+      \textit{Efectos}: se establece como ronda actual la ronda inicial.
 
     \item \textbf{Comenzar Ronda}: acción del robot que da comienzo a una nueva ronda.
 
