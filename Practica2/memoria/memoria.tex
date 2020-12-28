@@ -421,11 +421,342 @@
   Aún así permite probar las acciones que antes no se podía, porque se fuerza su aparición.
 
 
+  \subsection{Prueba 3}
+
+  Con esta prueba se quiere crear y probar una interrupción sobre la sesión. En este caso esta interrupción consiste en que antes de que empiece una ronda haya algunas cartas boca arriba. Para ello se tiene que crear una nueva acción:
+
+  \vspace{2mm}
+
+  \textbf{Colocar Mal Giradas}: acción del robot que coloca todas las cartas boca abajo antes de empezar una ronda.
+
+  \vspace{1mm}
+
+    \textit{Precondiciones}: que exista una ronda actual, que el contador de cartas boca arriba esté reseteado, que no se haya establecido ningún turno y que haya alguna carta boca arriba.
+
+    \vspace{1mm}
+
+    \textit{Efectos}: se da la vuelta a la carta boca arriba.
+
+
+  \vspace{2mm}
+
+  Además, se tiene que añadir la precondición de que no haya ninguna carta boca arriba antes de empezar una ronda en la acción \textit{Comenzar Ronda}.
+
+  \vspace{3mm}
+
+  En este problema se tienen 4 cartas por ronda y hay un total de 2 rondas. Hay una carta levantada en cada ronda.
+
+
+
+  \begin{multicols}{2}
+    \textbf{Plan obtenido}:
+
+    \begin{lstlisting}
+0: (IDENTIFICAR_PACIENTE TEO)
+1: (SALUDAR_PACIENTE TEO)
+2: (EXPLICAR_JUEGO TEO)
+3: (COMENZAR_SESION TEO GRANJA)
+4: (COLOCAR_MAL_GIRADAS GRANJA VACA2)
+5: (COMENZAR_RONDA GRANJA)
+6: (GIRAR_SIN_CONOCIMIENTO VACA1 GRANJA)
+7: (GIRAR_CON_CONOCIMIENTO VACA2 VACA1 GRANJA)
+8: (COMPROBAR_PAREJA_BIEN VACA2 VACA1 GRANJA)
+9: (CAMBIAR_TURNO_A_ROBOT)
+10: (GIRAR_SIN_CONOCIMIENTO CABALLO1 GRANJA)
+11: (GIRAR_CON_CONOCIMIENTO CABALLO2 CABALLO1 GRANJA)
+12: (COMPROBAR_PAREJA_BIEN CABALLO2 CABALLO1 GRANJA)
+13: (TERMINAR_RONDA GRANJA JUNGLA)
+14: (COLOCAR_MAL_GIRADAS JUNGLA TIGRE1)
+15: (COMENZAR_RONDA JUNGLA)
+16: (GIRAR_SIN_CONOCIMIENTO SERPIENTE1 JUNGLA)
+17: (GIRAR_CON_CONOCIMIENTO SERPIENTE2 SERPIENTE1 JUNGLA)
+18: (COMPROBAR_PAREJA_BIEN SERPIENTE2 SERPIENTE1 JUNGLA)
+19: (CAMBIAR_TURNO_A_ROBOT)
+20: (GIRAR_SIN_CONOCIMIENTO TIGRE1 JUNGLA)
+21: (GIRAR_CON_CONOCIMIENTO TIGRE2 TIGRE1 JUNGLA)
+22: (COMPROBAR_PAREJA_BIEN TIGRE2 TIGRE1 JUNGLA)
+23: (TERMINAR_JUEGO JUNGLA)
+24: (DESPEDIR_PACIENTE TEO)
+    \end{lstlisting}
+
+    \columnbreak
+
+    \textbf{Fichero del problema}: problema-3.pddl
+
+    \textbf{Fichero del resultado}: problema-3-o.pddl
+
+    \textbf{Tiempo de ejecución}: 0.00 segundos
+  \end{multicols}
+
+  El planificador consigue resolver correctamente el problema corrigiendo antes de empezar cada ronda las cartas que están boca arriba al inicio de una ronda.
+
+
+  \subsection{Prueba 4}
+
+  Esta prueba pretende probar una interrupción sobre la sesión que consiste en que el paciente es despistado y no se entera de la explicación del juego y por tanto hay que explicarsela de nuevo. Para ello se crea una nueva acción:
+
+  \vspace{2mm}
+
+  \textbf{Explicar Juego Despistado}: acción del robot que vuelve a explicar el juego al paciente despistado.
+
+  \vspace{1mm}
+
+    \textit{Precondiciones}: que el juego ya haya sido explicado y que el paciente sea despistado.
+
+    \vspace{1mm}
+
+    \textit{Efectos}: se puede iniciar el juego.
+
+
+  \vspace{2mm}
+
+  Además, se tiene que añadir el predicado \textit{(Despistado ?p - Paciente)} y la precondición de que el paciente no esté despistado en la acción \textit{Comenzar Sesion}.
+
+  \vspace{3mm}
+
+  En este problema se tienen 4 cartas por ronda y hay un total de 2 rondas. El paciente está despistado.
+
+  \begin{multicols}{2}
+    \textbf{Plan obtenido}:
+
+    \begin{lstlisting}
+0: (IDENTIFICAR_PACIENTE TEO)
+1: (SALUDAR_PACIENTE TEO)
+2: (EXPLICAR_JUEGO TEO)
+3: (EXPLICAR_JUEGO_DESPISTADO TEO)
+4: (COMENZAR_SESION TEO GRANJA)
+5: (COMENZAR_RONDA GRANJA)
+6: (GIRAR_SIN_CONOCIMIENTO VACA1 GRANJA)
+7: (GIRAR_CON_CONOCIMIENTO VACA2 VACA1 GRANJA)
+8: (COMPROBAR_PAREJA_BIEN VACA2 VACA1 GRANJA)
+9: (CAMBIAR_TURNO_A_ROBOT)
+10: (GIRAR_SIN_CONOCIMIENTO CABALLO1 GRANJA)
+11: (GIRAR_CON_CONOCIMIENTO CABALLO2 CABALLO1 GRANJA)
+12: (COMPROBAR_PAREJA_BIEN CABALLO2 CABALLO1 GRANJA)
+13: (TERMINAR_RONDA GRANJA JUNGLA)
+14: (COMENZAR_RONDA JUNGLA)
+15: (GIRAR_SIN_CONOCIMIENTO SERPIENTE1 JUNGLA)
+16: (GIRAR_CON_CONOCIMIENTO SERPIENTE2 SERPIENTE1 JUNGLA)
+17: (COMPROBAR_PAREJA_BIEN SERPIENTE2 SERPIENTE1 JUNGLA)
+18: (CAMBIAR_TURNO_A_ROBOT)
+19: (GIRAR_SIN_CONOCIMIENTO TIGRE1 JUNGLA)
+20: (GIRAR_CON_CONOCIMIENTO TIGRE2 TIGRE1 JUNGLA)
+21: (COMPROBAR_PAREJA_BIEN TIGRE2 TIGRE1 JUNGLA)
+22: (TERMINAR_JUEGO JUNGLA)
+23: (DESPEDIR_PACIENTE TEO)
+    \end{lstlisting}
+
+    \columnbreak
+
+    \textbf{Fichero del problema}: problema-4.pddl
+
+    \textbf{Fichero del resultado}: problema-4-o.pddl
+
+    \textbf{Tiempo de ejecución}: 0.00 segundos
+  \end{multicols}
+
+  Se puede ver en plan que el planificador resuelve el problema explicando dos veces el juego.
+
+  \newpage
+
+  \subsection{Prueba 5}
+
+  Esta prueba representa una sesión con más cartas y más rondas, por lo que se quiere probar que se pueden resolver problemas más complejos correctamente.
+
+  \vspace{3mm}
+
+  Por lo tanto, para este problema se tienen 8 cartas por ronda y hay un total de 4 rondas.
+
+  \vspace{3mm}
+
+    \textbf{Plan obtenido}:
+
+    \begin{lstlisting}
+0: (IDENTIFICAR_PACIENTE TEO)
+1: (SALUDAR_PACIENTE TEO)
+2: (EXPLICAR_JUEGO TEO)
+3: (COMENZAR_SESION TEO GRANJA)
+4: (COMENZAR_RONDA GRANJA)
+5: (GIRAR_SIN_CONOCIMIENTO CERDO1 GRANJA)
+6: (GIRAR_CON_CONOCIMIENTO CERDO2 CERDO1 GRANJA)
+7: (COMPROBAR_PAREJA_BIEN CERDO2 CERDO1 GRANJA)
+8: (CAMBIAR_TURNO_A_ROBOT)
+9: (GIRAR_SIN_CONOCIMIENTO VACA1 GRANJA)
+10: (GIRAR_CON_CONOCIMIENTO VACA2 VACA1 GRANJA)
+11: (COMPROBAR_PAREJA_BIEN VACA2 VACA1 GRANJA)
+12: (CAMBIAR_TURNO_A_PACIENTE)
+13: (GIRAR_SIN_CONOCIMIENTO CABALLO1 GRANJA)
+14: (GIRAR_CON_CONOCIMIENTO CABALLO2 CABALLO1 GRANJA)
+15: (COMPROBAR_PAREJA_BIEN CABALLO2 CABALLO1 GRANJA)
+16: (CAMBIAR_TURNO_A_ROBOT)
+17: (GIRAR_SIN_CONOCIMIENTO PATO1 GRANJA)
+18: (GIRAR_CON_CONOCIMIENTO PATO2 PATO1 GRANJA)
+19: (COMPROBAR_PAREJA_BIEN PATO2 PATO1 GRANJA)
+20: (TERMINAR_RONDA GRANJA JUNGLA)
+21: (COMENZAR_RONDA JUNGLA)
+22: (GIRAR_SIN_CONOCIMIENTO MONO1 JUNGLA)
+23: (GIRAR_CON_CONOCIMIENTO MONO2 MONO1 JUNGLA)
+24: (COMPROBAR_PAREJA_BIEN MONO2 MONO1 JUNGLA)
+25: (CAMBIAR_TURNO_A_ROBOT)
+26: (GIRAR_SIN_CONOCIMIENTO SERPIENTE1 JUNGLA)
+27: (GIRAR_CON_CONOCIMIENTO SERPIENTE2 SERPIENTE1 JUNGLA)
+28: (COMPROBAR_PAREJA_BIEN SERPIENTE2 SERPIENTE1 JUNGLA)
+29: (CAMBIAR_TURNO_A_PACIENTE)
+30: (GIRAR_SIN_CONOCIMIENTO TIGRE1 JUNGLA)
+31: (GIRAR_CON_CONOCIMIENTO TIGRE2 TIGRE1 JUNGLA)
+32: (COMPROBAR_PAREJA_BIEN TIGRE2 TIGRE1 JUNGLA)
+33: (CAMBIAR_TURNO_A_ROBOT)
+34: (GIRAR_SIN_CONOCIMIENTO LORO1 JUNGLA)
+35: (GIRAR_CON_CONOCIMIENTO LORO2 LORO1 JUNGLA)
+36: (COMPROBAR_PAREJA_BIEN LORO2 LORO1 JUNGLA)
+37: (TERMINAR_RONDA JUNGLA MAR)
+38: (COMENZAR_RONDA MAR)
+39: (GIRAR_SIN_CONOCIMIENTO DELFIN1 MAR)
+40: (GIRAR_CON_CONOCIMIENTO DELFIN2 DELFIN1 MAR)
+41: (COMPROBAR_PAREJA_BIEN DELFIN2 DELFIN1 MAR)
+42: (CAMBIAR_TURNO_A_ROBOT)
+43: (GIRAR_SIN_CONOCIMIENTO PEZ1 MAR)
+44: (GIRAR_CON_CONOCIMIENTO PEZ2 PEZ1 MAR)
+45: (COMPROBAR_PAREJA_BIEN PEZ2 PEZ1 MAR)
+46: (CAMBIAR_TURNO_A_PACIENTE)
+47: (GIRAR_SIN_CONOCIMIENTO TIBURON1 MAR)
+48: (GIRAR_CON_CONOCIMIENTO TIBURON2 TIBURON1 MAR)
+49: (COMPROBAR_PAREJA_BIEN TIBURON2 TIBURON1 MAR)
+50: (CAMBIAR_TURNO_A_ROBOT)
+51: (GIRAR_SIN_CONOCIMIENTO PULPO1 MAR)
+52: (GIRAR_CON_CONOCIMIENTO PULPO2 PULPO1 MAR)
+53: (COMPROBAR_PAREJA_BIEN PULPO2 PULPO1 MAR)
+54: (TERMINAR_RONDA MAR DESIERTO)
+55: (COMENZAR_RONDA DESIERTO)
+56: (GIRAR_SIN_CONOCIMIENTO ESCORPION1 DESIERTO)
+57: (GIRAR_CON_CONOCIMIENTO ESCORPION2 ESCORPION1 DESIERTO)
+58: (COMPROBAR_PAREJA_BIEN ESCORPION2 ESCORPION1 DESIERTO)
+59: (CAMBIAR_TURNO_A_ROBOT)
+60: (GIRAR_SIN_CONOCIMIENTO CAMELLO1 DESIERTO)
+61: (GIRAR_CON_CONOCIMIENTO CAMELLO2 CAMELLO1 DESIERTO)
+62: (COMPROBAR_PAREJA_BIEN CAMELLO2 CAMELLO1 DESIERTO)
+63: (CAMBIAR_TURNO_A_PACIENTE)
+64: (GIRAR_SIN_CONOCIMIENTO COYOTE1 DESIERTO)
+65: (GIRAR_CON_CONOCIMIENTO COYOTE2 COYOTE1 DESIERTO)
+66: (COMPROBAR_PAREJA_BIEN COYOTE2 COYOTE1 DESIERTO)
+67: (CAMBIAR_TURNO_A_ROBOT)
+68: (GIRAR_SIN_CONOCIMIENTO HORMIGA1 DESIERTO)
+69: (GIRAR_CON_CONOCIMIENTO HORMIGA2 HORMIGA1 DESIERTO)
+70: (COMPROBAR_PAREJA_BIEN HORMIGA2 HORMIGA1 DESIERTO)
+71: (TERMINAR_JUEGO DESIERTO)
+72: (DESPEDIR_PACIENTE TEO)
+    \end{lstlisting}
+
+    \vspace{2mm}
+
+    \textbf{Fichero del problema}: problema-5.pddl
+
+    \textbf{Fichero del resultado}: problema-5-o.pddl
+
+    \textbf{Tiempo de ejecución}: 0.06 segundos
+
+    \vspace{3mm}
+
+  Los resultados obtenidos son los esperados, funciona correctamente a pesar de que se haya aumentado la complejidad.
+
+  \newpage
+
+  \subsection{Prueba 6}
+
+  Con esta última prueba se pretende probar el comportamiento cuando se mezclan el número de errores mínimos requeridos, que el paciente esté despistado y que haya cartas boca arriba al inicio de cada ronda.
+
+  \vspace{3mm}
+
+  En este problema se tienen 6 cartas por ronda y hay un total de 2 rondas. El paciente está despistado y hay 2 cartas boca arriba en cada ronda. Además, se fuerza a que se produzcan 3 equivocaciones.
+
+  \vspace{3mm}
+
+    \textbf{Plan obtenido}:
+
+    \begin{lstlisting}
+0: (IDENTIFICAR_PACIENTE TEO)
+1: (SALUDAR_PACIENTE TEO)
+2: (EXPLICAR_JUEGO TEO)
+3: (EXPLICAR_JUEGO_DESPISTADO TEO)
+4: (COMENZAR_SESION TEO GRANJA)
+5: (COLOCAR_MAL_GIRADAS GRANJA VACA2)
+6: (COLOCAR_MAL_GIRADAS GRANJA CABALLO1)
+7: (COMENZAR_RONDA GRANJA)
+8: (GIRAR_SIN_CONOCIMIENTO CERDO2 GRANJA)
+9: (GIRAR_CON_CONOCIMIENTO CABALLO2 CERDO2 GRANJA)
+10: (COMPROBAR_PAREJA_MAL CABALLO2 CERDO2 GRANJA)
+11: (CAMBIAR_TURNO_A_ROBOT)
+12: (GIRAR_RECORDADA GRANJA CERDO2)
+13: (GIRAR_RECORDADA GRANJA CABALLO2)
+14: (COMPROBAR_PAREJA_MAL CABALLO2 CERDO2 GRANJA)
+15: (CAMBIAR_TURNO_A_PACIENTE)
+16: (GIRAR_RECORDADA GRANJA CERDO2)
+17: (GIRAR_RECORDADA GRANJA CABALLO2)
+18: (COMPROBAR_PAREJA_MAL CABALLO2 CERDO2 GRANJA)
+19: (CAMBIAR_TURNO_A_ROBOT)
+20: (GIRAR_RECORDADA GRANJA CERDO2)
+21: (GIRAR_CON_CONOCIMIENTO CERDO1 CABALLO2 GRANJA)
+22: (COMPROBAR_PAREJA_BIEN CERDO2 CERDO1 GRANJA)
+23: (CAMBIAR_TURNO_A_PACIENTE)
+24: (GIRAR_CON_CONOCIMIENTO VACA1 CABALLO2 GRANJA)
+25: (GIRAR_CON_CONOCIMIENTO VACA2 CABALLO2 GRANJA)
+26: (COMPROBAR_PAREJA_BIEN VACA2 VACA1 GRANJA)
+27: (CAMBIAR_TURNO_A_ROBOT)
+28: (GIRAR_CON_CONOCIMIENTO CABALLO1 CABALLO2 GRANJA)
+29: (GIRAR_RECORDADA GRANJA CABALLO2)
+30: (COMPROBAR_PAREJA_BIEN CABALLO2 CABALLO1 GRANJA)
+31: (TERMINAR_RONDA GRANJA JUNGLA)
+32: (COLOCAR_MAL_GIRADAS JUNGLA MONO2)
+33: (COLOCAR_MAL_GIRADAS JUNGLA SERPIENTE2)
+34: (COMENZAR_RONDA JUNGLA)
+35: (GIRAR_SIN_CONOCIMIENTO MONO1 JUNGLA)
+36: (GIRAR_CON_CONOCIMIENTO MONO2 MONO1 JUNGLA)
+37: (COMPROBAR_PAREJA_BIEN MONO2 MONO1 JUNGLA)
+38: (CAMBIAR_TURNO_A_ROBOT)
+39: (GIRAR_SIN_CONOCIMIENTO SERPIENTE1 JUNGLA)
+40: (GIRAR_CON_CONOCIMIENTO SERPIENTE2 SERPIENTE1 JUNGLA)
+41: (COMPROBAR_PAREJA_BIEN SERPIENTE2 SERPIENTE1 JUNGLA)
+42: (CAMBIAR_TURNO_A_PACIENTE)
+43: (GIRAR_SIN_CONOCIMIENTO TIGRE1 JUNGLA)
+44: (GIRAR_CON_CONOCIMIENTO TIGRE2 TIGRE1 JUNGLA)
+45: (COMPROBAR_PAREJA_BIEN TIGRE2 TIGRE1 JUNGLA)
+46: (TERMINAR_JUEGO JUNGLA)
+47: (DESPEDIR_PACIENTE TEO)
+
+    \end{lstlisting}
+
+    \vspace{2mm}
+
+    \textbf{Fichero del problema}: problema-6.pddl
+
+    \textbf{Fichero del resultado}: problema-6-o.pddl
+
+    \textbf{Tiempo de ejecución}: 0.01 segundos
+
+  \vspace{3mm}
+
+  El planificador resuelve satisfactoriamente el problema manejando todas las distintas modificaciones de forma correcta.
+
+
   \section{Conclusiones}
 
+  Esta práctica ha servido para afianzar los conocimientos sobre planificadores aprendidos en clase, teniendo que crear un dominio y una serie de problemas, con los distintos pasos que ello conlleva.
+
+  \vspace{2mm}
+
+  El dominio sobre el que se ha trabajado es para una sesión del juego de memoria de emparejar cartas de animales. A pesar de que se consigue un flujo que resuelve el problema, no parece una sesión 'real' dado que, como lo resuelve lo más rápido posible a falta de otra métrica, siempre adivina las parejas a la primera. Si fuera una sesión 'real' lo normal sería que ambos jugadores se equivocaran al hacer las parejas más de una vez.
 
   \section{Comentarios personales}
 
+  El principal problema encontrado ha sido durante el uso de la herramienta proporcionada para crear el diagrama de flujo, ya que tenía algunos fallos como que no se podía guardar el diagrama creado para modificarlo después.
+
+  \vspace{2mm}
+
+  Una vez generados los archivos \textit{.pddl} con el programa fue necesario modificar prácticamente todas las acciones.
+
+  \vspace{2mm}
+
+  A parte de esto, no ha habido mayores dificultades, quitando algunos errores en la conceptualización del dominio pero que han sido resueltos gracias a las diferentes pruebas creadas.
 
 
 

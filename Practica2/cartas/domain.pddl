@@ -26,6 +26,8 @@
       (CartaEmparejada ?c - Carta)
       (JuegoTerminado)
       (Despedido ?p - Paciente)
+
+			(Despistado ?p - Paciente)
 	)
 
   (:functions
@@ -67,11 +69,26 @@
   		  )
   )
 
+
+	(:action Explicar_Juego_Despistado
+  	:parameters	(?p - Paciente)
+  	:precondition (and
+  			(Despistado ?p)
+  			(JuegoExplicado ?p)
+  		       )
+  	:effect	 (and
+  			(not (Despistado ?p))
+  		  )
+  )
+
+
   (:action Comenzar_Sesion
   	:parameters	(?p - Paciente ?r - Contador)
   	:precondition (and
   			(JuegoExplicado ?p)
         (RondaInicial ?r)
+
+				(not (Despistado ?p))
   		       )
   	:effect	 (and
         (RondaActual ?r)
@@ -90,11 +107,34 @@
         (= (ContadorBocaArriba) -1)
         (not (Turno paciente))
         (not (Turno nao))
+
+
+				(not (exists (?c - Carta)
+              (and
+                (CartaBocaArriba ?c)
+                (CartaEnRonda ?c ?r)
+              )
+        ))
   		       )
   	:effect	 (and
   			(Turno paciente)
         (increase (ContadorBocaArriba) 1)
         (assign (ContadorRecordadas) 0)
+  		  )
+  )
+
+	(:action Colocar_Mal_Giradas
+  	:parameters	(?r - Contador ?c - Carta)
+  	:precondition (and
+  			(RondaActual ?r)
+        (= (ContadorBocaArriba) -1)
+        (not (Turno paciente))
+        (not (Turno nao))
+				(CartaEnRonda ?c ?r)
+				(CartaBocaArriba ?c)
+  		       )
+  	:effect	 (and
+  			(not (CartaBocaArriba ?c))
   		  )
   )
 
