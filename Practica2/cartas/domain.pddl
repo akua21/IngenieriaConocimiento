@@ -31,6 +31,7 @@
   (:functions
       (ContadorBocaArriba)
       (ContadorRecordadas)
+			(ContadorErrores)
   )
 
   (:action Identificar_Paciente
@@ -76,6 +77,9 @@
         (RondaActual ?r)
         (assign (ContadorBocaArriba) -1)
         (not (RondaInicial ?r))
+
+
+				(assign (ContadorErrores) 0)
   		  )
   )
 
@@ -192,6 +196,9 @@
         (not (CartaBocaArriba ?c1))
         (not (CartaBocaArriba ?c2))
   			(assign (ContadorBocaArriba) -1)
+
+
+				(increase (ContadorErrores) 1)
   		  )
   )
 

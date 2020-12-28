@@ -1,0 +1,5 @@
+
+ff: parsing domain file
+domain 'AUTO' defined
+ ... done.
+ff: parsing problem file
