@@ -1,0 +1,106 @@
+
+ff: parsing domain file
+domain 'AUTO' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEMA1' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+Evaluation function -1.000000*g(s) + -1.000000*h(s) where
+ metric is plan length
+
+Cueing down from goal distance:   29 into depth [1]
+                                  28            [1]
+                                  27            [1]
+                                  26            [1]
+                                  25            [1]
+                                  24            [1][2] --- pruning stopped --- [1][2][3]
+                                  22            [1]
+                                  21            [1]
+                                  20             --- pruning stopped --- [1][2][3][4]
+                                  19             --- pruning stopped --- [1][2][3][4]
+                                  18             --- pruning stopped --- [1][2][3][4]
+                                  17            [1] --- pruning stopped --- [1][2]
+                                  16            [1]
+                                  15            [1]
+                                  14            [1] --- pruning stopped --- [1][2]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1][2][3][4] --- pruning stopped --- [1][2][3][4][5][6]
+                                  10            [1]
+                                   9            [1] --- pruning stopped --- [1][2]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1] --- pruning stopped --- [1][2]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: (IDENTIFICAR_PACIENTE TEO)
+        1: (SALUDAR_PACIENTE TEO)
+        2: (EXPLICAR_JUEGO TEO)
+        3: (EXPLICAR_JUEGO_DESPISTADO TEO)
+        4: (COMENZAR_SESION TEO GRANJA)
+        5: (COLOCAR_MAL_GIRADAS GRANJA VACA2)
+        6: (COLOCAR_MAL_GIRADAS GRANJA CABALLO1)
+        7: (COMENZAR_RONDA GRANJA)
+        8: (GIRAR_SIN_CONOCIMIENTO CERDO2 GRANJA)
+        9: (GIRAR_CON_CONOCIMIENTO CABALLO2 CERDO2 GRANJA)
+       10: (COMPROBAR_PAREJA_MAL CABALLO2 CERDO2 GRANJA)
+       11: (CAMBIAR_TURNO_A_ROBOT)
+       12: (GIRAR_RECORDADA GRANJA CERDO2)
+       13: (GIRAR_RECORDADA GRANJA CABALLO2)
+       14: (COMPROBAR_PAREJA_MAL CABALLO2 CERDO2 GRANJA)
+       15: (CAMBIAR_TURNO_A_PACIENTE)
+       16: (GIRAR_RECORDADA GRANJA CERDO2)
+       17: (GIRAR_RECORDADA GRANJA CABALLO2)
+       18: (COMPROBAR_PAREJA_MAL CABALLO2 CERDO2 GRANJA)
+       19: (CAMBIAR_TURNO_A_ROBOT)
+       20: (GIRAR_RECORDADA GRANJA CERDO2)
+       21: (GIRAR_CON_CONOCIMIENTO CERDO1 CABALLO2 GRANJA)
+       22: (COMPROBAR_PAREJA_BIEN CERDO2 CERDO1 GRANJA)
+       23: (CAMBIAR_TURNO_A_PACIENTE)
+       24: (GIRAR_CON_CONOCIMIENTO VACA1 CABALLO2 GRANJA)
+       25: (GIRAR_CON_CONOCIMIENTO VACA2 CABALLO2 GRANJA)
+       26: (COMPROBAR_PAREJA_BIEN VACA2 VACA1 GRANJA)
+       27: (CAMBIAR_TURNO_A_ROBOT)
+       28: (GIRAR_CON_CONOCIMIENTO CABALLO1 CABALLO2 GRANJA)
+       29: (GIRAR_RECORDADA GRANJA CABALLO2)
+       30: (COMPROBAR_PAREJA_BIEN CABALLO2 CABALLO1 GRANJA)
+       31: (TERMINAR_RONDA GRANJA JUNGLA)
+       32: (COLOCAR_MAL_GIRADAS JUNGLA MONO2)
+       33: (COLOCAR_MAL_GIRADAS JUNGLA SERPIENTE2)
+       34: (COMENZAR_RONDA JUNGLA)
+       35: (GIRAR_SIN_CONOCIMIENTO MONO1 JUNGLA)
+       36: (GIRAR_CON_CONOCIMIENTO MONO2 MONO1 JUNGLA)
+       37: (COMPROBAR_PAREJA_BIEN MONO2 MONO1 JUNGLA)
+       38: (CAMBIAR_TURNO_A_ROBOT)
+       39: (GIRAR_SIN_CONOCIMIENTO SERPIENTE1 JUNGLA)
+       40: (GIRAR_CON_CONOCIMIENTO SERPIENTE2 SERPIENTE1 JUNGLA)
+       41: (COMPROBAR_PAREJA_BIEN SERPIENTE2 SERPIENTE1 JUNGLA)
+       42: (CAMBIAR_TURNO_A_PACIENTE)
+       43: (GIRAR_SIN_CONOCIMIENTO TIGRE1 JUNGLA)
+       44: (GIRAR_CON_CONOCIMIENTO TIGRE2 TIGRE1 JUNGLA)
+       45: (COMPROBAR_PAREJA_BIEN TIGRE2 TIGRE1 JUNGLA)
+       46: (TERMINAR_JUEGO JUNGLA)
+       47: (DESPEDIR_PACIENTE TEO)
+     
+
+time spent:    0.00 seconds instantiating 239 easy, 20 hard action templates
+               0.00 seconds reachability analysis, yielding 79 facts and 252 actions
+               0.00 seconds creating final representation with 77 relevant facts, 6 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.01 seconds searching, evaluating 104 states, to a max depth of 6
+               0.01 seconds total time
+

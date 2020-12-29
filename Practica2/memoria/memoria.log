@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.23)  28 DEC 2020 14:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.23)  29 DEC 2020 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,239 +654,83 @@ Overfull \hbox (42.58571pt too wide) in paragraph at lines 320--321
 [][][][][][][][][][][][][][] 
  []
 
-[7] [8]
-Overfull \hbox (2.68552pt too wide) in paragraph at lines 368--369
+[7] [8] [9]
+Overfull \hbox (31.18565pt too wide) in paragraph at lines 531--532
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (25.48563pt too wide) in paragraph at lines 532--533
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (19.7856pt too wide) in paragraph at lines 534--535
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (53.98576pt too wide) in paragraph at lines 369--370
+Overfull \hbox (71.08585pt too wide) in paragraph at lines 535--536
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (42.58571pt too wide) in paragraph at lines 370--371
+Overfull \hbox (65.38582pt too wide) in paragraph at lines 536--537
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (48.28574pt too wide) in paragraph at lines 374--375
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (48.28574pt too wide) in paragraph at lines 378--379
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (59.68579pt too wide) in paragraph at lines 381--382
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (42.58571pt too wide) in paragraph at lines 382--383
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (53.98576pt too wide) in paragraph at lines 384--385
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (53.98576pt too wide) in paragraph at lines 385--386
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 386--387
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (71.08585pt too wide) in paragraph at lines 388--389
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (65.38582pt too wide) in paragraph at lines 390--391
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (2.68552pt too wide) in paragraph at lines 393--394
+Overfull \hbox (31.18565pt too wide) in paragraph at lines 539--540
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (36.88568pt too wide) in paragraph at lines 394--395
+Overfull \hbox (93.88596pt too wide) in paragraph at lines 540--541
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 395--396
+Overfull \hbox (88.18593pt too wide) in paragraph at lines 541--542
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 397--398
+Overfull \hbox (8.38554pt too wide) in paragraph at lines 543--544
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (93.88596pt too wide) in paragraph at lines 398--399
+Overfull \hbox (48.28574pt too wide) in paragraph at lines 544--545
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (88.18593pt too wide) in paragraph at lines 399--400
+Overfull \hbox (42.58571pt too wide) in paragraph at lines 545--546
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (8.38554pt too wide) in paragraph at lines 401--402
-[][][][][][][][][][][][] 
- []
+Overfull \vbox (8.7277pt too high) has occurred while \output is active []
 
 
-Overfull \hbox (48.28574pt too wide) in paragraph at lines 402--403
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (42.58571pt too wide) in paragraph at lines 403--404
-[][][][][][][][][][][][][][] 
- []
-
-[9]
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 462--463
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (25.48563pt too wide) in paragraph at lines 463--464
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (19.7856pt too wide) in paragraph at lines 465--466
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (71.08585pt too wide) in paragraph at lines 466--467
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (65.38582pt too wide) in paragraph at lines 467--468
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 471--472
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (93.88596pt too wide) in paragraph at lines 472--473
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (88.18593pt too wide) in paragraph at lines 473--474
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.38554pt too wide) in paragraph at lines 475--476
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (48.28574pt too wide) in paragraph at lines 476--477
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (42.58571pt too wide) in paragraph at lines 477--478
-[][][][][][][][][][][][][][] 
- []
-
-[10]
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 530--531
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (25.48563pt too wide) in paragraph at lines 531--532
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (19.7856pt too wide) in paragraph at lines 533--534
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (71.08585pt too wide) in paragraph at lines 534--535
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (65.38582pt too wide) in paragraph at lines 535--536
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (31.18565pt too wide) in paragraph at lines 538--539
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (93.88596pt too wide) in paragraph at lines 539--540
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (88.18593pt too wide) in paragraph at lines 540--541
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.38554pt too wide) in paragraph at lines 542--543
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (48.28574pt too wide) in paragraph at lines 543--544
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (42.58571pt too wide) in paragraph at lines 544--545
-[][][][][][][][][][][][][][] 
- []
-
-[11] [12] [13] [14] 
+[10] [11] [12] [13] 
 AED: lastpage setting LastPage
-[15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 763.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 763.
+[14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 767.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 767.
  (./memoria.aux
 LaTeX Info: Redefining \. on input line 20.
 LaTeX Info: Redefining \% on input line 20.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 763.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 763.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 767.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 767.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
 (rerunfilecheck)             Checksum: 1291587D3DF7C3C9580091F19A095EC8;888.
  ) 
 Here is how much of TeX's memory you used:
- 10460 strings out of 483121
- 156210 string characters out of 5964354
- 534785 words of memory out of 5000000
+ 10459 strings out of 483121
+ 156203 string characters out of 5964354
+ 504785 words of memory out of 5000000
  25031 multiletter control sequences out of 15000+600000
  563029 words of font info for 46 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
@@ -897,10 +741,10 @@ f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 ro8a.pfb>
-Output written on memoria.pdf (15 pages, 186802 bytes).
+Output written on memoria.pdf (14 pages, 186238 bytes).
 PDF statistics:
- 513 PDF objects out of 1000 (max. 8388607)
- 482 compressed objects within 5 object streams
- 289 named destinations out of 1000 (max. 500000)
+ 506 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
+ 288 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

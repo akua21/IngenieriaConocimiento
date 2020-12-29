@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {3}Manual de usuario}{6}{section.3}%
 \contentsline {section}{\numberline {4}Pruebas realizadas}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Prueba 1}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Prueba 2}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Prueba 3}{10}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Prueba 4}{11}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Prueba 5}{12}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Prueba 6}{14}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Conclusiones}{15}{section.5}%
-\contentsline {section}{\numberline {6}Comentarios personales}{15}{section.6}%
+\contentsline {subsection}{\numberline {4.2}Prueba 2}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Prueba 3}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Prueba 4}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Prueba 5}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Prueba 6}{12}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusiones}{14}{section.5}%
+\contentsline {section}{\numberline {6}Comentarios personales}{14}{section.6}%

@@ -64,7 +64,7 @@
 
   \section{Introducción}
 
-  En esta segunda práctica se lleva a cabo el modelado de un problema similar al de la práctica anterior pero en este caso un \textbf{planificador} tiene que que simular una sesión entre el robot y el paciente, donde la actividad que realizan es jugar al \textbf{juego de memoria de las cartas}.
+  En esta segunda práctica se lleva a cabo el modelado de un problema similar al de la práctica anterior pero en este caso un \textbf{planificador} tiene que simular una sesión entre el robot y el paciente, donde la actividad que realizan es jugar al \textbf{juego de memoria de las cartas}.
 
   \vspace{2mm}
 
@@ -342,7 +342,6 @@
   Además, en este caso no se puede asegurar el funcionamiento de todas las acciones ya que algunas de ellas, como por ejemplo \textit{Comprobar Pareja Mal}, nunca van a ejecutarse.
 
 
-  \newpage
 
   \subsection{Prueba 2}
 
@@ -356,7 +355,8 @@
 
   De esta forma se obliga al planificador a pasar 3 veces por la acción que representa una equivocación.
 
-  \begin{multicols}{2}
+    \vspace{3mm}
+
     \textbf{Plan obtenido}:
 
     \begin{lstlisting}
@@ -405,14 +405,15 @@
 42: (DESPEDIR_PACIENTE TEO)
     \end{lstlisting}
 
-    \columnbreak
+  \vspace{2mm}
 
     \textbf{Fichero del problema}: problema-2.pddl
 
     \textbf{Fichero del resultado}: problema-2-o.pddl
 
     \textbf{Tiempo de ejecución}: 0.01 segundos
-  \end{multicols}
+
+  \vspace{3mm}
 
   A pesar de que los resultados obtenidos sí concuerdan con los esperados, siguen sin ser ejecuciones que se puedan parecer a las reales, porque lo que hace el planificador es equivocarse levantando las mismas cartas 3 veces seguidas al principio, y depués el resto de turnos los hace perfectos, igual que en la prueba anterior.
 
@@ -446,9 +447,8 @@
 
   En este problema se tienen 4 cartas por ronda y hay un total de 2 rondas. Hay una carta levantada en cada ronda.
 
+  \vspace{3mm}
 
-
-  \begin{multicols}{2}
     \textbf{Plan obtenido}:
 
     \begin{lstlisting}
@@ -479,14 +479,15 @@
 24: (DESPEDIR_PACIENTE TEO)
     \end{lstlisting}
 
-    \columnbreak
+    \vspace{2mm}
 
     \textbf{Fichero del problema}: problema-3.pddl
 
     \textbf{Fichero del resultado}: problema-3-o.pddl
 
     \textbf{Tiempo de ejecución}: 0.00 segundos
-  \end{multicols}
+
+  \vspace{3mm}
 
   El planificador consigue resolver correctamente el problema corrigiendo antes de empezar cada ronda las cartas que están boca arriba al inicio de una ronda.
 
@@ -557,7 +558,7 @@
 
   Se puede ver en plan que el planificador resuelve el problema explicando dos veces el juego.
 
-  \newpage
+
 
   \subsection{Prueba 5}
 
@@ -659,7 +660,7 @@
 
   Los resultados obtenidos son los esperados, funciona correctamente a pesar de que se haya aumentado la complejidad.
 
-  \newpage
+
 
   \subsection{Prueba 6}
 
@@ -736,6 +737,9 @@
   \vspace{3mm}
 
   El planificador resuelve satisfactoriamente el problema manejando todas las distintas modificaciones de forma correcta.
+
+
+  \newpage
 
 
   \section{Conclusiones}
