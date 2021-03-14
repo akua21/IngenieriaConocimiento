@@ -1,0 +1,70 @@
+digraph wines {
+	node [label="\N"];
+	graph [bb="0,0,3390,902"];
+	"Merlot grape" [label="{Merlot grape|{name =|{Merlot grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="87,27", rects="-0.5,27,174.5,53 -0.5,1,70.5,27 70.5,1,174.5,27", width="2.4167", height="0.73611"];
+	"Wine grape" [label="{Wine grape|{name|String}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1676,135", rects="1619,135,1733,161 1619,109,1674,135 1674,109,1733,135", width="1.5833", height="0.73611"];
+	Wine [label="{Wine|{maker|Instance|{Winery}}|{body|Symbol|{FULL|MEDIUM|LIGHT}}|{grape|Instance*|{Wine grape}}|{sugar|Symbol|{DRY|SWEET|OFF-DRY\
+}}|{flavor|Symbol|{DELICATE|MODERATE|STRONG}}|{...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1617,386", rects="1499.5,529,1734.5,555 1499.5,503,1569.5,529 1569.5,503,1655.5,529 1655.5,503,1734.5,529 1499.5,425,1563.5,503 1563.5,425,1644.5,\
+503 1644.5,477,1734.5,503 1644.5,451,1734.5,477 1644.5,425,1734.5,451 1499.5,399,1555.5,425 1555.5,399,1638.5,425 1638.5,399,1734.5\
+,425 1499.5,321,1565.5,399 1565.5,321,1643.5,399 1643.5,373,1734.5,399 1643.5,347,1734.5,373 1643.5,321,1734.5,347 1499.5,243\
+,1560.5,321 1560.5,243,1632.5,321 1632.5,295,1734.5,321 1632.5,269,1734.5,295 1632.5,243,1734.5,269 1499.5,217,1734.5,243", width="3.25", height="4.7083"];
+	"Petite Verdot grape" [label="{Petite Verdot grape|{name =|{Petite Verdot grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="303,27", rects="192,27,414,53 192,1,263,27 263,1,414,27", width="3.0833", height="0.73611"];
+	"Pinot Noir grape" [label="{Pinot Noir grape|{name =|{Pinot Noir grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="532,27", rects="432,27,632,53 432,1,503,27 503,1,632,27", width="2.7778", height="0.73611"];
+	":CLASS" [label="{:CLASS|{:DIRECT-TYPE|Class*|{:CLASS}}|{:DIRECT-INSTANCES|Instance*|{:THING}}|{:DIRECT-SUPERCLASSES|Class*|{:THING}}|{:DIRECT-SUBCLASSES\
+|Class*|{:THING}}|{:DIRECT-TEMPLATE-SLOTS|Instance*|{:SLOT}}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1403,689", rects="1231.5,741,1574.5,767 1231.5,715,1378.5,741 1378.5,715,1472.5,741 1472.5,715,1574.5,741 1231.5,689,1400.5,715 1400.5,689,1495.5,\
+715 1495.5,689,1574.5,715 1231.5,663,1428.5,689 1428.5,663,1497.5,689 1497.5,663,1574.5,689 1231.5,637,1417.5,663 1417.5,637,1491.5\
+,663 1491.5,637,1574.5,663 1231.5,611,1433.5,637 1433.5,611,1516.5,637 1516.5,611,1574.5,637", width="4.75", height="2.1806"];
+	":META-CLASS" [label="{:META-CLASS|{:NAME|String}|{:DIRECT-TYPE|Class*|{:META-CLASS}}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1403,862", rects="1261.5,875,1544.5,901 1261.5,849,1404.5,875 1404.5,849,1544.5,875 1261.5,823,1374.5,849 1374.5,823,1433.5,849 1433.5,823,1544.5,\
+849", width="3.9167", height="1.0972"];
+	":THING" [label=":THING", shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1785,386", width="0.91667", height="0.5"];
+	"Sauvignon Blanc grape" [label="{Sauvignon Blanc grape|{name =|{Sauvignon Blanc grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="773,27", rects="650,27,896,53 650,1,721,27 721,1,896,27", width="3.4167", height="0.73611"];
+	"Gamay grape" [label="{Gamay grape|{name =|{Gamay grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1004,27", rects="914,27,1094,53 914,1,985,27 985,1,1094,27", width="2.5", height="0.73611"];
+	"Chenin Blanc grape" [label="{Chenin Blanc grape|{name =|{Chenin Blanc grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1223,27", rects="1112,27,1334,53 1112,1,1183,27 1183,1,1334,27", width="3.0833", height="0.73611"];
+	"Chardonnay grape" [label="{Chardonnay grape|{name =|{Chardonnay grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1459,27", rects="1351.5,27,1566.5,53 1351.5,1,1422.5,27 1422.5,1,1566.5,27", width="2.9722", height="0.73611"];
+	"Riesling grape" [label="{Riesling grape|{name =|{Riesling grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1676,27", rects="1584,27,1768,53 1584,1,1655,27 1655,1,1768,27", width="2.5556", height="0.73611"];
+	"Pinot Blanc grape" [label="{Pinot Blanc grape|{name =|{Pinot Blanc grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1890,27", rects="1785.5,27,1994.5,53 1785.5,1,1856.5,27 1856.5,1,1994.5,27", width="2.8889", height="0.73611"];
+	"Zinfandel grape" [label="{Zinfandel grape|{name =|{Zinfandel grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2110,27", rects="2012,27,2208,53 2012,1,2083,27 2083,1,2208,27", width="2.7222", height="0.73611"];
+	":INSTANCE-ANNOTATION" [label="{:INSTANCE-ANNOTATION|{:ANNOTATED-INSTANCE|Instance|{:THING}}|{:ANNOTATION-TEXT|String}|{:CREATOR|String}|{:CREATION-TIMESTAMP|String\
+}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1878,689", rects="1714,728,2042,754 1714,702,1900,728 1900,702,1975,728 1975,702,2042,728 1714,676,1927,702 1927,676,2042,702 1714,650,1893,676 1893\
+,650,2042,676 1714,624,1938,650 1938,624,2042,650", width="4.5556", height="1.8194"];
+	"Malbec grape" [label="{Malbec grape|{name =|{Malbec grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2315,27", rects="2226,27,2404,53 2226,1,2297,27 2297,1,2404,27", width="2.4722", height="0.73611"];
+	"Petite Syrah grape" [label="{Petite Syrah grape|{name =|{Petite Syrah grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2530,27", rects="2421.5,27,2638.5,53 2421.5,1,2492.5,27 2492.5,1,2638.5,27", width=3, height="0.73611"];
+	"Semillon grape" [label="{Semillon grape|{name =|{Semillon grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2751,27", rects="2656,27,2846,53 2656,1,2727,27 2727,1,2846,27", width="2.6389", height="0.73611"];
+	":DIRECTED-BINARY-RELATION" [label="{:DIRECTED-BINARY-RELATION|{:FROM|Instance|{:THING}}|{:TO|Instance|{:THING}}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="2173,689", rects="2059.5,702,2286.5,728 2059.5,676,2128.5,702 2128.5,676,2211.5,702 2211.5,676,2286.5,702 2059.5,650,2114.5,676 2114.5,650,2204.5,\
+676 2204.5,650,2286.5,676", width="3.1389", height="1.0972"];
+	"Cabernet Franc grape" [label="{Cabernet Franc grape|{name =|{Cabernet Franc grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2982,27", rects="2863.5,27,3100.5,53 2863.5,1,2934.5,27 2934.5,1,3100.5,27", width="3.2778", height="0.73611"];
+	"Cabernet Sauvignon grape" [label="{Cabernet Sauvignon grape|{name =|{Cabernet Sauvignon grape}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="3254,27", rects="3118,27,3390,53 3118,1,3189,27 3189,1,3390,27", width="3.7778", height="0.73611"];
+	"Wine grape" -> "Merlot grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1619,134 1608.8,133.81 1432.7,130.36 942.81,118.75 536,90 378.69,78.884 337.93,83.458 183,54 180.28,53.483 177.52,52.924 174.75\
+,52.332", lp="542.5,81"];
+	Wine -> "Wine grape" [label="grape*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", style=filled, pos="e,1669.9,161.07 1656.8,216.84 1660.8,199.83 1664.5,184.04 1667.5,170.95", lp="1687.5,189"];
+	"Wine grape" -> "Petite Verdot grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1618.8,133.29 1608.8,132.97 1457.7,128.12 1079.6,114.42 764,90 612.06,78.24 573.37,78.768 423,54 420.05,53.514 417.06,53.001 414.05\
+,52.464", lp="770.5,81"];
+	"Wine grape" -> "Pinot Noir grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1618.9,134.18 1608.9,133.98 1443.3,130.56 1002.5,115.88 641,54 638.12,53.507 635.2,52.978 632.26,52.421", lp="901.5,81"];
+	":META-CLASS" -> ":CLASS" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,1403,822.74 1403,812.7 1403,798.45 1403,782.55 1403,767.01", lp="1412.5,795"];
+	":CLASS" -> ":CLASS" [label=":DIRECT-TYPE*", color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", style=filled, pos="e,1574.5,674.98 1574.5,703.02 1585.4,699.73 1592,695.06 1592,689 1592,685.03 1589.2,681.65 1584.1,678.87", lp="1644,689"];
+	":CLASS" -> ":THING" [label=":DIRECT-INSTANCES*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", style=filled, pos="e,1786.8,404.24 1311.5,610.8 1305.8,598.06 1306.1,585.34 1317,574 1349.8,539.8 1706.3,585.99 1743,556 1784.8,521.79 1788.8,453.1\
+ 1787.4,414.33", lp="1392,583"];
+	":CLASS" -> ":THING" [label=":DIRECT-SUPERCLASSES*", color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", style=filled, pos="e,1786.7,404.13 1454.9,610.71 1467.8,593.63 1480.6,579.1 1490,574 1539.5,547.12 1699.9,592.3 1743,556 1784.3,521.19 1788.5,452.74\
+ 1787.2,414.16", lp="1580,583"];
+	":CLASS" -> ":THING" [label=":DIRECT-SUBCLASSES*", color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", style=filled, pos="e,1785.9,404.25 1574.5,638.53 1607.4,625.62 1640.6,610.15 1670,592 1679.9,585.89 1679,579.98 1689,574 1710.7,560.99 1725.8,574.59\
+ 1743,556 1779.1,516.87 1785.5,451.67 1785.9,414.42", lp="1770.5,583"];
+	":THING" -> "Wine grape" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,1783.1,368 1781.9,358.07 1777.2,323.3 1766.2,262.78 1743,216 1733,195.72 1716.9,176.09 1703.1,161.23", lp="1740.5,189"];
+	"Wine grape" -> "Sauvignon Blanc grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1618.6,131.26 1608.5,130.55 1474,121.11 1163.2,96.373 905,54 902.11,53.527 899.2,53.035 896.26,52.528", lp="1165.5,81"];
+	":META-CLASS" -> ":META-CLASS" [label=":DIRECT-TYPE*", color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", style=filled, pos="e,1544.6,852.72 1544.6,871.28 1555.4,869.22 1562,866.12 1562,862 1562,859.36 1559.3,857.14 1554.5,855.34", lp="1614,862"];
+	"Wine grape" -> "Gamay grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1618.7,129.31 1608.6,128.25 1501,116.86 1284.1,91.344 1103,54 1100.1,53.406 1097.2,52.777 1094.3,52.119", lp="1313.5,81"];
+	"Wine grape" -> "Chenin Blanc grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1618.6,121.32 1608.6,118.94 1535.7,101.56 1418.4,73.577 1332.2,53.042", lp="1483.5,81"];
+	"Wine grape" -> "Chardonnay grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1623.7,108.99 1614.8,104.53 1582.2,88.338 1542.7,68.643 1511.6,53.155", lp="1587.5,81"];
+	"Wine grape" -> "Riesling grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1676,108.86 1676,98.483 1676,83.658 1676,66.862 1676,53.277", lp="1682.5,81"];
+	"Wine grape" -> "Pinot Blanc grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1727.5,108.99 1736.8,104.32 1768.8,88.17 1807.6,68.577 1838.2,53.155", lp="1801.5,81"];
+	"Wine grape" -> "Zinfandel grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1733,120.95 1742.9,118.52 1809,102.21 1913,76.5 2003,54 2005.9,53.28 2008.8,52.548 2011.8,51.808", lp="1928.5,81"];
+	":INSTANCE-ANNOTATION" -> ":THING" [label=":ANNOTATED-INSTANCE", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", style=filled, pos="e,1793,404.06 1867.5,623.77 1864.4,607.39 1860.5,589.94 1856,574 1839.5,515.53 1812.6,449.62 1797.1,413.45", lp="1945,583"];
+	"Wine grape" -> "Malbec grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1733.3,128.72 1743.5,127.54 1846.3,115.58 2048.1,89.769 2217,54 2219.9,53.378 2222.9,52.72 2225.9,52.033", lp="2120.5,81"];
+	"Wine grape" -> "Petite Syrah grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1733.2,131.35 1743.5,130.64 1873.7,121.56 2168.4,97.721 2413,54 2415.8,53.505 2418.6,52.987 2421.4,52.45", lp="2299.5,81"];
+	"Wine grape" -> "Semillon grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1733.1,134.09 1743.2,133.87 1901.8,130.23 2311.3,115.16 2647,54 2649.9,53.465 2652.9,52.891 2655.9,52.286", lp="2522.5,81"];
+	":DIRECTED-BINARY-RELATION" -> ":THING" [label=":FROM", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", style=filled, pos="e,1809.7,404.06 2126.8,649.88 2099.9,627.39 2065.3,598.77 2034,574 1957.6,513.63 1865.8,445.37 1817.8,410.05", lp="2076,583"];
+	":DIRECTED-BINARY-RELATION" -> ":THING" [label=":TO", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0", style=filled, pos="e,1818.3,399.15 2155.4,649.99 2143.2,626.03 2125.1,595.84 2103,574 2019.6,491.71 1893.4,431.16 1827.9,403.2", lp="2129.5,583"];
+	"Wine grape" -> "Cabernet Franc grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1733.2,133.16 1743.3,132.81 1888,127.82 2239.4,114.1 2533,90 2676.5,78.219 2712.8,77 2855,54 2857.8,53.55 2860.6,53.079 2863.4\
+,52.592", lp="2733.5,81"];
+	"Wine grape" -> "Cabernet Sauvignon grape" [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1733.1,133.72 1743.3,133.48 1911.9,129.38 2366.2,116.57 2744,90 2906.6,78.564 2947.6,76.941 3109,54 3111.9,53.586 3114.9,53.154\
+ 3117.8,52.707", lp="2969.5,81"];
+}

@@ -1,0 +1,63 @@
+
+ff: parsing domain file
+domain 'SIMON' defined
+ ... done.
+ff: parsing problem file
+problem 'P1' defined
+ ... done.
+
+
+warning: non-constant effect on metric. metric replaced with plan length.
+
+checking for cyclic := effects --- OK.
+
+Evaluation function -1.000000*g(s) + -1.000000*h(s) where
+ metric is plan length
+
+Cueing down from goal distance:   13 into depth [1]
+                                  12            [1]
+                                  11            [1][2]
+                                  10            [1][2]
+                                   8            [1]
+                                   7            [1][2][3]
+                                   6            [1][2][3]
+                                   5            [1]
+                                   4            [1][2][3][4]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: (SAY-HELLO SPEAK)
+        1: (NAOROBOT-PLAYS ONE GREEN ZERO SPEAK)
+        2: (CHANGE-HUMAN ONE)
+        3: (NAOCHECK-HUMAN GREEN ZERO)
+        4: (NEW-ROUND ONE TWO)
+        5: (NAOROBOT-PLAYS TWO YELLOW ZERO SPEAK)
+        6: (NAOROBOT-PLAYS TWO RED ONE SPEAK)
+        7: (CHANGE-HUMAN TWO)
+        8: (NAOCHECK-HUMAN YELLOW ZERO)
+        9: (NAOCHECK-HUMAN RED ONE)
+       10: (NEW-ROUND TWO THREE)
+       11: (NAOROBOT-PLAYS THREE GREEN ZERO SPEAK)
+       12: (NAOROBOT-PLAYS THREE YELLOW ONE SPEAK)
+       13: (NAOROBOT-PLAYS THREE BLUE TWO SPEAK)
+       14: (CHANGE-HUMAN THREE)
+       15: (NAOCHECK-HUMAN GREEN ZERO)
+       16: (NAOCHECK-HUMAN YELLOW ONE)
+       17: (NAOCHECK-HUMAN BLUE TWO)
+       18: (NEW-ROUND THREE FOUR)
+       19: (FINISH-GAME THREE SPEAK)
+       20: (SAY-GOODBYE SPEAK)
+     
+
+time spent:    0.00 seconds instantiating 1880 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 84 facts and 1698 actions
+               0.00 seconds creating final representation with 84 relevant facts, 5 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.02 seconds searching, evaluating 27 states, to a max depth of 4
+               0.02 seconds total time
+

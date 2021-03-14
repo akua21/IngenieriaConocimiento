@@ -1,0 +1,21 @@
+La programación declarativa es un paradigma de programación que se basa en escribir sentencias que describen el problema a resolver, se programa describiendo el resultado final deseado, en lugar de mostrar todos los pasos de trabajo. Esto funciona si las especificaciones del estado final se definen claramente y si existe un procedimiento de ejecución adecuado. Si se cumplen ambas condiciones la programación declarativa es muy eficiente.
+
+
+Un ejemplo podría ser saber cuántas veces aparece el número 3 dentro de una secuencia. Si tenemos la siguiente lista: list = [1, 6, 3, 5, 2, 3, 9]
+
+Una solución imperativa sería:
+
+counter = 0
+
+for i in list:
+
+  if i == 3:
+
+     counter += 1
+
+result = counter
+
+
+Mientras que una posible solución declarativa sería:
+
+result = list.count(3)

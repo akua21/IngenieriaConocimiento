@@ -1,0 +1,34 @@
+Identificación problema de las reacciones químicas
+
+1. Identificación del problema
+
+	1) Objetivos del problema:
+		- Metas específicas y generales: ajustar una reacción química representada por una ecuación no balanceada.
+	
+		- Funcionalidad y rendimiento: contar el número de átomos en reactivos y productos e ir ajustando los coeficientes de aquellas fórmulas donde no coincida el número de átomos y repetir el procedimiento hasta que a ambos lados de la ecuación los átomos sean iguales. Utilizando la sintaxis de CLIPS y sistemas de producción.
+		
+		- Fiabilidad y calidad: debe balancearse correctamente cualquier reacción química.
+	
+	2) Evaluar el problema:
+		- Adecuación: es un problema que requiere experiencia y además es una actividad práctica que usa manipulación simbólica y no requiere de investigación pues no es algo novedoso. La transferencia de experiencia entre humanos es factible y su dominio está acotado dentro de los compuestos químicos.
+		
+		- Plaudibilidad: los expertos pueden explicar sus métodos de resolución de este problema, además estos expertos son accesibles y la definición del problema está estructurada.
+	
+	3) Definir el problema y concebir la solución
+	
+	
+	El problema se basa en ajustar los átomos de una reacción química para que no esté desbalanceada, para ello se tienen que ir modificando los coeficientes de cada átomo para que haya el mismo número de átomos en los reactivos y en los productos.
+	
+	Cada subproblema consiste en ajustar los coeficientes de un átomo en concreto, la entrada por tanto es un átomo al que hay que ajustar sus coeficientes y la salida es dicho átomo con sus coeficientes ajustados.
+	
+	La complejidad del problema aumenta según se complique la reacción química.
+	
+		
+
+2. Conceptos
+
+- Fórmula
+- Reactivo
+- Producto
+- Componente
+

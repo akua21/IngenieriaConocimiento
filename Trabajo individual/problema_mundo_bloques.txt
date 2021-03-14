@@ -1,0 +1,34 @@
+Taller 8. Mundo bloques
+
+-Problema-
+Estado inicial: (ontable C) (on B A) (holding D) (armfree)
+Metas: (on B D)
+
+-Predicados-
+(on ?x ?y)
+(ontable ?x)
+(clear ?x)
+(armfree)
+(holding ?x)
+
+-Operadores-
+-pickup(?x)
+	Pre: (ontable ?x) (clear ?x) (armfree)
+	Add: (holding ?x)
+	Del: (ontable ?x) (clear ?x) (armfree)
+	
+-putdown(?x)
+	Pre: (holding ?x)
+	Add: (ontable ?x) (clear ?x) (armfree)
+	Del: (holding ?x)
+
+-unstack(?x ?y)
+	Pre: (on ?x ?y) (clear ?x) (armfree)
+	Add: (holding ?x) (clear ?y)
+	Del: (on ?x ?y) (clear ?x) (armfree)
+
+-stack(?x ?y)
+	Pre: (clear ?y) (holding ?x)
+	Add: (on ?x ?y) (clear ?x) (armfree)
+	Del: (clear ?y) (holding ?x)
+
